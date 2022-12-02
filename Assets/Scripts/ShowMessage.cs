@@ -14,5 +14,6 @@ public class ShowMessage : Interactable
         
     }
     protected override void Interact(){
+        gameObject.SetActive(false);
     }
 }

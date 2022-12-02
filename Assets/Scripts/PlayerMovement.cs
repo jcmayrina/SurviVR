@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                Debug.Log("Fire"+hitInfo.collider.name);
+                hitInfo.collider.GetComponent<Interactable>().baseInteract();
             }
         }
     }
