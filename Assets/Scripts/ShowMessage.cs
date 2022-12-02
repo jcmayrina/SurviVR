@@ -14,5 +14,6 @@ public class ShowMessage : Interactable
         
     }
     protected override void Interact(){
+        Debug.Log("HELLO");
     }
 }

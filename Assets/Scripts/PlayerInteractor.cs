@@ -2,21 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerInteractor : MonoBehaviour
 {
     public Image img;
     private Camera cam;
     private PlayerUI playerUI;
-    private InputManager inputManager;
+    private SurviVR surviVR;
+    private SurviVR.PlayerActions surviVRAct;
+    private InputAction interact;
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
+
+    private void Awake(){
+        surviVR = new SurviVR();
+        surviVRAct = surviVR.Player;
+    }
+
     // Start is called before the first frame update
     void Start() {
         cam = Camera.main;
-        inputManager = GetComponent<InputManager>();
         playerUI = GetComponent<PlayerUI>();
-        inputManager = GetComponent<InputManager>();
     }
 
     // Update is called once per frame
@@ -29,9 +36,25 @@ public class PlayerInteractor : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
+                Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
+                playerUI.UpdateText(interactable.promptMessage);
                 img.gameObject.SetActive(true);
+                onEnable();
             }
         }
+    }
+
+    private void onEnable() {
+        interact = surviVRAct.Fire;
+        interact.Enable();
+        interact.performed += Interact;
+    }
+
+    private void onDisable() {
+        surviVRAct.Fire.Disable();
+    }
+
+    private void Interact(InputAction.CallbackContext context) {
+        Debug.Log("HELLO");
     }
 }
