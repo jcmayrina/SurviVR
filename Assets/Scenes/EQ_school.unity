@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 223974235}
   - component: {fileID: 223974233}
   - component: {fileID: 223974230}
+  - component: {fileID: 223974237}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -445,6 +446,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!143 &223974237
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223974226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0.12
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1 &267111399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,11 +2206,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  img: {fileID: 0}
+  img: {fileID: 1294697494}
   maxDistance: 3
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 72
 --- !u!1 &1857303861
 GameObject:
   m_ObjectHideFlags: 0

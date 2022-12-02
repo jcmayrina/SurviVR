@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
+    private float gravity = 10f;
+    private CharacterController controller;
     public PlayerInputActions playerControls;
     Rigidbody myRb;
-    Vector2 moveDirection = Vector2.zero;
-    private InputAction move;
     private InputAction fire;
     public Image img;
     private Camera cam;
@@ -22,26 +22,23 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnEnable()
     {
-        move = playerControls.Player.Move;
-        move.Enable();
-        
         fire = playerControls.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
     }
     private void OnDisable()
     {
-        move.Disable();
         fire.Disable();
     }
     void Start()
     {
+        controller =  GetComponent<CharacterController>();
         myRb = GetComponent<Rigidbody>();
         cam = Camera.main;
         playerUI = GetComponent<PlayerUI>();
     }
     void Update(){
-        moveDirection = move.ReadValue<Vector2>();
+        playerMove();
         playerUI.UpdateText(string.Empty);
         img.gameObject.SetActive(false);
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -61,8 +58,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    private void FixedUpdate(){
-        myRb.velocity = new Vector3(moveDirection.x * speed, myRb.velocity.y,moveDirection.y * speed);
+    private void playerMove(){
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0, vertical);
+        Vector3 velocity = direction * speed;
+        velocity = Camera.main.transform.TransformDirection(velocity);
+        velocity.y -= gravity;
+        controller.Move(velocity * Time.deltaTime);
     }
     private void Fire(InputAction.CallbackContext context){
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
