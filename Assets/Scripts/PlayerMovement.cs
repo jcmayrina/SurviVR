@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     public float gravity = 10f;
-
+    public InputAction playerControls;
     private CharacterController controller;
 
     void Start()
