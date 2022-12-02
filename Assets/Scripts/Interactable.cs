@@ -6,11 +6,11 @@ public abstract class Interactable : MonoBehaviour
 {
     public string promptMessage;
 
-    public void baseInteract() {
-        Interact();
+    public void HideDoorPass() {
+        HideDoor();
     }
 
-    protected virtual void Interact() {
+    protected virtual void HideDoor() {
 
     }
 }

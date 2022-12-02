@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ShowMessage : Interactable
+public class EquipItem : Equipable
 {
     void Start()
     {
@@ -13,8 +13,8 @@ public class ShowMessage : Interactable
     {
         
     }
-    protected override void HideDoor(){
-        Debug.Log("removed");
+    protected override void Equip(){
+        Debug.Log("equipped");
         gameObject.SetActive(false);
     }
 }

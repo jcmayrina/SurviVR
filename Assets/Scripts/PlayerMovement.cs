@@ -53,6 +53,13 @@ public class PlayerMovement : MonoBehaviour
                 img.gameObject.SetActive(true);
             }
         }
+        
+        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
+                img.gameObject.SetActive(true);
+            }
+        }
     }
     private void FixedUpdate(){
         myRb.velocity = new Vector3(moveDirection.x * speed, myRb.velocity.y,moveDirection.y * speed);
@@ -63,7 +70,12 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                hitInfo.collider.GetComponent<Interactable>().baseInteract();
+                hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+            }
+        }
+        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                hitInfo.collider.GetComponent<Equipable>().EquipPass();
             }
         }
     }
