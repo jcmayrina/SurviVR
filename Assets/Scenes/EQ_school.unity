@@ -279,7 +279,6 @@ GameObject:
   - component: {fileID: 223974228}
   - component: {fileID: 223974227}
   - component: {fileID: 223974236}
-  - component: {fileID: 223974232}
   - component: {fileID: 223974235}
   - component: {fileID: 223974234}
   - component: {fileID: 223974233}
@@ -335,20 +334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!136 &223974232
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223974226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.18
-  m_Height: 2.04
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.38, z: 0}
 --- !u!114 &223974233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,7 +1868,6 @@ GameObject:
   - component: {fileID: 1828601337}
   - component: {fileID: 1828601345}
   - component: {fileID: 1828601349}
-  - component: {fileID: 1828601348}
   - component: {fileID: 1828601346}
   m_Layer: 0
   m_Name: Main Camera
@@ -2057,28 +2041,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.18
-  m_Height: 2.04
+  m_Radius: 0.12
+  m_Height: 0.8
   m_Direction: 1
-  m_Center: {x: 0, y: -0.38, z: 0}
---- !u!143 &1828601348
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828601335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 2.04
-  m_Radius: 0.18
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.38, z: 0}
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &1828601349
 MonoBehaviour:
   m_ObjectHideFlags: 0
