@@ -4501,7 +4501,7 @@ GameObject:
   - component: {fileID: 3984787661096136584}
   - component: {fileID: 1492685997883273137}
   - component: {fileID: 3984787661096136586}
-  - component: {fileID: 3984787661096136585}
+  - component: {fileID: 3984787661096136587}
   m_Layer: 3
   m_Name: Door.003
   m_TagString: Untagged
@@ -7921,19 +7921,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902975120889234861}
   m_Mesh: {fileID: 161445127193481064, guid: 01984bef63685494ba206239e3b2ed7f, type: 3}
---- !u!65 &3984787661096136585
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902975120889234861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.0000002, y: 1.9999998, z: 63.438}
-  m_Center: {x: 0, y: 0, z: 30.719}
 --- !u!114 &3984787661096136586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7947,6 +7934,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Use Door
+--- !u!65 &3984787661096136587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902975120889234861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.252202, y: 6.006469, z: 0.3015436}
+  m_Center: {x: -4.626099, y: 2.003234, z: -0.15077156}
 --- !u!1 &4109162655543195334
 GameObject:
   m_ObjectHideFlags: 0
@@ -13022,8 +13022,8 @@ GameObject:
   - component: {fileID: 2729090405034325706}
   - component: {fileID: 4663776512772662780}
   - component: {fileID: 9152994195076289212}
-  - component: {fileID: 9152994195076289214}
   - component: {fileID: 9152994195076289213}
+  - component: {fileID: 9152994195076289214}
   m_Layer: 3
   m_Name: Door.002
   m_TagString: Door
@@ -14666,8 +14666,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0000002, y: 1.9999998, z: 63.438}
-  m_Center: {x: 0, y: 0, z: 30.719}
+  m_Size: {x: 11.252203, y: 6.006467, z: 0.30154267}
+  m_Center: {x: -4.6261005, y: 2.0032356, z: -0.15077119}
 --- !u!4 &9185281203560792598
 Transform:
   m_ObjectHideFlags: 0
