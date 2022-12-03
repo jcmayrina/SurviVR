@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "2af86eec-716d-4187-b057-d63b80e2158d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -256,12 +265,20 @@
                 },
                 {
                     "name": "",
+<<<<<<< Updated upstream:Assets/SurviVR.inputactions
                     "id": "9308a621-9567-423c-a757-74fd6eebbc2e",
+=======
+                    "id": "ecfffa06-b431-4794-8587-c22f07306be2",
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.inputactions
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+<<<<<<< Updated upstream:Assets/SurviVR.inputactions
                     "action": "Fire",
+=======
+                    "action": "Inventory",
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.inputactions
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
