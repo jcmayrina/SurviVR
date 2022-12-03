@@ -16,6 +16,8 @@ namespace Google.XR.Cardboard
     {
         [DllImport(ApiConstants.CardboardApi)]
         private static extern void CardboardUnity_AddSixDoFData(IntPtr ptr, Int64 timestamp, [In] float[] position, [In] float[] orientation);
+        public CharacterController controller;
+
 
 #if CARDBOARD_6DOF
         private ARCameraManager _arCameraManager;
@@ -171,6 +173,13 @@ namespace Google.XR.Cardboard
 
                 if (positionSuccess && rotationSuccess)
                 {
+                    if(pose.position.y <= -0.6){
+                        Debug.Log("crouching with 6dof");
+                        controller.height = 0.7f;
+                    }
+                    else{
+                        controller.height = 1f;
+                    }
                     AddSixDoFData(pose.position, pose.rotation, (long)obj.timestampNs);
                 }
             }
@@ -186,6 +195,14 @@ namespace Google.XR.Cardboard
 
                     if (positionSuccess && rotationSuccess)
                     {
+                        if(pose.position.y <= -0.6){
+                            Debug.Log("crouching with 6dof");
+                            controller.height = 0.7f;
+                        }
+                        else{
+                            controller.height = 1f;
+                        }
+                        
                         AddSixDoFData(pose.position, pose.rotation, (long)obj.timestampNs);
                     }
                     break;
