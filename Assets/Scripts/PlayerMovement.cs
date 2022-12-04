@@ -13,15 +13,26 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
 =======
     public PlayerInputActions playerControls;
-    Rigidbody myRb;
     private InputAction fire;
+<<<<<<< Updated upstream
     private InputAction inventory;
+=======
+    private InputAction navigate;
+    Rigidbody myRb;
+>>>>>>> Stashed changes
     public Image img;
+    public Light light;
     private Camera cam;
     private PlayerUI playerUI;
+<<<<<<< Updated upstream
     private Inventory setInventory;
 
     //Editable component values
+=======
+    public GameObject hotBarUI;
+    public string thisButton = "";
+    //private InputManager inputManager;
+>>>>>>> Stashed changes
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
 
@@ -35,21 +46,32 @@ public class PlayerMovement : MonoBehaviour
         fire.Enable();
         fire.performed += Fire;
 
+<<<<<<< Updated upstream
         inventory = playerControls.Player.Inventory;
         inventory.Enable();
         inventory.performed += openInventory;
+=======
+        navigate = playerControls.Player.Navigate;
+        navigate.Enable();
+        navigate.performed += Navigate;
+>>>>>>> Stashed changes
     }
     private void OnDisable()
     {
         fire.Disable();
+        navigate.Disable();
     }
     void Start()
     {
         controller =  GetComponent<CharacterController>();
         myRb = GetComponent<Rigidbody>();
         playerUI = GetComponent<PlayerUI>();
+<<<<<<< Updated upstream
         setInventory = GetComponent<Inventory>();
         cam = Camera.main;
+>>>>>>> Stashed changes
+=======
+        hotBarUI.gameObject.SetActive(false);
 >>>>>>> Stashed changes
     }
 
@@ -70,20 +92,36 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
+<<<<<<< Updated upstream
 
         //If the object is interactable
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
                 img.gameObject.SetActive(true);
+=======
+        if(thisButton.Equals("")) {
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                    playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
+                    img.gameObject.SetActive(true);
+                }
+>>>>>>> Stashed changes
             }
-        }
         
+<<<<<<< Updated upstream
         //If the object is equipable
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Equipable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
                 img.gameObject.SetActive(true);
+=======
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                    playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
+                    img.gameObject.SetActive(true);
+                }
+>>>>>>> Stashed changes
             }
         }
     }
@@ -99,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
         velocity.y -= gravity;
         controller.Move(velocity * Time.deltaTime);
     }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
 
@@ -119,6 +158,46 @@ public class PlayerMovement : MonoBehaviour
             else if(hitInfo.collider.GetComponent<Equipable>() != null) {
                 hitInfo.collider.GetComponent<Equipable>().EquipPass();
                 setInventory.active();
+=======
+    public void Fire(InputAction.CallbackContext context){
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        RaycastHit hitInfo;
+        Debug.DrawRay(ray.origin, ray.direction * maxDistance);
+        if(thisButton.Equals("")) {
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                    hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                }
+            }
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                    hitInfo.collider.GetComponent<Equipable>().EquipPass();
+                    hotBarUI.gameObject.SetActive(true);
+                }
+            }
+            else
+                Debug.Log("There is no current item handled. Interact.");
+        }
+        else if(thisButton.Equals("HotbarSlot1") && hotBarUI.activeSelf) {
+            Debug.Log("Current item is " + thisButton);
+        }
+        else if(thisButton.Equals("HotbarSlot2") && hotBarUI.activeSelf) {
+            Debug.Log("Current item is " + thisButton);
+            light.gameObject.GetComponent<Light>().enabled = !light.gameObject.GetComponent<Light>().enabled;
+        }
+    }
+
+    public void Navigate(InputAction.CallbackContext context) {
+        if(hotBarUI.activeSelf) {
+            if(thisButton.Equals("HotbarSlot1")) {
+                thisButton = "HotbarSlot2";
+            }
+            else if(thisButton.Equals("HotbarSlot2")) {
+                thisButton = "";
+            }
+            else {
+                thisButton = "HotbarSlot1";
+>>>>>>> Stashed changes
             }
         }
 

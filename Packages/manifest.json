@@ -2,6 +2,7 @@
   "dependencies": {
     "com.aryzon.unity-sdk": "https://github.com/Aryzon/unity-sdk.git",
     "com.google.xr.cardboard": "https://github.com/Aryzon/cardboard-xr-plugin.git",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "1.17.2",
     "com.unity.feature.ar": "1.0.0",
     "com.unity.feature.development": "1.0.1",

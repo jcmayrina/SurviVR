@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Navigate",
+                    "type": "Button",
+                    "id": "0b4fcf1c-0bf8-4455-aa94-aa934ee4911c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -222,7 +231,7 @@
                 {
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -266,6 +275,7 @@
                 {
                     "name": "",
 <<<<<<< Updated upstream:Assets/SurviVR.inputactions
+<<<<<<< Updated upstream:Assets/SurviVR.inputactions
                     "id": "9308a621-9567-423c-a757-74fd6eebbc2e",
 =======
                     "id": "ecfffa06-b431-4794-8587-c22f07306be2",
@@ -278,6 +288,14 @@
                     "action": "Fire",
 =======
                     "action": "Inventory",
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.inputactions
+=======
+                    "id": "a5d50db4-c96f-4f8e-b633-9575def7c47c",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
 >>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.inputactions
                     "isComposite": false,
                     "isPartOfComposite": false

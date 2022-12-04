@@ -62,6 +62,15 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""Button"",
+                    ""id"": ""0b4fcf1c-0bf8-4455-aa94-aa934ee4911c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -244,7 +253,7 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -288,6 +297,7 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
 <<<<<<< Updated upstream:Assets/SurviVR.cs
+<<<<<<< Updated upstream:Assets/SurviVR.cs
                     ""id"": ""9308a621-9567-423c-a757-74fd6eebbc2e"",
 =======
                     ""id"": ""ecfffa06-b431-4794-8587-c22f07306be2"",
@@ -300,6 +310,14 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
                     ""action"": ""Fire"",
 =======
                     ""action"": ""Inventory"",
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
+=======
+                    ""id"": ""a5d50db4-c96f-4f8e-b633-9575def7c47c"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
 >>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -891,7 +909,11 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+<<<<<<< Updated upstream:Assets/SurviVR.cs
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
+=======
+        m_Player_Navigate = m_Player.FindAction("Navigate", throwIfNotFound: true);
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -966,7 +988,11 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
+<<<<<<< Updated upstream:Assets/SurviVR.cs
     private readonly InputAction m_Player_Inventory;
+=======
+    private readonly InputAction m_Player_Navigate;
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
     public struct PlayerActions
     {
         private @SurviVR m_Wrapper;
@@ -974,7 +1000,11 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+<<<<<<< Updated upstream:Assets/SurviVR.cs
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
+=======
+        public InputAction @Navigate => m_Wrapper.m_Player_Navigate;
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -993,9 +1023,15 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+<<<<<<< Updated upstream:Assets/SurviVR.cs
                 @Inventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
+=======
+                @Navigate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNavigate;
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1009,9 +1045,15 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+<<<<<<< Updated upstream:Assets/SurviVR.cs
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+=======
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
             }
         }
     }
@@ -1171,7 +1213,11 @@ public partial class @SurviVR : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+<<<<<<< Updated upstream:Assets/SurviVR.cs
         void OnInventory(InputAction.CallbackContext context);
+=======
+        void OnNavigate(InputAction.CallbackContext context);
+>>>>>>> Stashed changes:Assets/Scripts/PlayerInputActions.cs
     }
     public interface IUIActions
     {
