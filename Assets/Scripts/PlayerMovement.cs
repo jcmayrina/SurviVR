@@ -9,10 +9,15 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     public PlayerInputActions playerControls;
     Rigidbody myRb;
+    
     private InputAction fire;
+    private InputAction navigate;
     public Image img;
+    public GameObject flashlight;
     private Camera cam;
     private PlayerUI playerUI;
+    public GameObject hotbarUI;
+    string itemChoose = "";
     //private InputManager inputManager;
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
@@ -25,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
         fire = playerControls.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
+
+        navigate = playerControls.Player.Navigate;
+        navigate.Enable();
+        navigate.performed += Navigate;
     }
     private void OnDisable()
     {
@@ -33,9 +42,11 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller =  GetComponent<CharacterController>();
-        myRb = GetComponent<Rigidbody>();
-        cam = Camera.main;
         playerUI = GetComponent<PlayerUI>();
+        myRb = GetComponent<Rigidbody>();
+        hotbarUI.SetActive(false);
+        flashlight.SetActive(false);
+        cam = Camera.main;
     }
     void Update(){
         playerMove();
@@ -71,14 +82,44 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+        if(itemChoose.Equals("slot1")) {
+            Debug.Log("WHISTLE NASAAN NA");
+        }
+        else if(itemChoose.Equals("slot2")) {
+            if(flashlight.activeSelf) {
+                flashlight.SetActive(false);
+            }
+            else {
+                flashlight.SetActive(true);
             }
         }
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Equipable>() != null) {
-                hitInfo.collider.GetComponent<Equipable>().EquipPass();
+        else {
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                    hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                }
+            }
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                    hitInfo.collider.GetComponent<Equipable>().EquipPass();
+                    hotbarUI.SetActive(true);
+                }
+            }
+        }
+    }
+    private void Navigate(InputAction.CallbackContext context) {
+        if(hotbarUI.activeSelf) {
+            if(itemChoose.Equals("slot1")) {
+                Debug.Log("Flashlight");
+                itemChoose = "slot2";
+            }
+            else if(itemChoose.Equals("slot2")) {
+                Debug.Log("Hand");
+                itemChoose = "";
+            }
+            else {
+                Debug.Log("Whistle");
+                itemChoose = "slot1";
             }
         }
     }
