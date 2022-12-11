@@ -3,7 +3,8 @@ using TMPro;
 
 public class IsCrouching : MonoBehaviour
 {
-    float countDown;
+    float crouchtimer;
+    int mycrouchtimer;
     public TextMeshProUGUI textCrouch;
     public GameObject crouchInstructions;
     // Start is called before the first frame update
@@ -16,12 +17,11 @@ public class IsCrouching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player")){
-            countDown = 5.0f;
+            crouchtimer = 0;
             Debug.Log("Crouching under the table");
             crouchInstructions.SetActive(true);
             textCrouch.SetText("Please stay under the table until the earthquake calms down.");
@@ -30,12 +30,15 @@ public class IsCrouching : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player")){
-            if(countDown > 0) {
-                countDown -= Time.deltaTime;
-            }
-            else{
-                Debug.Log("Time reached 5seconds");
+            crouchtimer += 1 * Time.deltaTime;
+            mycrouchtimer = (int) crouchtimer;
+            Debug.Log(mycrouchtimer);
+            if(mycrouchtimer == 10) {
                 textCrouch.SetText("You can now carefully move and evacuate.");
+            }
+            else if(mycrouchtimer == 15) {
+                textCrouch.SetText("");
+                crouchInstructions.SetActive(false);
             }
         }
     }
@@ -43,7 +46,13 @@ public class IsCrouching : MonoBehaviour
     {
         if(other.CompareTag("Player")){
             Debug.Log("Left under the table");
+            crouchInstructions.SetActive(true);
             textCrouch.SetText("Find the exit and an open area to evacuate to.");
+            Invoke("HideExitText",15);
         }
+    }
+    void HideExitText(){
+        crouchInstructions.SetActive(false);
+        textCrouch.SetText("");
     }
 }

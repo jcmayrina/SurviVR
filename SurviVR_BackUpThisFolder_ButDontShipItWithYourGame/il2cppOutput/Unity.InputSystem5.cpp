@@ -658,6 +658,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral4B4523E5E32D17473FFCC006C3EF7B5B197C03B1
 IL2CPP_EXTERN_C String_t* _stringLiteral4D3D7302987C2B4D5F8093A5DAF6AC713B851CFC;
 IL2CPP_EXTERN_C String_t* _stringLiteral4F724051E2D28B18765B679F5E4D93AED1FD6821;
 IL2CPP_EXTERN_C String_t* _stringLiteral53341CC24F9A1C8120B54B4F417C8EF87B0CBCE1;
+IL2CPP_EXTERN_C String_t* _stringLiteral54458377977B39746D8739B34B60A49EA898EDAE;
 IL2CPP_EXTERN_C String_t* _stringLiteral54BB766C350A71E727166B0CA9401593627E8F16;
 IL2CPP_EXTERN_C String_t* _stringLiteral5742AB535A524B7E9D2BBC75E3B43257D3C75064;
 IL2CPP_EXTERN_C String_t* _stringLiteral5A240611394957FD23FDBBB19D1FAEA92BD0A2E9;
@@ -5471,8 +5472,10 @@ struct InputSettings_tBA8835B505722A59702A08BCBA46ECF0B0274EEF  : public Scripta
 	float ___m_MultiTapDelayTime_19;
 	// System.Boolean UnityEngine.InputSystem.InputSettings::m_DisableRedundantEventsMerging
 	bool ___m_DisableRedundantEventsMerging_20;
+	// System.Boolean UnityEngine.InputSystem.InputSettings::m_ShortcutKeysConsumeInputs
+	bool ___m_ShortcutKeysConsumeInputs_21;
 	// System.Collections.Generic.HashSet`1<System.String> UnityEngine.InputSystem.InputSettings::m_FeatureFlags
-	HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* ___m_FeatureFlags_21;
+	HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* ___m_FeatureFlags_22;
 };
 
 // UnityEngine.InputSystem.LowLevel.InputUpdateDelegate
@@ -26256,7 +26259,7 @@ IL_0128:
 		// if (m_Settings.m_FeatureFlags != null)
 		InputSettings_tBA8835B505722A59702A08BCBA46ECF0B0274EEF* L_43 = __this->___m_Settings_33;
 		NullCheck(L_43);
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_44 = L_43->___m_FeatureFlags_21;
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_44 = L_43->___m_FeatureFlags_22;
 		if (!L_44)
 		{
 			goto IL_0165;
@@ -32657,6 +32660,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InputSettings_SetInternalFeatureFlag_mF5
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HashSet_1_Remove_m97303C08928AB7A9364E7908F34670D92348D9DA_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HashSet_1__ctor_m780CFB8A2D23543157D1A0E1FADF781E1AF81E03_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral54458377977B39746D8739B34B60A49EA898EDAE);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -32679,58 +32683,94 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InputSettings_SetInternalFeatureFlag_mF5
 
 IL_0013:
 	{
-		// if (m_FeatureFlags == null)
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_3 = __this->___m_FeatureFlags_21;
-		if (L_3)
+		// if (featureName == InputFeatureNames.kDisableShortcutSupport)
+		String_t* L_3 = ___featureName0;
+		bool L_4;
+		L_4 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_3, _stringLiteral54458377977B39746D8739B34B60A49EA898EDAE, NULL);
+		if (!L_4)
 		{
-			goto IL_0026;
+			goto IL_003e;
+		}
+	}
+	{
+		// if (m_ShortcutKeysConsumeInputs == !enabled) return;
+		bool L_5 = __this->___m_ShortcutKeysConsumeInputs_21;
+		bool L_6 = ___enabled1;
+		if ((!(((uint32_t)L_5) == ((uint32_t)((((int32_t)L_6) == ((int32_t)0))? 1 : 0)))))
+		{
+			goto IL_002d;
+		}
+	}
+	{
+		// if (m_ShortcutKeysConsumeInputs == !enabled) return;
+		return;
+	}
+
+IL_002d:
+	{
+		// m_ShortcutKeysConsumeInputs = !enabled;
+		bool L_7 = ___enabled1;
+		__this->___m_ShortcutKeysConsumeInputs_21 = (bool)((((int32_t)L_7) == ((int32_t)0))? 1 : 0);
+		// OnChange();
+		InputSettings_OnChange_mCB0D398486EC073F501A076B2C5D0C791C565F79(__this, NULL);
+		// return;
+		return;
+	}
+
+IL_003e:
+	{
+		// if (m_FeatureFlags == null)
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_8 = __this->___m_FeatureFlags_22;
+		if (L_8)
+		{
+			goto IL_0051;
 		}
 	}
 	{
 		// m_FeatureFlags = new HashSet<string>();
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_4 = (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178*)il2cpp_codegen_object_new(HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178_il2cpp_TypeInfo_var);
-		NullCheck(L_4);
-		HashSet_1__ctor_m780CFB8A2D23543157D1A0E1FADF781E1AF81E03(L_4, HashSet_1__ctor_m780CFB8A2D23543157D1A0E1FADF781E1AF81E03_RuntimeMethod_var);
-		__this->___m_FeatureFlags_21 = L_4;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_FeatureFlags_21), (void*)L_4);
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_9 = (HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178*)il2cpp_codegen_object_new(HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178_il2cpp_TypeInfo_var);
+		NullCheck(L_9);
+		HashSet_1__ctor_m780CFB8A2D23543157D1A0E1FADF781E1AF81E03(L_9, HashSet_1__ctor_m780CFB8A2D23543157D1A0E1FADF781E1AF81E03_RuntimeMethod_var);
+		__this->___m_FeatureFlags_22 = L_9;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_FeatureFlags_22), (void*)L_9);
 	}
 
-IL_0026:
+IL_0051:
 	{
 		// if (enabled)
-		bool L_5 = ___enabled1;
-		if (!L_5)
+		bool L_10 = ___enabled1;
+		if (!L_10)
 		{
-			goto IL_003d;
+			goto IL_0068;
 		}
 	}
 	{
 		// m_FeatureFlags.Add(featureName.ToUpperInvariant());
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_6 = __this->___m_FeatureFlags_21;
-		String_t* L_7 = ___featureName0;
-		NullCheck(L_7);
-		String_t* L_8;
-		L_8 = String_ToUpperInvariant_mD73F658CDE1280A527231DC305B66CF09B64E5AB(L_7, NULL);
-		NullCheck(L_6);
-		bool L_9;
-		L_9 = HashSet_1_Add_mF3D4CF6D0150392127D5561A87DCDEDA9A81BE5D(L_6, L_8, HashSet_1_Add_mF3D4CF6D0150392127D5561A87DCDEDA9A81BE5D_RuntimeMethod_var);
-		goto IL_004f;
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_11 = __this->___m_FeatureFlags_22;
+		String_t* L_12 = ___featureName0;
+		NullCheck(L_12);
+		String_t* L_13;
+		L_13 = String_ToUpperInvariant_mD73F658CDE1280A527231DC305B66CF09B64E5AB(L_12, NULL);
+		NullCheck(L_11);
+		bool L_14;
+		L_14 = HashSet_1_Add_mF3D4CF6D0150392127D5561A87DCDEDA9A81BE5D(L_11, L_13, HashSet_1_Add_mF3D4CF6D0150392127D5561A87DCDEDA9A81BE5D_RuntimeMethod_var);
+		goto IL_007a;
 	}
 
-IL_003d:
+IL_0068:
 	{
 		// m_FeatureFlags.Remove(featureName.ToUpperInvariant());
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_10 = __this->___m_FeatureFlags_21;
-		String_t* L_11 = ___featureName0;
-		NullCheck(L_11);
-		String_t* L_12;
-		L_12 = String_ToUpperInvariant_mD73F658CDE1280A527231DC305B66CF09B64E5AB(L_11, NULL);
-		NullCheck(L_10);
-		bool L_13;
-		L_13 = HashSet_1_Remove_m97303C08928AB7A9364E7908F34670D92348D9DA(L_10, L_12, HashSet_1_Remove_m97303C08928AB7A9364E7908F34670D92348D9DA_RuntimeMethod_var);
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_15 = __this->___m_FeatureFlags_22;
+		String_t* L_16 = ___featureName0;
+		NullCheck(L_16);
+		String_t* L_17;
+		L_17 = String_ToUpperInvariant_mD73F658CDE1280A527231DC305B66CF09B64E5AB(L_16, NULL);
+		NullCheck(L_15);
+		bool L_18;
+		L_18 = HashSet_1_Remove_m97303C08928AB7A9364E7908F34670D92348D9DA(L_15, L_17, HashSet_1_Remove_m97303C08928AB7A9364E7908F34670D92348D9DA_RuntimeMethod_var);
 	}
 
-IL_004f:
+IL_007a:
 	{
 		// OnChange();
 		InputSettings_OnChange_mCB0D398486EC073F501A076B2C5D0C791C565F79(__this, NULL);
@@ -32745,29 +32785,47 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputSettings_IsFeatureEnabled_mA9209A0E
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&HashSet_1_Contains_mAE49939A0DE08C4864E8560F3F7FCDAC2E193853_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral54458377977B39746D8739B34B60A49EA898EDAE);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// return m_FeatureFlags != null && m_FeatureFlags.Contains(featureName.ToUpperInvariant());
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_0 = __this->___m_FeatureFlags_21;
-		if (!L_0)
+		// if (featureName == InputFeatureNames.kDisableShortcutSupport) return !m_ShortcutKeysConsumeInputs;
+		String_t* L_0 = ___featureName0;
+		bool L_1;
+		L_1 = String_op_Equality_m030E1B219352228970A076136E455C4E568C02C1(L_0, _stringLiteral54458377977B39746D8739B34B60A49EA898EDAE, NULL);
+		if (!L_1)
 		{
-			goto IL_001a;
+			goto IL_0017;
 		}
 	}
 	{
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_1 = __this->___m_FeatureFlags_21;
-		String_t* L_2 = ___featureName0;
-		NullCheck(L_2);
-		String_t* L_3;
-		L_3 = String_ToUpperInvariant_mD73F658CDE1280A527231DC305B66CF09B64E5AB(L_2, NULL);
-		NullCheck(L_1);
-		bool L_4;
-		L_4 = HashSet_1_Contains_mAE49939A0DE08C4864E8560F3F7FCDAC2E193853(L_1, L_3, HashSet_1_Contains_mAE49939A0DE08C4864E8560F3F7FCDAC2E193853_RuntimeMethod_var);
-		return L_4;
+		// if (featureName == InputFeatureNames.kDisableShortcutSupport) return !m_ShortcutKeysConsumeInputs;
+		bool L_2 = __this->___m_ShortcutKeysConsumeInputs_21;
+		return (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
 	}
 
-IL_001a:
+IL_0017:
+	{
+		// return m_FeatureFlags != null && m_FeatureFlags.Contains(featureName.ToUpperInvariant());
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_3 = __this->___m_FeatureFlags_22;
+		if (!L_3)
+		{
+			goto IL_0031;
+		}
+	}
+	{
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_4 = __this->___m_FeatureFlags_22;
+		String_t* L_5 = ___featureName0;
+		NullCheck(L_5);
+		String_t* L_6;
+		L_6 = String_ToUpperInvariant_mD73F658CDE1280A527231DC305B66CF09B64E5AB(L_5, NULL);
+		NullCheck(L_4);
+		bool L_7;
+		L_7 = HashSet_1_Contains_mAE49939A0DE08C4864E8560F3F7FCDAC2E193853(L_4, L_6, HashSet_1_Contains_mAE49939A0DE08C4864E8560F3F7FCDAC2E193853_RuntimeMethod_var);
+		return L_7;
+	}
+
+IL_0031:
 	{
 		return (bool)0;
 	}
