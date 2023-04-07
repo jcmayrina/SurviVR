@@ -1,4 +1,4 @@
-
+using TMPro;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -175,7 +175,7 @@ namespace Google.XR.Cardboard
                 {
                     if(pose.position.y <= -0.6){
                         Debug.Log("crouching with 6dof");
-                        controller.height = 0.7f;
+                        controller.height = 0.6f;
                     }
                     else{
                         controller.height = 1f;
@@ -197,7 +197,7 @@ namespace Google.XR.Cardboard
                     {
                         if(pose.position.y <= -0.6){
                             Debug.Log("crouching with 6dof");
-                            controller.height = 0.7f;
+                            controller.height = 0.6f;
                         }
                         else{
                             controller.height = 1f;

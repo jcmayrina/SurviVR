@@ -170,6 +170,8 @@ struct DeviceRequirementU5BU5D_t0496FAAB7554B7BFC270BA53BA6A5EFD5DE061CE;
 struct UnicodeCharU5BU5D_t67F27D09F8EB28D2C42DFF16FE60054F157012F5;
 // UnityEngine.XR.ARFoundation.ARCameraManager
 struct ARCameraManager_t6E957EA922911B8447D086D9FB1F860EC967BD9F;
+// UnityEngine.Animator
+struct Animator_t8A52E42AE54F76681838FE9E632683EF3952E883;
 // UnityEngine.Behaviour
 struct Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA;
 // UnityEngine.Camera
@@ -312,6 +314,7 @@ IL2CPP_EXTERN_C RuntimeClass* CommonUsages_t9208F514F1E77BE70AC53EFEC94D57EDDAF3
 IL2CPP_EXTERN_C RuntimeClass* Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IPlayerActions_t71B1DE685863404A0563EC268B5E0225748DA4F1_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IUIActions_tA4C6BBF537B877ED68C75E65F38A2B75CDEEDA64_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IntPtr_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_tB66D13E0427CA48C600AEA4DBA5B173C3734C6CE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_tE3AE94237CE649B47E1D52E1A3120E772255FF87_il2cpp_TypeInfo_var;
@@ -344,7 +347,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteral71368575C0C8F9BF9AF38B89410C975551E9305A
 IL2CPP_EXTERN_C String_t* _stringLiteral7190B99ACC92263A8252BF1908D6653B40287E65;
 IL2CPP_EXTERN_C String_t* _stringLiteral732E50D95DAD72070C9C953009118D1542F16367;
 IL2CPP_EXTERN_C String_t* _stringLiteral7F8C014BD4810CC276D0F9F81A1E759C7B098B1E;
-IL2CPP_EXTERN_C String_t* _stringLiteral8379FAAE8D42E1435DD5D7C1E5F780A688D9AA9C;
 IL2CPP_EXTERN_C String_t* _stringLiteral877DCF22CD310B2FAD5C93CA9D7573D599D22B5F;
 IL2CPP_EXTERN_C String_t* _stringLiteral898D90EB3DE7D3668A0EFD87738586E47DA59C23;
 IL2CPP_EXTERN_C String_t* _stringLiteral93717CD8FCD45BAB4F15D3BACC989A6A93BA2674;
@@ -359,12 +361,14 @@ IL2CPP_EXTERN_C String_t* _stringLiteralAF76631C9924DA21CC9961B508E27EB5D8012412
 IL2CPP_EXTERN_C String_t* _stringLiteralB008A4D70C23C4CA7F12FC5053B5803ECA08C362;
 IL2CPP_EXTERN_C String_t* _stringLiteralB502A186982A83A6C402B5753C1120061504E6EB;
 IL2CPP_EXTERN_C String_t* _stringLiteralB93F5E13E0AD8E8044D7D80E771F9A55F393D87F;
+IL2CPP_EXTERN_C String_t* _stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118;
 IL2CPP_EXTERN_C String_t* _stringLiteralBE945037029A4F161238215887E2AA5C0431C00F;
 IL2CPP_EXTERN_C String_t* _stringLiteralC63533D7E97B41EB9EC8122A46CB313BA2A0DDC4;
 IL2CPP_EXTERN_C String_t* _stringLiteralCAF8804297181FF007CA835529DD4477CFD94A70;
 IL2CPP_EXTERN_C String_t* _stringLiteralD5A6D1524A9CAA0C1FE48522BD4B250F6A827CC8;
 IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709;
 IL2CPP_EXTERN_C String_t* _stringLiteralE1944807DB2BAC61478C70E117D71C41E625CE4D;
+IL2CPP_EXTERN_C String_t* _stringLiteralEEF71EB81A1BA46C11E853CACAC82454DD34C7B5;
 IL2CPP_EXTERN_C String_t* _stringLiteralF3E84B722399601AD7E281754E917478AA9AD48D;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisCharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A_m96B48A644EDC97C5C82F154D1FEA551B2E392040_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisEquipable_t31566ED87946BE840864FB4C8F99215C3916A124_m67268AEDA252B8B57EAFB348B047B7FB0370C2AE_RuntimeMethod_var;
@@ -2856,6 +2860,11 @@ struct TMP_TextProcessingStack_1_t2DDA00FFC64AF6E3AFD475AB2086D16C34787E0F
 	int32_t ___m_Count_5;
 };
 
+// UnityEngine.Animator
+struct Animator_t8A52E42AE54F76681838FE9E632683EF3952E883  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
+{
+};
+
 // UnityEngine.Camera
 struct Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
 {
@@ -2941,12 +2950,16 @@ struct Interactable_t8827E5DAD48A2075EDFB2410F54F284C645E3E11  : public MonoBeha
 // IsCrouching
 struct IsCrouching_t54C5E4450BBA60484C56E27A4765DAE35F9173E0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	// System.Single IsCrouching::countDown
-	float ___countDown_4;
+	// System.Single IsCrouching::crouchtimer
+	float ___crouchtimer_4;
+	// System.Int32 IsCrouching::mycrouchtimer
+	int32_t ___mycrouchtimer_5;
 	// TMPro.TextMeshProUGUI IsCrouching::textCrouch
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___textCrouch_5;
+	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___textCrouch_6;
 	// UnityEngine.GameObject IsCrouching::crouchInstructions
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___crouchInstructions_6;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___crouchInstructions_7;
+	// UnityEngine.Animator IsCrouching::myAnimController
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___myAnimController_8;
 };
 
 // PlayerMovement
@@ -3943,8 +3956,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Equipable__ctor_m4516AEDCA5D9DC9AB6C9ABB
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_Text_SetText_m848189C290727009A95A00E432B66DFB2F2C3454 (TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* __this, String_t* ___sourceText0, bool ___syncTextInputBox1, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Component::CompareTag(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, String_t* ___tag0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Animator::SetBool(System.String,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___name0, bool ___value1, const RuntimeMethod* method) ;
 // System.Single UnityEngine.Time::get_deltaTime()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865 (const RuntimeMethod* method) ;
+// System.Void UnityEngine.MonoBehaviour::Invoke(System.String,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_Invoke_mF724350C59362B0F1BFE26383209A274A29A63FB (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, String_t* ___methodName0, float ___time1, const RuntimeMethod* method) ;
 // System.Void System.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // UnityEngine.InputSystem.InputActionAsset UnityEngine.InputSystem.InputActionAsset::FromJson(System.String)
@@ -4522,11 +4539,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_Start_m240D66C1A901ACCA4CEA3
 	}
 	{
 		// textCrouch.SetText("");
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_0 = __this->___textCrouch_5;
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_0 = __this->___textCrouch_6;
 		NullCheck(L_0);
 		TMP_Text_SetText_m848189C290727009A95A00E432B66DFB2F2C3454(L_0, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, (bool)1, NULL);
 		// crouchInstructions.SetActive(false);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___crouchInstructions_6;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___crouchInstructions_7;
 		NullCheck(L_1);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_1, (bool)0, NULL);
 		// }
@@ -4550,6 +4567,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_OnTriggerEnter_mC8D351256ECD
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral00AFB916A7C31CECDF51304F7004734FD3ED2782);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2183EF4CEC9408CFB5C929A4C905177DD61532C5);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCAF8804297181FF007CA835529DD4477CFD94A70);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -4561,26 +4579,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_OnTriggerEnter_mC8D351256ECD
 		L_1 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_0, _stringLiteralCAF8804297181FF007CA835529DD4477CFD94A70, NULL);
 		if (!L_1)
 		{
-			goto IL_003f;
+			goto IL_0050;
 		}
 	}
 	{
-		// countDown = 5.0f;
-		__this->___countDown_4 = (5.0f);
+		// crouchtimer = 0;
+		__this->___crouchtimer_4 = (0.0f);
 		// Debug.Log("Crouching under the table");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral00AFB916A7C31CECDF51304F7004734FD3ED2782, NULL);
 		// crouchInstructions.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___crouchInstructions_6;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___crouchInstructions_7;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)1, NULL);
 		// textCrouch.SetText("Please stay under the table until the earthquake calms down.");
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_3 = __this->___textCrouch_5;
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_3 = __this->___textCrouch_6;
 		NullCheck(L_3);
 		TMP_Text_SetText_m848189C290727009A95A00E432B66DFB2F2C3454(L_3, _stringLiteral2183EF4CEC9408CFB5C929A4C905177DD61532C5, (bool)1, NULL);
+		// myAnimController.SetBool("showText",true);
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_4 = __this->___myAnimController_8;
+		NullCheck(L_4);
+		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_4, _stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118, (bool)1, NULL);
 	}
 
-IL_003f:
+IL_0050:
 	{
 		// }
 		return;
@@ -4593,8 +4615,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_OnTriggerStay_m3272F8A193DAD
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7190B99ACC92263A8252BF1908D6653B40287E65);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8379FAAE8D42E1435DD5D7C1E5F780A688D9AA9C);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCAF8804297181FF007CA835529DD4477CFD94A70);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -4606,38 +4629,77 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_OnTriggerStay_m3272F8A193DAD
 		L_1 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_0, _stringLiteralCAF8804297181FF007CA835529DD4477CFD94A70, NULL);
 		if (!L_1)
 		{
-			goto IL_0048;
+			goto IL_00a9;
 		}
 	}
 	{
-		// if(countDown > 0) {
-		float L_2 = __this->___countDown_4;
-		if ((!(((float)L_2) > ((float)(0.0f)))))
+		// crouchtimer += 1 * Time.deltaTime;
+		float L_2 = __this->___crouchtimer_4;
+		float L_3;
+		L_3 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
+		__this->___crouchtimer_4 = ((float)il2cpp_codegen_add(L_2, ((float)il2cpp_codegen_multiply((1.0f), L_3))));
+		// mycrouchtimer = (int) crouchtimer;
+		float L_4 = __this->___crouchtimer_4;
+		__this->___mycrouchtimer_5 = il2cpp_codegen_cast_double_to_int<int32_t>(L_4);
+		// Debug.Log(mycrouchtimer);
+		int32_t L_5 = __this->___mycrouchtimer_5;
+		int32_t L_6 = L_5;
+		RuntimeObject* L_7 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_6);
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_7, NULL);
+		// if(mycrouchtimer == 9) {
+		int32_t L_8 = __this->___mycrouchtimer_5;
+		if ((!(((uint32_t)L_8) == ((uint32_t)((int32_t)9)))))
 		{
-			goto IL_002d;
+			goto IL_0061;
 		}
 	}
 	{
-		// countDown -= Time.deltaTime;
-		float L_3 = __this->___countDown_4;
-		float L_4;
-		L_4 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		__this->___countDown_4 = ((float)il2cpp_codegen_subtract(L_3, L_4));
+		// myAnimController.SetBool("showText",false);
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_9 = __this->___myAnimController_8;
+		NullCheck(L_9);
+		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_9, _stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118, (bool)0, NULL);
 		return;
 	}
 
-IL_002d:
+IL_0061:
 	{
-		// Debug.Log("Time reached 5seconds");
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral8379FAAE8D42E1435DD5D7C1E5F780A688D9AA9C, NULL);
+		// else if(mycrouchtimer == 10) {
+		int32_t L_10 = __this->___mycrouchtimer_5;
+		if ((!(((uint32_t)L_10) == ((uint32_t)((int32_t)10)))))
+		{
+			goto IL_008e;
+		}
+	}
+	{
+		// myAnimController.SetBool("showText",true);
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_11 = __this->___myAnimController_8;
+		NullCheck(L_11);
+		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_11, _stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118, (bool)1, NULL);
 		// textCrouch.SetText("You can now carefully move and evacuate.");
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_5 = __this->___textCrouch_5;
-		NullCheck(L_5);
-		TMP_Text_SetText_m848189C290727009A95A00E432B66DFB2F2C3454(L_5, _stringLiteral7190B99ACC92263A8252BF1908D6653B40287E65, (bool)1, NULL);
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_12 = __this->___textCrouch_6;
+		NullCheck(L_12);
+		TMP_Text_SetText_m848189C290727009A95A00E432B66DFB2F2C3454(L_12, _stringLiteral7190B99ACC92263A8252BF1908D6653B40287E65, (bool)1, NULL);
+		return;
 	}
 
-IL_0048:
+IL_008e:
+	{
+		// else if(mycrouchtimer == 15) {
+		int32_t L_13 = __this->___mycrouchtimer_5;
+		if ((!(((uint32_t)L_13) == ((uint32_t)((int32_t)15)))))
+		{
+			goto IL_00a9;
+		}
+	}
+	{
+		// myAnimController.SetBool("showText",false);
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_14 = __this->___myAnimController_8;
+		NullCheck(L_14);
+		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_14, _stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118, (bool)0, NULL);
+	}
+
+IL_00a9:
 	{
 		// }
 		return;
@@ -4652,7 +4714,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_OnTriggerExit_mAD76C9965A5D0
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral665030B2F862B157CD639380BC6A873D6F1710A3);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral71368575C0C8F9BF9AF38B89410C975551E9305A);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralCAF8804297181FF007CA835529DD4477CFD94A70);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEEF71EB81A1BA46C11E853CACAC82454DD34C7B5);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -4663,21 +4727,49 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_OnTriggerExit_mAD76C9965A5D0
 		L_1 = Component_CompareTag_mE6F8897E84F12DF12D302FFC4D58204D51096FC5(L_0, _stringLiteralCAF8804297181FF007CA835529DD4477CFD94A70, NULL);
 		if (!L_1)
 		{
-			goto IL_0028;
+			goto IL_0055;
 		}
 	}
 	{
+		// myAnimController.SetBool("showText",true);
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_2 = __this->___myAnimController_8;
+		NullCheck(L_2);
+		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_2, _stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118, (bool)1, NULL);
 		// Debug.Log("Left under the table");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral71368575C0C8F9BF9AF38B89410C975551E9305A, NULL);
+		// crouchInstructions.SetActive(true);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->___crouchInstructions_7;
+		NullCheck(L_3);
+		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_3, (bool)1, NULL);
 		// textCrouch.SetText("Find the exit and an open area to evacuate to.");
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_2 = __this->___textCrouch_5;
-		NullCheck(L_2);
-		TMP_Text_SetText_m848189C290727009A95A00E432B66DFB2F2C3454(L_2, _stringLiteral665030B2F862B157CD639380BC6A873D6F1710A3, (bool)1, NULL);
+		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_4 = __this->___textCrouch_6;
+		NullCheck(L_4);
+		TMP_Text_SetText_m848189C290727009A95A00E432B66DFB2F2C3454(L_4, _stringLiteral665030B2F862B157CD639380BC6A873D6F1710A3, (bool)1, NULL);
+		// Invoke("HideText",15);
+		MonoBehaviour_Invoke_mF724350C59362B0F1BFE26383209A274A29A63FB(__this, _stringLiteralEEF71EB81A1BA46C11E853CACAC82454DD34C7B5, (15.0f), NULL);
 	}
 
-IL_0028:
+IL_0055:
 	{
+		// }
+		return;
+	}
+}
+// System.Void IsCrouching::HideText()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsCrouching_HideText_m88BA50C3A08ECA8137FFF1B89258215B269BB81B (IsCrouching_t54C5E4450BBA60484C56E27A4765DAE35F9173E0* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// myAnimController.SetBool("showText",false);
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_0 = __this->___myAnimController_8;
+		NullCheck(L_0);
+		Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B(L_0, _stringLiteralBDFAECA804ECBD994D7A5B99C24D376903827118, (bool)0, NULL);
 		// }
 		return;
 	}
@@ -9431,10 +9523,10 @@ IL_00a3:
 		// Debug.Log("crouching with 6dof");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral898D90EB3DE7D3668A0EFD87738586E47DA59C23, NULL);
-		// controller.height = 0.7f;
+		// controller.height = 0.6f;
 		CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* L_26 = __this->___controller_4;
 		NullCheck(L_26);
-		CharacterController_set_height_m7F8FCAFE75439842BAC1FFA1E302EFD812D170FB(L_26, (0.699999988f), NULL);
+		CharacterController_set_height_m7F8FCAFE75439842BAC1FFA1E302EFD812D170FB(L_26, (0.600000024f), NULL);
 		goto IL_00eb;
 	}
 
