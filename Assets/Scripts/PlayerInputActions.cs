@@ -44,6 +44,51 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonB"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9492eac-3f25-4cef-bfce-b1143cb4dc5a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonY"",
+                    ""type"": ""Button"",
+                    ""id"": ""8d8de227-87a1-46bf-a7f6-2807ab3e87e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonX"",
+                    ""type"": ""Button"",
+                    ""id"": ""5953ca85-8502-4b5e-8c07-b1a9c8cbd08d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonStart"",
+                    ""type"": ""Button"",
+                    ""id"": ""6fd43dd6-917b-4bb6-9669-e3534619257c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonSelect"",
+                    ""type"": ""Button"",
+                    ""id"": ""64a2ff2e-8217-48ae-8a3d-626a191b59cb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -231,6 +276,61 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e60920d5-8fbd-4d44-bfec-17d881c8e2da"",
+                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db67013f-3cec-4556-88e1-64328ee46552"",
+                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b511f4cf-3e7d-4294-85da-9bb8ce2fd20c"",
+                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c76560ed-5c44-4193-8ef2-0cd4bf4b879d"",
+                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5721135-7d58-4079-9cd6-36a01a5bbe3f"",
+                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button11"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonSelect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -820,6 +920,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_ButtonB = m_Player.FindAction("ButtonB", throwIfNotFound: true);
+        m_Player_ButtonY = m_Player.FindAction("ButtonY", throwIfNotFound: true);
+        m_Player_ButtonX = m_Player.FindAction("ButtonX", throwIfNotFound: true);
+        m_Player_ButtonStart = m_Player.FindAction("ButtonStart", throwIfNotFound: true);
+        m_Player_ButtonSelect = m_Player.FindAction("ButtonSelect", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -893,12 +998,22 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_ButtonB;
+    private readonly InputAction m_Player_ButtonY;
+    private readonly InputAction m_Player_ButtonX;
+    private readonly InputAction m_Player_ButtonStart;
+    private readonly InputAction m_Player_ButtonSelect;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @ButtonB => m_Wrapper.m_Player_ButtonB;
+        public InputAction @ButtonY => m_Wrapper.m_Player_ButtonY;
+        public InputAction @ButtonX => m_Wrapper.m_Player_ButtonX;
+        public InputAction @ButtonStart => m_Wrapper.m_Player_ButtonStart;
+        public InputAction @ButtonSelect => m_Wrapper.m_Player_ButtonSelect;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -914,6 +1029,21 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @ButtonB.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonB;
+                @ButtonB.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonB;
+                @ButtonB.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonB;
+                @ButtonY.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonY;
+                @ButtonY.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonY;
+                @ButtonY.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonY;
+                @ButtonX.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonX;
+                @ButtonX.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonX;
+                @ButtonX.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonX;
+                @ButtonStart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonStart;
+                @ButtonStart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonStart;
+                @ButtonStart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonStart;
+                @ButtonSelect.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonSelect;
+                @ButtonSelect.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonSelect;
+                @ButtonSelect.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonSelect;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -924,6 +1054,21 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @ButtonB.started += instance.OnButtonB;
+                @ButtonB.performed += instance.OnButtonB;
+                @ButtonB.canceled += instance.OnButtonB;
+                @ButtonY.started += instance.OnButtonY;
+                @ButtonY.performed += instance.OnButtonY;
+                @ButtonY.canceled += instance.OnButtonY;
+                @ButtonX.started += instance.OnButtonX;
+                @ButtonX.performed += instance.OnButtonX;
+                @ButtonX.canceled += instance.OnButtonX;
+                @ButtonStart.started += instance.OnButtonStart;
+                @ButtonStart.performed += instance.OnButtonStart;
+                @ButtonStart.canceled += instance.OnButtonStart;
+                @ButtonSelect.started += instance.OnButtonSelect;
+                @ButtonSelect.performed += instance.OnButtonSelect;
+                @ButtonSelect.canceled += instance.OnButtonSelect;
             }
         }
     }
@@ -1082,6 +1227,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnButtonB(InputAction.CallbackContext context);
+        void OnButtonY(InputAction.CallbackContext context);
+        void OnButtonX(InputAction.CallbackContext context);
+        void OnButtonStart(InputAction.CallbackContext context);
+        void OnButtonSelect(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

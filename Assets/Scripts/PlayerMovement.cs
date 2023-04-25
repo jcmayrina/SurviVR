@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = 10f;
     private CharacterController controller;
     public PlayerInputActions playerControls;
+    public CharacterController rigidbodyfreeze;
     Rigidbody myRb;
-    private InputAction fire;
+    private InputAction fire,buttB,buttY,buttX,buttSel,buttSt;
     public Image img;
     private Camera cam;
     private PlayerUI playerUI;
@@ -25,10 +26,30 @@ public class PlayerMovement : MonoBehaviour
         fire = playerControls.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
+        buttB = playerControls.Player.ButtonB;
+        buttB.Enable();
+        buttB.performed += ButtonB;
+        buttY = playerControls.Player.ButtonY;
+        buttY.Enable();
+        buttY.performed += ButtonY;
+        buttX = playerControls.Player.ButtonX;
+        buttX.Enable();
+        buttX.performed += ButtonX;
+        buttSel = playerControls.Player.ButtonSelect;
+        buttSel.Enable();
+        buttSel.performed += ButtonSelect;
+        buttSt = playerControls.Player.ButtonStart;
+        buttSt.Enable();
+        buttSt.performed += ButtonStart;
     }
     private void OnDisable()
     {
         fire.Disable();
+        buttB.Disable();
+        buttX.Disable();
+        buttY.Disable();
+        buttSel.Disable();
+        buttSt.Disable();
     }
     void Start()
     {
@@ -57,6 +78,12 @@ public class PlayerMovement : MonoBehaviour
                 img.gameObject.SetActive(true);
             }
         }
+        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(hitInfo.collider.GetComponent<Television>() != null) {
+                playerUI.UpdateText(hitInfo.collider.GetComponent<Television>().promptMessage);
+                img.gameObject.SetActive(true);
+            }
+        }
     }
     private void playerMove(){
         float horizontal = Input.GetAxis("Horizontal");
@@ -71,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
+        Debug.Log("buttonA");
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
@@ -81,5 +109,26 @@ public class PlayerMovement : MonoBehaviour
                 hitInfo.collider.GetComponent<Equipable>().EquipPass();
             }
         }
+        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(hitInfo.collider.GetComponent<Television>() != null) {
+                hitInfo.collider.GetComponent<Television>().TelevisionPass();
+            }
+        }
+    }
+    private void ButtonB(InputAction.CallbackContext context){
+        rigidbodyfreeze.enabled = true;
+        Debug.Log("buttonB");
+    }
+    private void ButtonX(InputAction.CallbackContext context){
+        Debug.Log("buttonX");
+    }
+    private void ButtonY(InputAction.CallbackContext context){
+        Debug.Log("buttonY");
+    }
+    private void ButtonSelect(InputAction.CallbackContext context){
+        Debug.Log("buttonSelect");
+    }
+    private void ButtonStart(InputAction.CallbackContext context){
+        Debug.Log("buttonStart");
     }
 }

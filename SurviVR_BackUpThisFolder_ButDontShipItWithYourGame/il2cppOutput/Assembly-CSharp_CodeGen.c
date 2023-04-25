@@ -98,147 +98,196 @@ extern void PlayerActions__ctor_m193F8F973C130637191BFA5A33A18ED931C1328B (void)
 extern void PlayerActions_get_Move_mBB4B4A475757DDBB329EECEAFD3E8DC727233ADE (void);
 // 0x0000002B UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_Fire()
 extern void PlayerActions_get_Fire_m4EE91BF41E60D77B2D046E11DE469B39CC8FBAEF (void);
-// 0x0000002C UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::Get()
+// 0x0000002C UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_ButtonB()
+extern void PlayerActions_get_ButtonB_m9DC27BBA5339F8068C160AE7AD14869E1A78261B (void);
+// 0x0000002D UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_ButtonY()
+extern void PlayerActions_get_ButtonY_mA54AC52DFAEB36CD4921F9A6305E760103AF49D5 (void);
+// 0x0000002E UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_ButtonX()
+extern void PlayerActions_get_ButtonX_m52F9E5BEB677451693C2E5E8D729D8B2C5D654C4 (void);
+// 0x0000002F UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_ButtonStart()
+extern void PlayerActions_get_ButtonStart_m1168BD829E5E6582DE23A5533676449E3F31520E (void);
+// 0x00000030 UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_ButtonSelect()
+extern void PlayerActions_get_ButtonSelect_mA26AD74857F9F0E6C1097EC7F30AC8BF76151B0D (void);
+// 0x00000031 UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::Get()
 extern void PlayerActions_Get_mA7C482C597BC15C02AB9A5EA22B1A57A679C107E (void);
-// 0x0000002D System.Void PlayerInputActions/PlayerActions::Enable()
+// 0x00000032 System.Void PlayerInputActions/PlayerActions::Enable()
 extern void PlayerActions_Enable_mF58238B2F4FDAC4042D0C535E628A2DCDEF89D7F (void);
-// 0x0000002E System.Void PlayerInputActions/PlayerActions::Disable()
+// 0x00000033 System.Void PlayerInputActions/PlayerActions::Disable()
 extern void PlayerActions_Disable_mDB55707960321BA19120D2FBFDE0BE47254F8CD9 (void);
-// 0x0000002F System.Boolean PlayerInputActions/PlayerActions::get_enabled()
+// 0x00000034 System.Boolean PlayerInputActions/PlayerActions::get_enabled()
 extern void PlayerActions_get_enabled_m13FC6D627F770B0D78D9FBA889BB4A6116AF5771 (void);
-// 0x00000030 UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::op_Implicit(PlayerInputActions/PlayerActions)
+// 0x00000035 UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::op_Implicit(PlayerInputActions/PlayerActions)
 extern void PlayerActions_op_Implicit_mA9565A8E45F42FBE2AF70A501187A897393BCE7D (void);
-// 0x00000031 System.Void PlayerInputActions/PlayerActions::SetCallbacks(PlayerInputActions/IPlayerActions)
+// 0x00000036 System.Void PlayerInputActions/PlayerActions::SetCallbacks(PlayerInputActions/IPlayerActions)
 extern void PlayerActions_SetCallbacks_mF14401481D7EDE8CDE7441FF33A814595D844AE0 (void);
-// 0x00000032 System.Void PlayerInputActions/UIActions::.ctor(PlayerInputActions)
+// 0x00000037 System.Void PlayerInputActions/UIActions::.ctor(PlayerInputActions)
 extern void UIActions__ctor_mFE20FFECECC7DDEBA0E07CECDC34FBA3E937DB92 (void);
-// 0x00000033 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Navigate()
+// 0x00000038 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Navigate()
 extern void UIActions_get_Navigate_mF537BE9950A6C9CC78D021E06C577AF1796DF2F3 (void);
-// 0x00000034 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Submit()
+// 0x00000039 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Submit()
 extern void UIActions_get_Submit_mFA76092E66F9DF534B340F6FBD840838D82F10A5 (void);
-// 0x00000035 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Cancel()
+// 0x0000003A UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Cancel()
 extern void UIActions_get_Cancel_m9B7CE7962687A43600B4FDF03B0E6A33FCE2363B (void);
-// 0x00000036 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Point()
+// 0x0000003B UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Point()
 extern void UIActions_get_Point_m597B893E7FAD692A52CEACF50BAECF33D599D8ED (void);
-// 0x00000037 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Click()
+// 0x0000003C UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Click()
 extern void UIActions_get_Click_m0A28491216AE6ECD21361605530018E360C7D4F9 (void);
-// 0x00000038 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_ScrollWheel()
+// 0x0000003D UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_ScrollWheel()
 extern void UIActions_get_ScrollWheel_mA497155FE9ACBE34DF43BB3285C00FB2E421AEAC (void);
-// 0x00000039 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_MiddleClick()
+// 0x0000003E UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_MiddleClick()
 extern void UIActions_get_MiddleClick_m97A2A81DE7C640D4FC7F8F62DEB806E002483074 (void);
-// 0x0000003A UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_RightClick()
+// 0x0000003F UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_RightClick()
 extern void UIActions_get_RightClick_m13EAE6AA3CC40478E0005F2954AA75EBF343EFBD (void);
-// 0x0000003B UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDevicePosition()
+// 0x00000040 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDevicePosition()
 extern void UIActions_get_TrackedDevicePosition_m84C1F8F282FE92FFC05C32FAAFD45B15278FEA25 (void);
-// 0x0000003C UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDeviceOrientation()
+// 0x00000041 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDeviceOrientation()
 extern void UIActions_get_TrackedDeviceOrientation_m01E002CF2D6336286E77F8C7800647C05B8BD7BE (void);
-// 0x0000003D UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::Get()
+// 0x00000042 UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::Get()
 extern void UIActions_Get_mE4668F284E08FCD4EB8FE8EA38AAF8C1989E8F03 (void);
-// 0x0000003E System.Void PlayerInputActions/UIActions::Enable()
+// 0x00000043 System.Void PlayerInputActions/UIActions::Enable()
 extern void UIActions_Enable_m059C9ADCAF895A65F26DB19AD0F1D600035D0B48 (void);
-// 0x0000003F System.Void PlayerInputActions/UIActions::Disable()
+// 0x00000044 System.Void PlayerInputActions/UIActions::Disable()
 extern void UIActions_Disable_mE346C967730D770B89CDF684D2F74F3F76F8B70C (void);
-// 0x00000040 System.Boolean PlayerInputActions/UIActions::get_enabled()
+// 0x00000045 System.Boolean PlayerInputActions/UIActions::get_enabled()
 extern void UIActions_get_enabled_m9302A9063DFF56B6B063875BE402BBD7414CDEA4 (void);
-// 0x00000041 UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::op_Implicit(PlayerInputActions/UIActions)
+// 0x00000046 UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::op_Implicit(PlayerInputActions/UIActions)
 extern void UIActions_op_Implicit_mB2BCD8D051428DB2D43AC095AC4602A94065250B (void);
-// 0x00000042 System.Void PlayerInputActions/UIActions::SetCallbacks(PlayerInputActions/IUIActions)
+// 0x00000047 System.Void PlayerInputActions/UIActions::SetCallbacks(PlayerInputActions/IUIActions)
 extern void UIActions_SetCallbacks_mDB07748C0E11C6BBED0CE47CA9265F683369484D (void);
-// 0x00000043 System.Void PlayerInputActions/IPlayerActions::OnMove(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000044 System.Void PlayerInputActions/IPlayerActions::OnFire(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000045 System.Void PlayerInputActions/IUIActions::OnNavigate(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000046 System.Void PlayerInputActions/IUIActions::OnSubmit(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000047 System.Void PlayerInputActions/IUIActions::OnCancel(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000048 System.Void PlayerInputActions/IUIActions::OnPoint(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000049 System.Void PlayerInputActions/IUIActions::OnClick(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000004A System.Void PlayerInputActions/IUIActions::OnScrollWheel(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000004B System.Void PlayerInputActions/IUIActions::OnMiddleClick(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000004C System.Void PlayerInputActions/IUIActions::OnRightClick(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000004D System.Void PlayerInputActions/IUIActions::OnTrackedDevicePosition(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000004E System.Void PlayerInputActions/IUIActions::OnTrackedDeviceOrientation(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000004F System.Void PlayerMovement::Awake()
+// 0x00000048 System.Void PlayerInputActions/IPlayerActions::OnMove(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000049 System.Void PlayerInputActions/IPlayerActions::OnFire(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000004A System.Void PlayerInputActions/IPlayerActions::OnButtonB(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000004B System.Void PlayerInputActions/IPlayerActions::OnButtonY(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000004C System.Void PlayerInputActions/IPlayerActions::OnButtonX(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000004D System.Void PlayerInputActions/IPlayerActions::OnButtonStart(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000004E System.Void PlayerInputActions/IPlayerActions::OnButtonSelect(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000004F System.Void PlayerInputActions/IUIActions::OnNavigate(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000050 System.Void PlayerInputActions/IUIActions::OnSubmit(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000051 System.Void PlayerInputActions/IUIActions::OnCancel(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000052 System.Void PlayerInputActions/IUIActions::OnPoint(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000053 System.Void PlayerInputActions/IUIActions::OnClick(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000054 System.Void PlayerInputActions/IUIActions::OnScrollWheel(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000055 System.Void PlayerInputActions/IUIActions::OnMiddleClick(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000056 System.Void PlayerInputActions/IUIActions::OnRightClick(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000057 System.Void PlayerInputActions/IUIActions::OnTrackedDevicePosition(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000058 System.Void PlayerInputActions/IUIActions::OnTrackedDeviceOrientation(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000059 System.Void PlayerMovement::Awake()
 extern void PlayerMovement_Awake_m7E8376225AEB5B44C88D56C73B36BD3E3F09CC1F (void);
-// 0x00000050 System.Void PlayerMovement::OnEnable()
+// 0x0000005A System.Void PlayerMovement::OnEnable()
 extern void PlayerMovement_OnEnable_mC174B01E97C5048AFEA84EAF74190FD66CCDA0ED (void);
-// 0x00000051 System.Void PlayerMovement::OnDisable()
+// 0x0000005B System.Void PlayerMovement::OnDisable()
 extern void PlayerMovement_OnDisable_m27A81E0BBA333A85AB67863E8ADB06B73F36739E (void);
-// 0x00000052 System.Void PlayerMovement::Start()
+// 0x0000005C System.Void PlayerMovement::Start()
 extern void PlayerMovement_Start_m83FD44DCA324CE3D05A71FD2E2991FCD743F003A (void);
-// 0x00000053 System.Void PlayerMovement::Update()
+// 0x0000005D System.Void PlayerMovement::Update()
 extern void PlayerMovement_Update_m5BB6CE35AF68EE00CFEB4BA5EBA17E10667551D3 (void);
-// 0x00000054 System.Void PlayerMovement::playerMove()
+// 0x0000005E System.Void PlayerMovement::playerMove()
 extern void PlayerMovement_playerMove_m5C07C783EE78F78C9F022D6118EAADB6EADBD5BD (void);
-// 0x00000055 System.Void PlayerMovement::Fire(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000005F System.Void PlayerMovement::Fire(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void PlayerMovement_Fire_m006B2870B21E6E9FA77417C0502DCBE70C209C0D (void);
-// 0x00000056 System.Void PlayerMovement::.ctor()
+// 0x00000060 System.Void PlayerMovement::ButtonB(UnityEngine.InputSystem.InputAction/CallbackContext)
+extern void PlayerMovement_ButtonB_m47E512FED112D36DFC9DCA3DC8D16D62F7CF0901 (void);
+// 0x00000061 System.Void PlayerMovement::ButtonX(UnityEngine.InputSystem.InputAction/CallbackContext)
+extern void PlayerMovement_ButtonX_m679692404CFCE79BA4ECDAF5AFC44F2CF29DFDAC (void);
+// 0x00000062 System.Void PlayerMovement::ButtonY(UnityEngine.InputSystem.InputAction/CallbackContext)
+extern void PlayerMovement_ButtonY_m8ECF6F1D9FB0ADD1CFEF7ED83A7DA11AD3F47AE5 (void);
+// 0x00000063 System.Void PlayerMovement::ButtonSelect(UnityEngine.InputSystem.InputAction/CallbackContext)
+extern void PlayerMovement_ButtonSelect_m0CE5002EAE901D669799919161DDEC19E77425BA (void);
+// 0x00000064 System.Void PlayerMovement::ButtonStart(UnityEngine.InputSystem.InputAction/CallbackContext)
+extern void PlayerMovement_ButtonStart_m336AFC48BC31216C25779967D55D4CACDD360326 (void);
+// 0x00000065 System.Void PlayerMovement::.ctor()
 extern void PlayerMovement__ctor_mB37559C5B0638161878D20E00B7C672FC38BBBAA (void);
-// 0x00000057 System.Void PlayerUI::Start()
+// 0x00000066 System.Void PlayerUI::Start()
 extern void PlayerUI_Start_m0B6A9FBFAEF0F63EDFD57EB4C76F56612753D8AF (void);
-// 0x00000058 System.Void PlayerUI::UpdateText(System.String)
+// 0x00000067 System.Void PlayerUI::UpdateText(System.String)
 extern void PlayerUI_UpdateText_mE4EF2CEAB44AD2C8955DFE01FA8099C7195EA829 (void);
-// 0x00000059 System.Void PlayerUI::.ctor()
+// 0x00000068 System.Void PlayerUI::.ctor()
 extern void PlayerUI__ctor_m25228057D467B6416C0249B763FFF27D42149C01 (void);
-// 0x0000005A System.Void SceneSwitch::OnTriggerEnter(UnityEngine.Collider)
+// 0x00000069 System.Void SceneSwitch::OnTriggerEnter(UnityEngine.Collider)
 extern void SceneSwitch_OnTriggerEnter_mAB129706564136FBD8C3E6A6157362C23F509D7E (void);
-// 0x0000005B System.Void SceneSwitch::.ctor()
+// 0x0000006A System.Void SceneSwitch::.ctor()
 extern void SceneSwitch__ctor_mD1B7AE904BCF221FA36B02267BB1B97B297259AD (void);
-// 0x0000005C System.Void ShowMessage::Start()
+// 0x0000006B System.Void ShowMessage::Start()
 extern void ShowMessage_Start_mB463EB203F6722E6AAED11DB4B86AF9FB1AD2A5A (void);
-// 0x0000005D System.Void ShowMessage::Update()
+// 0x0000006C System.Void ShowMessage::Update()
 extern void ShowMessage_Update_mAB48C2CBFC9C8CC9E415B2C14A0D074A596BBA53 (void);
-// 0x0000005E System.Void ShowMessage::HideDoor()
+// 0x0000006D System.Void ShowMessage::HideDoor()
 extern void ShowMessage_HideDoor_m974D1AF826CA9E8A53C64484B66E3E5083DC217E (void);
-// 0x0000005F System.Void ShowMessage::.ctor()
+// 0x0000006E System.Void ShowMessage::.ctor()
 extern void ShowMessage__ctor_m1B4D1C502379DEDE3CBED9BC9B87AFE123449E87 (void);
-// 0x00000060 System.IntPtr Google.XR.Cardboard.CardboardStartup::get_inputPointer()
+// 0x0000006F System.Void Television::TelevisionPass()
+extern void Television_TelevisionPass_mA922FAAE44FEA31759D8B030EBAEF0E971A796FF (void);
+// 0x00000070 System.Void Television::TelevisionSwitch()
+extern void Television_TelevisionSwitch_mD334B29A395142FA6A4B228F39EED89AD4BEA587 (void);
+// 0x00000071 System.Void Television::.ctor()
+extern void Television__ctor_m6CC8F000808E122840FF0B12B03FE561CB601800 (void);
+// 0x00000072 System.Void TVfreeze::Start()
+extern void TVfreeze_Start_mBC4550769B2F8B34ACDE3E5E08D803EB3A744F2A (void);
+// 0x00000073 System.Void TVfreeze::Update()
+extern void TVfreeze_Update_m370848335053257933143419871DE252355E23BC (void);
+// 0x00000074 System.Void TVfreeze::TurnOffControls()
+extern void TVfreeze_TurnOffControls_m7F563AD664313D2C4C5AC3FDDD7FB9B69A10E497 (void);
+// 0x00000075 System.Void TVfreeze::TurnOnControls()
+extern void TVfreeze_TurnOnControls_m2BB4F8CCBC1EC257F24C3AEB8A2E1CC19145374F (void);
+// 0x00000076 System.Void TVfreeze::.ctor()
+extern void TVfreeze__ctor_m89F564CF67672EBFCB12E8650BDD62AE4BF35037 (void);
+// 0x00000077 System.Void TVswitch::Start()
+extern void TVswitch_Start_m6842C17EBED46CB834D602141B413AA2308AB136 (void);
+// 0x00000078 System.Void TVswitch::Update()
+extern void TVswitch_Update_m4F60077C07271A79B21C08346656D03EE83DB893 (void);
+// 0x00000079 System.Void TVswitch::TelevisionSwitch()
+extern void TVswitch_TelevisionSwitch_m2D0EF793551BD28E5F946983C06375A0DFF4FBBD (void);
+// 0x0000007A System.Void TVswitch::.ctor()
+extern void TVswitch__ctor_m5528AA0F5D3DF486822E002F24379CE9F6899422 (void);
+// 0x0000007B System.IntPtr Google.XR.Cardboard.CardboardStartup::get_inputPointer()
 extern void CardboardStartup_get_inputPointer_mE6778EE519576276C087A4CD91C3CECC6010D306 (void);
-// 0x00000061 System.Void Google.XR.Cardboard.CardboardStartup::set_inputPointer(System.IntPtr)
+// 0x0000007C System.Void Google.XR.Cardboard.CardboardStartup::set_inputPointer(System.IntPtr)
 extern void CardboardStartup_set_inputPointer_mB4F723075478BFEAB3682F1E887E326CFD6727C6 (void);
-// 0x00000062 System.IntPtr Google.XR.Cardboard.CardboardStartup::get_displayPointer()
+// 0x0000007D System.IntPtr Google.XR.Cardboard.CardboardStartup::get_displayPointer()
 extern void CardboardStartup_get_displayPointer_mE03372CE758DA315997170776AD49EF319B19337 (void);
-// 0x00000063 System.Void Google.XR.Cardboard.CardboardStartup::set_displayPointer(System.IntPtr)
+// 0x0000007E System.Void Google.XR.Cardboard.CardboardStartup::set_displayPointer(System.IntPtr)
 extern void CardboardStartup_set_displayPointer_mA9C7D136F368A63883E399F98AA311FE6CFC349D (void);
-// 0x00000064 System.Void Google.XR.Cardboard.CardboardStartup::Start()
+// 0x0000007F System.Void Google.XR.Cardboard.CardboardStartup::Start()
 extern void CardboardStartup_Start_m56F74C09A9FFE2D48C4C2E1E177A8049FFC3AAA9 (void);
-// 0x00000065 System.Void Google.XR.Cardboard.CardboardStartup::StartCardboard()
+// 0x00000080 System.Void Google.XR.Cardboard.CardboardStartup::StartCardboard()
 extern void CardboardStartup_StartCardboard_m23EEDC3C023253209EC9EFE66420B1EC13209BF5 (void);
-// 0x00000066 System.Void Google.XR.Cardboard.CardboardStartup::StopCardboard()
+// 0x00000081 System.Void Google.XR.Cardboard.CardboardStartup::StopCardboard()
 extern void CardboardStartup_StopCardboard_mD03307F74EA3B50D6E4C63BB105A4D00686923EB (void);
-// 0x00000067 System.Void Google.XR.Cardboard.CardboardStartup::ReloadDeviceParams()
+// 0x00000082 System.Void Google.XR.Cardboard.CardboardStartup::ReloadDeviceParams()
 extern void CardboardStartup_ReloadDeviceParams_mA7FB661ECDF75395B71ECCB38AF9DC4AE5E2FDDD (void);
-// 0x00000068 System.Void Google.XR.Cardboard.CardboardStartup::Update()
+// 0x00000083 System.Void Google.XR.Cardboard.CardboardStartup::Update()
 extern void CardboardStartup_Update_m389936FD6C7EAF27A679F9646C4DA9ACC1A81514 (void);
-// 0x00000069 System.Void Google.XR.Cardboard.CardboardStartup::ConnectCardboardInputSystem()
+// 0x00000084 System.Void Google.XR.Cardboard.CardboardStartup::ConnectCardboardInputSystem()
 extern void CardboardStartup_ConnectCardboardInputSystem_mBFCE202F0DAA37B2B015ED9C474626923B734A85 (void);
-// 0x0000006A System.Void Google.XR.Cardboard.CardboardStartup::.ctor()
+// 0x00000085 System.Void Google.XR.Cardboard.CardboardStartup::.ctor()
 extern void CardboardStartup__ctor_m615BA9575F4EC4D3983D0C55ABE8C6A9ECBB1933 (void);
-// 0x0000006B System.Void Google.XR.Cardboard.PoseDriver::CardboardUnity_AddSixDoFData(System.IntPtr,System.Int64,System.Single[],System.Single[])
+// 0x00000086 System.Void Google.XR.Cardboard.PoseDriver::CardboardUnity_AddSixDoFData(System.IntPtr,System.Int64,System.Single[],System.Single[])
 extern void PoseDriver_CardboardUnity_AddSixDoFData_m6CB2A481D5053C68050CF8F4618A7AAD57B5598D (void);
-// 0x0000006C UnityEngine.XR.ARFoundation.ARCameraManager Google.XR.Cardboard.PoseDriver::get_arCameraManager()
+// 0x00000087 UnityEngine.XR.ARFoundation.ARCameraManager Google.XR.Cardboard.PoseDriver::get_arCameraManager()
 extern void PoseDriver_get_arCameraManager_m8BDFF4DEC58D13E7B8F3EE87D398C00F9C1A082C (void);
-// 0x0000006D System.Void Google.XR.Cardboard.PoseDriver::set_arCameraManager(UnityEngine.XR.ARFoundation.ARCameraManager)
+// 0x00000088 System.Void Google.XR.Cardboard.PoseDriver::set_arCameraManager(UnityEngine.XR.ARFoundation.ARCameraManager)
 extern void PoseDriver_set_arCameraManager_m528B833AA15113D24D4849FBC6A6511638D10A66 (void);
-// 0x0000006E System.Void Google.XR.Cardboard.PoseDriver::OnEnable()
+// 0x00000089 System.Void Google.XR.Cardboard.PoseDriver::OnEnable()
 extern void PoseDriver_OnEnable_m7A39556A893A4B9FBF406156C3475AEF83C8DE62 (void);
-// 0x0000006F System.Void Google.XR.Cardboard.PoseDriver::OnDisable()
+// 0x0000008A System.Void Google.XR.Cardboard.PoseDriver::OnDisable()
 extern void PoseDriver_OnDisable_m8A503E72A5D69B89DDB17CBA88F02BFC2DECDEDB (void);
-// 0x00000070 System.Void Google.XR.Cardboard.PoseDriver::OnBeforeRender()
+// 0x0000008B System.Void Google.XR.Cardboard.PoseDriver::OnBeforeRender()
 extern void PoseDriver_OnBeforeRender_m38B0CAFB193851BC29B5ADE5BA934D0C62A95089 (void);
-// 0x00000071 System.Void Google.XR.Cardboard.PoseDriver::PerformUpdate()
+// 0x0000008C System.Void Google.XR.Cardboard.PoseDriver::PerformUpdate()
 extern void PoseDriver_PerformUpdate_mA7AF9CDC41BA7EE32A79055B97011C269E1801FF (void);
-// 0x00000072 System.Void Google.XR.Cardboard.PoseDriver::OnInputDeviceConnected(UnityEngine.XR.InputDevice)
+// 0x0000008D System.Void Google.XR.Cardboard.PoseDriver::OnInputDeviceConnected(UnityEngine.XR.InputDevice)
 extern void PoseDriver_OnInputDeviceConnected_m8EE6584683BCD71DB486CE819A15ACA200038F67 (void);
-// 0x00000073 System.Void Google.XR.Cardboard.PoseDriver::CheckConnectedDevice(UnityEngine.XR.InputDevice,System.Boolean)
+// 0x0000008E System.Void Google.XR.Cardboard.PoseDriver::CheckConnectedDevice(UnityEngine.XR.InputDevice,System.Boolean)
 extern void PoseDriver_CheckConnectedDevice_m8E76DDF0CFAA03B0FE95F4E8E12C8AE12F3155A8 (void);
-// 0x00000074 System.Void Google.XR.Cardboard.PoseDriver::AddSixDoFData(UnityEngine.Vector3,UnityEngine.Quaternion,System.Int64)
+// 0x0000008F System.Void Google.XR.Cardboard.PoseDriver::AddSixDoFData(UnityEngine.Vector3,UnityEngine.Quaternion,System.Int64)
 extern void PoseDriver_AddSixDoFData_m2BC4714476EC05AAD566D13B45031535FC75AEF1 (void);
-// 0x00000075 System.Void Google.XR.Cardboard.PoseDriver::ArCameraManager_frameReceived(UnityEngine.XR.ARFoundation.ARCameraFrameEventArgs)
+// 0x00000090 System.Void Google.XR.Cardboard.PoseDriver::ArCameraManager_frameReceived(UnityEngine.XR.ARFoundation.ARCameraFrameEventArgs)
 extern void PoseDriver_ArCameraManager_frameReceived_m27D0731EDA2D513D0A0A3176338D2AD8DB5AA23E (void);
-// 0x00000076 Google.XR.Cardboard.PoseDriver/NullablePose Google.XR.Cardboard.PoseDriver::GetPoseData()
+// 0x00000091 Google.XR.Cardboard.PoseDriver/NullablePose Google.XR.Cardboard.PoseDriver::GetPoseData()
 extern void PoseDriver_GetPoseData_mE74FF665B24A111E71405C31E13DD025FD2BEAE7 (void);
-// 0x00000077 System.Void Google.XR.Cardboard.PoseDriver::.ctor()
+// 0x00000092 System.Void Google.XR.Cardboard.PoseDriver::.ctor()
 extern void PoseDriver__ctor_m09E86A0CA779EEBB611BE5ED646FBC2ACAF03DF6 (void);
-static Il2CppMethodPointer s_methodPointers[119] = 
+static Il2CppMethodPointer s_methodPointers[146] = 
 {
 	Equipable_EquipPass_mCDBFAD176FF82BF09180FFA53E28B2532978DE80,
 	Equipable_Equip_m5F4D4E6AC8D3058A5864A3F95772ABB08CDC9E00,
@@ -283,6 +332,11 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	PlayerActions__ctor_m193F8F973C130637191BFA5A33A18ED931C1328B,
 	PlayerActions_get_Move_mBB4B4A475757DDBB329EECEAFD3E8DC727233ADE,
 	PlayerActions_get_Fire_m4EE91BF41E60D77B2D046E11DE469B39CC8FBAEF,
+	PlayerActions_get_ButtonB_m9DC27BBA5339F8068C160AE7AD14869E1A78261B,
+	PlayerActions_get_ButtonY_mA54AC52DFAEB36CD4921F9A6305E760103AF49D5,
+	PlayerActions_get_ButtonX_m52F9E5BEB677451693C2E5E8D729D8B2C5D654C4,
+	PlayerActions_get_ButtonStart_m1168BD829E5E6582DE23A5533676449E3F31520E,
+	PlayerActions_get_ButtonSelect_mA26AD74857F9F0E6C1097EC7F30AC8BF76151B0D,
 	PlayerActions_Get_mA7C482C597BC15C02AB9A5EA22B1A57A679C107E,
 	PlayerActions_Enable_mF58238B2F4FDAC4042D0C535E628A2DCDEF89D7F,
 	PlayerActions_Disable_mDB55707960321BA19120D2FBFDE0BE47254F8CD9,
@@ -318,6 +372,11 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	NULL,
 	NULL,
 	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
 	PlayerMovement_Awake_m7E8376225AEB5B44C88D56C73B36BD3E3F09CC1F,
 	PlayerMovement_OnEnable_mC174B01E97C5048AFEA84EAF74190FD66CCDA0ED,
 	PlayerMovement_OnDisable_m27A81E0BBA333A85AB67863E8ADB06B73F36739E,
@@ -325,6 +384,11 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	PlayerMovement_Update_m5BB6CE35AF68EE00CFEB4BA5EBA17E10667551D3,
 	PlayerMovement_playerMove_m5C07C783EE78F78C9F022D6118EAADB6EADBD5BD,
 	PlayerMovement_Fire_m006B2870B21E6E9FA77417C0502DCBE70C209C0D,
+	PlayerMovement_ButtonB_m47E512FED112D36DFC9DCA3DC8D16D62F7CF0901,
+	PlayerMovement_ButtonX_m679692404CFCE79BA4ECDAF5AFC44F2CF29DFDAC,
+	PlayerMovement_ButtonY_m8ECF6F1D9FB0ADD1CFEF7ED83A7DA11AD3F47AE5,
+	PlayerMovement_ButtonSelect_m0CE5002EAE901D669799919161DDEC19E77425BA,
+	PlayerMovement_ButtonStart_m336AFC48BC31216C25779967D55D4CACDD360326,
 	PlayerMovement__ctor_mB37559C5B0638161878D20E00B7C672FC38BBBAA,
 	PlayerUI_Start_m0B6A9FBFAEF0F63EDFD57EB4C76F56612753D8AF,
 	PlayerUI_UpdateText_mE4EF2CEAB44AD2C8955DFE01FA8099C7195EA829,
@@ -335,6 +399,18 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	ShowMessage_Update_mAB48C2CBFC9C8CC9E415B2C14A0D074A596BBA53,
 	ShowMessage_HideDoor_m974D1AF826CA9E8A53C64484B66E3E5083DC217E,
 	ShowMessage__ctor_m1B4D1C502379DEDE3CBED9BC9B87AFE123449E87,
+	Television_TelevisionPass_mA922FAAE44FEA31759D8B030EBAEF0E971A796FF,
+	Television_TelevisionSwitch_mD334B29A395142FA6A4B228F39EED89AD4BEA587,
+	Television__ctor_m6CC8F000808E122840FF0B12B03FE561CB601800,
+	TVfreeze_Start_mBC4550769B2F8B34ACDE3E5E08D803EB3A744F2A,
+	TVfreeze_Update_m370848335053257933143419871DE252355E23BC,
+	TVfreeze_TurnOffControls_m7F563AD664313D2C4C5AC3FDDD7FB9B69A10E497,
+	TVfreeze_TurnOnControls_m2BB4F8CCBC1EC257F24C3AEB8A2E1CC19145374F,
+	TVfreeze__ctor_m89F564CF67672EBFCB12E8650BDD62AE4BF35037,
+	TVswitch_Start_m6842C17EBED46CB834D602141B413AA2308AB136,
+	TVswitch_Update_m4F60077C07271A79B21C08346656D03EE83DB893,
+	TVswitch_TelevisionSwitch_m2D0EF793551BD28E5F946983C06375A0DFF4FBBD,
+	TVswitch__ctor_m5528AA0F5D3DF486822E002F24379CE9F6899422,
 	CardboardStartup_get_inputPointer_mE6778EE519576276C087A4CD91C3CECC6010D306,
 	CardboardStartup_set_inputPointer_mB4F723075478BFEAB3682F1E887E326CFD6727C6,
 	CardboardStartup_get_displayPointer_mE03372CE758DA315997170776AD49EF319B19337,
@@ -363,6 +439,11 @@ static Il2CppMethodPointer s_methodPointers[119] =
 extern void PlayerActions__ctor_m193F8F973C130637191BFA5A33A18ED931C1328B_AdjustorThunk (void);
 extern void PlayerActions_get_Move_mBB4B4A475757DDBB329EECEAFD3E8DC727233ADE_AdjustorThunk (void);
 extern void PlayerActions_get_Fire_m4EE91BF41E60D77B2D046E11DE469B39CC8FBAEF_AdjustorThunk (void);
+extern void PlayerActions_get_ButtonB_m9DC27BBA5339F8068C160AE7AD14869E1A78261B_AdjustorThunk (void);
+extern void PlayerActions_get_ButtonY_mA54AC52DFAEB36CD4921F9A6305E760103AF49D5_AdjustorThunk (void);
+extern void PlayerActions_get_ButtonX_m52F9E5BEB677451693C2E5E8D729D8B2C5D654C4_AdjustorThunk (void);
+extern void PlayerActions_get_ButtonStart_m1168BD829E5E6582DE23A5533676449E3F31520E_AdjustorThunk (void);
+extern void PlayerActions_get_ButtonSelect_mA26AD74857F9F0E6C1097EC7F30AC8BF76151B0D_AdjustorThunk (void);
 extern void PlayerActions_Get_mA7C482C597BC15C02AB9A5EA22B1A57A679C107E_AdjustorThunk (void);
 extern void PlayerActions_Enable_mF58238B2F4FDAC4042D0C535E628A2DCDEF89D7F_AdjustorThunk (void);
 extern void PlayerActions_Disable_mDB55707960321BA19120D2FBFDE0BE47254F8CD9_AdjustorThunk (void);
@@ -384,101 +465,111 @@ extern void UIActions_Enable_m059C9ADCAF895A65F26DB19AD0F1D600035D0B48_AdjustorT
 extern void UIActions_Disable_mE346C967730D770B89CDF684D2F74F3F76F8B70C_AdjustorThunk (void);
 extern void UIActions_get_enabled_m9302A9063DFF56B6B063875BE402BBD7414CDEA4_AdjustorThunk (void);
 extern void UIActions_SetCallbacks_mDB07748C0E11C6BBED0CE47CA9265F683369484D_AdjustorThunk (void);
-static Il2CppTokenAdjustorThunkPair s_adjustorThunks[24] = 
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[29] = 
 {
 	{ 0x06000029, PlayerActions__ctor_m193F8F973C130637191BFA5A33A18ED931C1328B_AdjustorThunk },
 	{ 0x0600002A, PlayerActions_get_Move_mBB4B4A475757DDBB329EECEAFD3E8DC727233ADE_AdjustorThunk },
 	{ 0x0600002B, PlayerActions_get_Fire_m4EE91BF41E60D77B2D046E11DE469B39CC8FBAEF_AdjustorThunk },
-	{ 0x0600002C, PlayerActions_Get_mA7C482C597BC15C02AB9A5EA22B1A57A679C107E_AdjustorThunk },
-	{ 0x0600002D, PlayerActions_Enable_mF58238B2F4FDAC4042D0C535E628A2DCDEF89D7F_AdjustorThunk },
-	{ 0x0600002E, PlayerActions_Disable_mDB55707960321BA19120D2FBFDE0BE47254F8CD9_AdjustorThunk },
-	{ 0x0600002F, PlayerActions_get_enabled_m13FC6D627F770B0D78D9FBA889BB4A6116AF5771_AdjustorThunk },
-	{ 0x06000031, PlayerActions_SetCallbacks_mF14401481D7EDE8CDE7441FF33A814595D844AE0_AdjustorThunk },
-	{ 0x06000032, UIActions__ctor_mFE20FFECECC7DDEBA0E07CECDC34FBA3E937DB92_AdjustorThunk },
-	{ 0x06000033, UIActions_get_Navigate_mF537BE9950A6C9CC78D021E06C577AF1796DF2F3_AdjustorThunk },
-	{ 0x06000034, UIActions_get_Submit_mFA76092E66F9DF534B340F6FBD840838D82F10A5_AdjustorThunk },
-	{ 0x06000035, UIActions_get_Cancel_m9B7CE7962687A43600B4FDF03B0E6A33FCE2363B_AdjustorThunk },
-	{ 0x06000036, UIActions_get_Point_m597B893E7FAD692A52CEACF50BAECF33D599D8ED_AdjustorThunk },
-	{ 0x06000037, UIActions_get_Click_m0A28491216AE6ECD21361605530018E360C7D4F9_AdjustorThunk },
-	{ 0x06000038, UIActions_get_ScrollWheel_mA497155FE9ACBE34DF43BB3285C00FB2E421AEAC_AdjustorThunk },
-	{ 0x06000039, UIActions_get_MiddleClick_m97A2A81DE7C640D4FC7F8F62DEB806E002483074_AdjustorThunk },
-	{ 0x0600003A, UIActions_get_RightClick_m13EAE6AA3CC40478E0005F2954AA75EBF343EFBD_AdjustorThunk },
-	{ 0x0600003B, UIActions_get_TrackedDevicePosition_m84C1F8F282FE92FFC05C32FAAFD45B15278FEA25_AdjustorThunk },
-	{ 0x0600003C, UIActions_get_TrackedDeviceOrientation_m01E002CF2D6336286E77F8C7800647C05B8BD7BE_AdjustorThunk },
-	{ 0x0600003D, UIActions_Get_mE4668F284E08FCD4EB8FE8EA38AAF8C1989E8F03_AdjustorThunk },
-	{ 0x0600003E, UIActions_Enable_m059C9ADCAF895A65F26DB19AD0F1D600035D0B48_AdjustorThunk },
-	{ 0x0600003F, UIActions_Disable_mE346C967730D770B89CDF684D2F74F3F76F8B70C_AdjustorThunk },
-	{ 0x06000040, UIActions_get_enabled_m9302A9063DFF56B6B063875BE402BBD7414CDEA4_AdjustorThunk },
-	{ 0x06000042, UIActions_SetCallbacks_mDB07748C0E11C6BBED0CE47CA9265F683369484D_AdjustorThunk },
+	{ 0x0600002C, PlayerActions_get_ButtonB_m9DC27BBA5339F8068C160AE7AD14869E1A78261B_AdjustorThunk },
+	{ 0x0600002D, PlayerActions_get_ButtonY_mA54AC52DFAEB36CD4921F9A6305E760103AF49D5_AdjustorThunk },
+	{ 0x0600002E, PlayerActions_get_ButtonX_m52F9E5BEB677451693C2E5E8D729D8B2C5D654C4_AdjustorThunk },
+	{ 0x0600002F, PlayerActions_get_ButtonStart_m1168BD829E5E6582DE23A5533676449E3F31520E_AdjustorThunk },
+	{ 0x06000030, PlayerActions_get_ButtonSelect_mA26AD74857F9F0E6C1097EC7F30AC8BF76151B0D_AdjustorThunk },
+	{ 0x06000031, PlayerActions_Get_mA7C482C597BC15C02AB9A5EA22B1A57A679C107E_AdjustorThunk },
+	{ 0x06000032, PlayerActions_Enable_mF58238B2F4FDAC4042D0C535E628A2DCDEF89D7F_AdjustorThunk },
+	{ 0x06000033, PlayerActions_Disable_mDB55707960321BA19120D2FBFDE0BE47254F8CD9_AdjustorThunk },
+	{ 0x06000034, PlayerActions_get_enabled_m13FC6D627F770B0D78D9FBA889BB4A6116AF5771_AdjustorThunk },
+	{ 0x06000036, PlayerActions_SetCallbacks_mF14401481D7EDE8CDE7441FF33A814595D844AE0_AdjustorThunk },
+	{ 0x06000037, UIActions__ctor_mFE20FFECECC7DDEBA0E07CECDC34FBA3E937DB92_AdjustorThunk },
+	{ 0x06000038, UIActions_get_Navigate_mF537BE9950A6C9CC78D021E06C577AF1796DF2F3_AdjustorThunk },
+	{ 0x06000039, UIActions_get_Submit_mFA76092E66F9DF534B340F6FBD840838D82F10A5_AdjustorThunk },
+	{ 0x0600003A, UIActions_get_Cancel_m9B7CE7962687A43600B4FDF03B0E6A33FCE2363B_AdjustorThunk },
+	{ 0x0600003B, UIActions_get_Point_m597B893E7FAD692A52CEACF50BAECF33D599D8ED_AdjustorThunk },
+	{ 0x0600003C, UIActions_get_Click_m0A28491216AE6ECD21361605530018E360C7D4F9_AdjustorThunk },
+	{ 0x0600003D, UIActions_get_ScrollWheel_mA497155FE9ACBE34DF43BB3285C00FB2E421AEAC_AdjustorThunk },
+	{ 0x0600003E, UIActions_get_MiddleClick_m97A2A81DE7C640D4FC7F8F62DEB806E002483074_AdjustorThunk },
+	{ 0x0600003F, UIActions_get_RightClick_m13EAE6AA3CC40478E0005F2954AA75EBF343EFBD_AdjustorThunk },
+	{ 0x06000040, UIActions_get_TrackedDevicePosition_m84C1F8F282FE92FFC05C32FAAFD45B15278FEA25_AdjustorThunk },
+	{ 0x06000041, UIActions_get_TrackedDeviceOrientation_m01E002CF2D6336286E77F8C7800647C05B8BD7BE_AdjustorThunk },
+	{ 0x06000042, UIActions_Get_mE4668F284E08FCD4EB8FE8EA38AAF8C1989E8F03_AdjustorThunk },
+	{ 0x06000043, UIActions_Enable_m059C9ADCAF895A65F26DB19AD0F1D600035D0B48_AdjustorThunk },
+	{ 0x06000044, UIActions_Disable_mE346C967730D770B89CDF684D2F74F3F76F8B70C_AdjustorThunk },
+	{ 0x06000045, UIActions_get_enabled_m9302A9063DFF56B6B063875BE402BBD7414CDEA4_AdjustorThunk },
+	{ 0x06000047, UIActions_SetCallbacks_mDB07748C0E11C6BBED0CE47CA9265F683369484D_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[119] = 
+static const int32_t s_InvokerIndices[146] = 
 {
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	4436,
-	4436,
-	4436,
-	5602,
-	5602,
-	5495,
-	5602,
-	5602,
-	5297,
-	4230,
-	5292,
-	4225,
-	5311,
-	3090,
-	5495,
-	5495,
-	5602,
-	5602,
-	5495,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	4438,
+	4438,
+	4438,
+	5604,
+	5604,
+	5497,
+	5604,
+	5604,
+	5299,
+	4232,
+	5294,
+	4227,
+	5313,
+	3091,
+	5497,
+	5497,
+	5604,
+	5604,
+	5497,
 	1796,
 	1597,
-	5698,
-	5699,
-	5456,
-	5456,
-	5456,
-	5456,
-	5456,
-	4436,
-	5495,
-	5495,
-	5495,
-	5602,
-	5602,
-	5405,
-	8415,
-	4436,
-	4436,
-	5495,
-	5495,
-	5495,
-	5495,
-	5495,
-	5495,
-	5495,
-	5495,
-	5495,
-	5495,
-	5495,
-	5602,
-	5602,
-	5405,
-	8416,
-	4436,
+	5700,
+	5701,
+	5458,
+	5458,
+	5458,
+	5458,
+	5458,
+	4438,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5604,
+	5604,
+	5407,
+	8418,
+	4438,
+	4438,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5497,
+	5604,
+	5604,
+	5407,
+	8419,
+	4438,
 	0,
 	0,
 	0,
@@ -491,55 +582,77 @@ static const int32_t s_InvokerIndices[119] =
 	0,
 	0,
 	0,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	4578,
-	5602,
-	5602,
-	4436,
-	5602,
-	4436,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	8724,
-	8584,
-	8724,
-	8584,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	5602,
-	6638,
-	5495,
-	4436,
-	5602,
-	5602,
-	5602,
-	5602,
-	4402,
+	0,
+	0,
+	0,
+	0,
+	0,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	4580,
+	4580,
+	4580,
+	4580,
+	4580,
+	4580,
+	5604,
+	5604,
+	4438,
+	5604,
+	4438,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	8727,
+	8587,
+	8727,
+	8587,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	5604,
+	6640,
+	5497,
+	4438,
+	5604,
+	5604,
+	5604,
+	5604,
+	4404,
 	1947,
 	1272,
-	4310,
-	8790,
-	5602,
+	4312,
+	8793,
+	5604,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	119,
+	146,
 	s_methodPointers,
-	24,
+	29,
 	s_adjustorThunks,
 	s_InvokerIndices,
 	0,
