@@ -2122,6 +2122,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CharacterController_Move_mE3F7AC1B4A2
 		return L_0;
 	}
 }
+// System.Void UnityEngine.CharacterController::set_height(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CharacterController_set_height_m7F8FCAFE75439842BAC1FFA1E302EFD812D170FB (CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* __this, float ___value0, const RuntimeMethod* method) 
+{
+	typedef void (*CharacterController_set_height_m7F8FCAFE75439842BAC1FFA1E302EFD812D170FB_ftn) (CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A*, float);
+	static CharacterController_set_height_m7F8FCAFE75439842BAC1FFA1E302EFD812D170FB_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (CharacterController_set_height_m7F8FCAFE75439842BAC1FFA1E302EFD812D170FB_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.CharacterController::set_height(System.Single)");
+	_il2cpp_icall_func(__this, ___value0);
+}
 // UnityEngine.CollisionFlags UnityEngine.CharacterController::Move_Injected(UnityEngine.Vector3&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t CharacterController_Move_Injected_m7F25C33CF948858A8D5822EF73FAE7A16AE65C86 (CharacterController_t847C1A2719F60547D7D6077B648D6CE2D1EF3A6A* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___motion0, const RuntimeMethod* method) 
 {

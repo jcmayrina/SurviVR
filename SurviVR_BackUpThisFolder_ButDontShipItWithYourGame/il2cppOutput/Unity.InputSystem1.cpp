@@ -4298,8 +4298,10 @@ struct InputSettings_tBA8835B505722A59702A08BCBA46ECF0B0274EEF  : public Scripta
 	float ___m_MultiTapDelayTime_19;
 	// System.Boolean UnityEngine.InputSystem.InputSettings::m_DisableRedundantEventsMerging
 	bool ___m_DisableRedundantEventsMerging_20;
+	// System.Boolean UnityEngine.InputSystem.InputSettings::m_ShortcutKeysConsumeInputs
+	bool ___m_ShortcutKeysConsumeInputs_21;
 	// System.Collections.Generic.HashSet`1<System.String> UnityEngine.InputSystem.InputSettings::m_FeatureFlags
-	HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* ___m_FeatureFlags_21;
+	HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* ___m_FeatureFlags_22;
 };
 
 // System.InvalidOperationException
@@ -5878,6 +5880,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TriggerState_get_inProcessing_mB8327E526
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t TriggerState_get_flags_m03F4E9C66A2CC7854DC09C87A81D28DACD4063CD_inline (TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.InputSystem.InputActionState/TriggerState::set_flags(UnityEngine.InputSystem.InputActionState/TriggerState/Flags)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TriggerState_set_flags_m15D5CB1647EE3083045A3720E91189EE3FC5E1EF (TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* __this, int32_t ___value0, const RuntimeMethod* method) ;
+// System.Boolean UnityEngine.InputSystem.LowLevel.InputEventPtr::get_valid()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputEventPtr_get_valid_m27705F3E3203539F9C0C5857F48DCC35EC158012 (InputEventPtr_tC2A58521C9AFB479CC88789D5E0797D817C721C0* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.InputSystem.LowLevel.InputEventPtr::set_handled(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InputEventPtr_set_handled_m855A75D4B98470B0A814FB8627608595FC9E9EF0 (InputEventPtr_tC2A58521C9AFB479CC88789D5E0797D817C721C0* __this, bool ___value0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.InputSystem.InputActionState::CallActionListeners(System.Int32,UnityEngine.InputSystem.InputActionMap,UnityEngine.InputSystem.InputActionPhase,UnityEngine.InputSystem.Utilities.CallbackArray`1<System.Action`1<UnityEngine.InputSystem.InputAction/CallbackContext>>&,System.String)
@@ -20855,7 +20859,7 @@ IL_0035:
 		int32_t L_8 = ___newPhase2;
 		if ((!(((uint32_t)L_8) == ((uint32_t)3))))
 		{
-			goto IL_0081;
+			goto IL_008e;
 		}
 	}
 	{
@@ -20867,7 +20871,11 @@ IL_0035:
 		uint32_t L_11;
 		L_11 = TriggerState_get_lastCanceledInUpdate_m0131CE5316D3C8EA449892CCDFA8FD658F32CB7B_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_10, NULL);
 		TriggerState_set_lastCanceledInUpdate_m32E322779C9521C446AD9FD18987A7D30386E481_inline((&V_0), L_11, NULL);
-		// if (controlGroupingAndComplexity[trigger.controlIndex * 2 + 1] > 1)
+		// if (controlGroupingAndComplexity[trigger.controlIndex * 2 + 1] > 1 &&
+		//     // we can end up switching to performed state from an interaction with a timeout, at which point
+		//     // the original event will probably have been removed from memory, so make sure to check
+		//     // we still have one
+		//     m_CurrentlyProcessingThisEvent.valid)
 		uint16_t* L_12;
 		L_12 = InputActionState_get_controlGroupingAndComplexity_mCC4F6F2A155AFF6A04B5997ABAE6E0617A4118F3(__this, NULL);
 		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_13 = ___trigger3;
@@ -20876,127 +20884,136 @@ IL_0035:
 		int32_t L_15 = *((uint16_t*)((uint16_t*)il2cpp_codegen_add((intptr_t)L_12, ((intptr_t)il2cpp_codegen_multiply(((intptr_t)((int32_t)il2cpp_codegen_add(((int32_t)il2cpp_codegen_multiply(L_14, 2)), 1))), 2)))));
 		if ((((int32_t)L_15) <= ((int32_t)1)))
 		{
-			goto IL_00ba;
+			goto IL_00c7;
+		}
+	}
+	{
+		InputEventPtr_tC2A58521C9AFB479CC88789D5E0797D817C721C0* L_16 = (&__this->___m_CurrentlyProcessingThisEvent_11);
+		bool L_17;
+		L_17 = InputEventPtr_get_valid_m27705F3E3203539F9C0C5857F48DCC35EC158012(L_16, NULL);
+		if (!L_17)
+		{
+			goto IL_00c7;
 		}
 	}
 	{
 		// m_CurrentlyProcessingThisEvent.handled = true;
-		InputEventPtr_tC2A58521C9AFB479CC88789D5E0797D817C721C0* L_16 = (&__this->___m_CurrentlyProcessingThisEvent_11);
-		InputEventPtr_set_handled_m855A75D4B98470B0A814FB8627608595FC9E9EF0(L_16, (bool)1, NULL);
-		goto IL_00ba;
+		InputEventPtr_tC2A58521C9AFB479CC88789D5E0797D817C721C0* L_18 = (&__this->___m_CurrentlyProcessingThisEvent_11);
+		InputEventPtr_set_handled_m855A75D4B98470B0A814FB8627608595FC9E9EF0(L_18, (bool)1, NULL);
+		goto IL_00c7;
 	}
 
-IL_0081:
+IL_008e:
 	{
 		// else if (newPhase == InputActionPhase.Canceled)
-		int32_t L_17 = ___newPhase2;
-		if ((!(((uint32_t)L_17) == ((uint32_t)4))))
+		int32_t L_19 = ___newPhase2;
+		if ((!(((uint32_t)L_19) == ((uint32_t)4))))
 		{
-			goto IL_00a0;
+			goto IL_00ad;
 		}
 	}
 	{
 		// newState.lastCanceledInUpdate = InputUpdate.s_UpdateStepCount;
-		uint32_t L_18 = ((InputUpdate_t3D4F0AD6CD83C86A73B8165929FF0CB151A07CCD_StaticFields*)il2cpp_codegen_static_fields_for(InputUpdate_t3D4F0AD6CD83C86A73B8165929FF0CB151A07CCD_il2cpp_TypeInfo_var))->___s_UpdateStepCount_0;
-		TriggerState_set_lastCanceledInUpdate_m32E322779C9521C446AD9FD18987A7D30386E481_inline((&V_0), L_18, NULL);
-		// newState.lastPerformedInUpdate = actionState->lastPerformedInUpdate;
-		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_19 = ___actionState1;
-		uint32_t L_20;
-		L_20 = TriggerState_get_lastPerformedInUpdate_m03A7B1C49F3E698D08D1AABBF5B75B6160419686_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_19, NULL);
-		TriggerState_set_lastPerformedInUpdate_m3643DF0285D087F45DA8D87CD27A54C782153629_inline((&V_0), L_20, NULL);
-		goto IL_00ba;
-	}
-
-IL_00a0:
-	{
+		uint32_t L_20 = ((InputUpdate_t3D4F0AD6CD83C86A73B8165929FF0CB151A07CCD_StaticFields*)il2cpp_codegen_static_fields_for(InputUpdate_t3D4F0AD6CD83C86A73B8165929FF0CB151A07CCD_il2cpp_TypeInfo_var))->___s_UpdateStepCount_0;
+		TriggerState_set_lastCanceledInUpdate_m32E322779C9521C446AD9FD18987A7D30386E481_inline((&V_0), L_20, NULL);
 		// newState.lastPerformedInUpdate = actionState->lastPerformedInUpdate;
 		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_21 = ___actionState1;
 		uint32_t L_22;
 		L_22 = TriggerState_get_lastPerformedInUpdate_m03A7B1C49F3E698D08D1AABBF5B75B6160419686_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_21, NULL);
 		TriggerState_set_lastPerformedInUpdate_m3643DF0285D087F45DA8D87CD27A54C782153629_inline((&V_0), L_22, NULL);
-		// newState.lastCanceledInUpdate = actionState->lastCanceledInUpdate;
-		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_23 = ___actionState1;
-		uint32_t L_24;
-		L_24 = TriggerState_get_lastCanceledInUpdate_m0131CE5316D3C8EA449892CCDFA8FD658F32CB7B_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_23, NULL);
-		TriggerState_set_lastCanceledInUpdate_m32E322779C9521C446AD9FD18987A7D30386E481_inline((&V_0), L_24, NULL);
+		goto IL_00c7;
 	}
 
-IL_00ba:
+IL_00ad:
 	{
-		// newState.pressedInUpdate = actionState->pressedInUpdate;
+		// newState.lastPerformedInUpdate = actionState->lastPerformedInUpdate;
+		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_23 = ___actionState1;
+		uint32_t L_24;
+		L_24 = TriggerState_get_lastPerformedInUpdate_m03A7B1C49F3E698D08D1AABBF5B75B6160419686_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_23, NULL);
+		TriggerState_set_lastPerformedInUpdate_m3643DF0285D087F45DA8D87CD27A54C782153629_inline((&V_0), L_24, NULL);
+		// newState.lastCanceledInUpdate = actionState->lastCanceledInUpdate;
 		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_25 = ___actionState1;
 		uint32_t L_26;
-		L_26 = TriggerState_get_pressedInUpdate_m52D6A5C1E728BF49BC129207376149B2E3C87E89_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_25, NULL);
-		TriggerState_set_pressedInUpdate_m6C8318D4DE435B22A2277E4836F45274A8A14A5B_inline((&V_0), L_26, NULL);
-		// newState.releasedInUpdate = actionState->releasedInUpdate;
+		L_26 = TriggerState_get_lastCanceledInUpdate_m0131CE5316D3C8EA449892CCDFA8FD658F32CB7B_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_25, NULL);
+		TriggerState_set_lastCanceledInUpdate_m32E322779C9521C446AD9FD18987A7D30386E481_inline((&V_0), L_26, NULL);
+	}
+
+IL_00c7:
+	{
+		// newState.pressedInUpdate = actionState->pressedInUpdate;
 		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_27 = ___actionState1;
 		uint32_t L_28;
-		L_28 = TriggerState_get_releasedInUpdate_m1C256A76659DE3EE62BF1A86B055FBC7A93238B4_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_27, NULL);
-		TriggerState_set_releasedInUpdate_mB50246B19DDC67E032785E0C601E0EE6F81FF737_inline((&V_0), L_28, NULL);
+		L_28 = TriggerState_get_pressedInUpdate_m52D6A5C1E728BF49BC129207376149B2E3C87E89_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_27, NULL);
+		TriggerState_set_pressedInUpdate_m6C8318D4DE435B22A2277E4836F45274A8A14A5B_inline((&V_0), L_28, NULL);
+		// newState.releasedInUpdate = actionState->releasedInUpdate;
+		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_29 = ___actionState1;
+		uint32_t L_30;
+		L_30 = TriggerState_get_releasedInUpdate_m1C256A76659DE3EE62BF1A86B055FBC7A93238B4_inline((TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_29, NULL);
+		TriggerState_set_releasedInUpdate_mB50246B19DDC67E032785E0C601E0EE6F81FF737_inline((&V_0), L_30, NULL);
 		// if (newPhase == InputActionPhase.Started)
-		int32_t L_29 = ___newPhase2;
-		if ((!(((uint32_t)L_29) == ((uint32_t)2))))
+		int32_t L_31 = ___newPhase2;
+		if ((!(((uint32_t)L_31) == ((uint32_t)2))))
 		{
-			goto IL_00e6;
+			goto IL_00f3;
 		}
 	}
 	{
 		// newState.startTime = newState.time;
-		double L_30;
-		L_30 = TriggerState_get_time_m24F76F03E47DEFAEB40652814E189E13433EA29C_inline((&V_0), NULL);
-		TriggerState_set_startTime_mE949DC15C580566A6C93904D659C91E1AC633609_inline((&V_0), L_30, NULL);
+		double L_32;
+		L_32 = TriggerState_get_time_m24F76F03E47DEFAEB40652814E189E13433EA29C_inline((&V_0), NULL);
+		TriggerState_set_startTime_mE949DC15C580566A6C93904D659C91E1AC633609_inline((&V_0), L_32, NULL);
 	}
 
-IL_00e6:
+IL_00f3:
 	{
 		// *actionState = newState;
-		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_31 = ___actionState1;
-		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D L_32 = V_0;
-		*(TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_31 = L_32;
+		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_33 = ___actionState1;
+		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D L_34 = V_0;
+		*(TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D*)L_33 = L_34;
 		// var map = maps[trigger.mapIndex];
-		InputActionMapU5BU5D_t4B352E8DA73976FEDA107E35E81FB5BE6838C045* L_33 = __this->___maps_1;
-		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_34 = ___trigger3;
-		int32_t L_35;
-		L_35 = TriggerState_get_mapIndex_m2EF42EE7F026B1FEAE73AD21ACF2891AB8A8C07E_inline(L_34, NULL);
-		NullCheck(L_33);
-		int32_t L_36 = L_35;
-		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_37 = (L_33)->GetAt(static_cast<il2cpp_array_size_t>(L_36));
-		V_1 = L_37;
+		InputActionMapU5BU5D_t4B352E8DA73976FEDA107E35E81FB5BE6838C045* L_35 = __this->___maps_1;
+		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_36 = ___trigger3;
+		int32_t L_37;
+		L_37 = TriggerState_get_mapIndex_m2EF42EE7F026B1FEAE73AD21ACF2891AB8A8C07E_inline(L_36, NULL);
+		NullCheck(L_35);
+		int32_t L_38 = L_37;
+		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_39 = (L_35)->GetAt(static_cast<il2cpp_array_size_t>(L_38));
+		V_1 = L_39;
 		// var action = map.m_Actions[actionIndex - mapIndices[trigger.mapIndex].actionStartIndex];
-		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_38 = V_1;
-		NullCheck(L_38);
-		InputActionU5BU5D_t6F881A9FE5C2016615C8D2E0B192608EA5FCE810* L_39 = L_38->___m_Actions_3;
-		int32_t L_40 = ___actionIndex0;
-		ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD* L_41;
-		L_41 = InputActionState_get_mapIndices_mF75C8F6FFBE91E223291E569223DC642F82A4879(__this, NULL);
-		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_42 = ___trigger3;
-		int32_t L_43;
-		L_43 = TriggerState_get_mapIndex_m2EF42EE7F026B1FEAE73AD21ACF2891AB8A8C07E_inline(L_42, NULL);
-		uint32_t L_44 = sizeof(ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD);
-		NullCheck(((ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD*)il2cpp_codegen_add((intptr_t)L_41, ((intptr_t)il2cpp_codegen_multiply(((intptr_t)L_43), (int32_t)L_44)))));
-		int32_t L_45 = ((ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD*)il2cpp_codegen_add((intptr_t)L_41, ((intptr_t)il2cpp_codegen_multiply(((intptr_t)L_43), (int32_t)L_44))))->___actionStartIndex_0;
-		NullCheck(L_39);
-		int32_t L_46 = ((int32_t)il2cpp_codegen_subtract(L_40, L_45));
-		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_47 = (L_39)->GetAt(static_cast<il2cpp_array_size_t>(L_46));
-		V_2 = L_47;
+		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_40 = V_1;
+		NullCheck(L_40);
+		InputActionU5BU5D_t6F881A9FE5C2016615C8D2E0B192608EA5FCE810* L_41 = L_40->___m_Actions_3;
+		int32_t L_42 = ___actionIndex0;
+		ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD* L_43;
+		L_43 = InputActionState_get_mapIndices_mF75C8F6FFBE91E223291E569223DC642F82A4879(__this, NULL);
+		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_44 = ___trigger3;
+		int32_t L_45;
+		L_45 = TriggerState_get_mapIndex_m2EF42EE7F026B1FEAE73AD21ACF2891AB8A8C07E_inline(L_44, NULL);
+		uint32_t L_46 = sizeof(ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD);
+		NullCheck(((ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD*)il2cpp_codegen_add((intptr_t)L_43, ((intptr_t)il2cpp_codegen_multiply(((intptr_t)L_45), (int32_t)L_46)))));
+		int32_t L_47 = ((ActionMapIndices_t013BEFD76B7FE52E413C5DBF5C7CDA4194800CBD*)il2cpp_codegen_add((intptr_t)L_43, ((intptr_t)il2cpp_codegen_multiply(((intptr_t)L_45), (int32_t)L_46))))->___actionStartIndex_0;
+		NullCheck(L_41);
+		int32_t L_48 = ((int32_t)il2cpp_codegen_subtract(L_42, L_47));
+		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_49 = (L_41)->GetAt(static_cast<il2cpp_array_size_t>(L_48));
+		V_2 = L_49;
 		// trigger.phase = newPhase;
-		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_48 = ___trigger3;
-		int32_t L_49 = ___newPhase2;
-		TriggerState_set_phase_mF4C392049D7510A9AEA8E32B21D57816BEEF7183(L_48, L_49, NULL);
-		int32_t L_50 = ___newPhase2;
-		switch (((int32_t)il2cpp_codegen_subtract((int32_t)L_50, 2)))
+		TriggerState_t99B6AEA05EECEE1FEE7B60C2ABA73FA03685F38D* L_50 = ___trigger3;
+		int32_t L_51 = ___newPhase2;
+		TriggerState_set_phase_mF4C392049D7510A9AEA8E32B21D57816BEEF7183(L_50, L_51, NULL);
+		int32_t L_52 = ___newPhase2;
+		switch (((int32_t)il2cpp_codegen_subtract((int32_t)L_52, 2)))
 		{
 			case 0:
 			{
-				goto IL_013e;
+				goto IL_014b;
 			}
 			case 1:
 			{
-				goto IL_0153;
+				goto IL_0160;
 			}
 			case 2:
 			{
-				goto IL_0168;
+				goto IL_0175;
 			}
 		}
 	}
@@ -21004,44 +21021,44 @@ IL_00e6:
 		return;
 	}
 
-IL_013e:
+IL_014b:
 	{
 		// CallActionListeners(actionIndex, map, newPhase, ref action.m_OnStarted, "started");
-		int32_t L_51 = ___actionIndex0;
-		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_52 = V_1;
-		int32_t L_53 = ___newPhase2;
-		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_54 = V_2;
-		NullCheck(L_54);
-		CallbackArray_1_tDFF8C4C6015023B6C2E70BAD26D8BC6BF00D8775* L_55 = (&L_54->___m_OnStarted_15);
-		InputActionState_CallActionListeners_mAAF093B0FB0498719E81AF0F30E7D3806F39D501(__this, L_51, L_52, L_53, L_55, _stringLiteral008F6E1BE2B28B633406A8328A0C886C24DD0A51, NULL);
+		int32_t L_53 = ___actionIndex0;
+		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_54 = V_1;
+		int32_t L_55 = ___newPhase2;
+		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_56 = V_2;
+		NullCheck(L_56);
+		CallbackArray_1_tDFF8C4C6015023B6C2E70BAD26D8BC6BF00D8775* L_57 = (&L_56->___m_OnStarted_15);
+		InputActionState_CallActionListeners_mAAF093B0FB0498719E81AF0F30E7D3806F39D501(__this, L_53, L_54, L_55, L_57, _stringLiteral008F6E1BE2B28B633406A8328A0C886C24DD0A51, NULL);
 		// break;
 		return;
 	}
 
-IL_0153:
+IL_0160:
 	{
 		// CallActionListeners(actionIndex, map, newPhase, ref action.m_OnPerformed, "performed");
-		int32_t L_56 = ___actionIndex0;
-		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_57 = V_1;
-		int32_t L_58 = ___newPhase2;
-		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_59 = V_2;
-		NullCheck(L_59);
-		CallbackArray_1_tDFF8C4C6015023B6C2E70BAD26D8BC6BF00D8775* L_60 = (&L_59->___m_OnPerformed_17);
-		InputActionState_CallActionListeners_mAAF093B0FB0498719E81AF0F30E7D3806F39D501(__this, L_56, L_57, L_58, L_60, _stringLiteralA41CA1583CF7F9B7681B6464696960B8E54B3A96, NULL);
+		int32_t L_58 = ___actionIndex0;
+		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_59 = V_1;
+		int32_t L_60 = ___newPhase2;
+		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_61 = V_2;
+		NullCheck(L_61);
+		CallbackArray_1_tDFF8C4C6015023B6C2E70BAD26D8BC6BF00D8775* L_62 = (&L_61->___m_OnPerformed_17);
+		InputActionState_CallActionListeners_mAAF093B0FB0498719E81AF0F30E7D3806F39D501(__this, L_58, L_59, L_60, L_62, _stringLiteralA41CA1583CF7F9B7681B6464696960B8E54B3A96, NULL);
 		// break;
 		return;
 	}
 
-IL_0168:
+IL_0175:
 	{
 		// CallActionListeners(actionIndex, map, newPhase, ref action.m_OnCanceled, "canceled");
-		int32_t L_61 = ___actionIndex0;
-		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_62 = V_1;
-		int32_t L_63 = ___newPhase2;
-		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_64 = V_2;
-		NullCheck(L_64);
-		CallbackArray_1_tDFF8C4C6015023B6C2E70BAD26D8BC6BF00D8775* L_65 = (&L_64->___m_OnCanceled_16);
-		InputActionState_CallActionListeners_mAAF093B0FB0498719E81AF0F30E7D3806F39D501(__this, L_61, L_62, L_63, L_65, _stringLiteralEB9331669B60C315ADB2F574C3C7DBA9736364CD, NULL);
+		int32_t L_63 = ___actionIndex0;
+		InputActionMap_tFCE82E0E014319D4DED9F8962B06655DD0420A09* L_64 = V_1;
+		int32_t L_65 = ___newPhase2;
+		InputAction_t1B550AD2B55AF322AFB53CD28DA64081220D01CD* L_66 = V_2;
+		NullCheck(L_66);
+		CallbackArray_1_tDFF8C4C6015023B6C2E70BAD26D8BC6BF00D8775* L_67 = (&L_66->___m_OnCanceled_16);
+		InputActionState_CallActionListeners_mAAF093B0FB0498719E81AF0F30E7D3806F39D501(__this, L_63, L_64, L_65, L_67, _stringLiteralEB9331669B60C315ADB2F574C3C7DBA9736364CD, NULL);
 		// }
 		return;
 	}
