@@ -282,10 +282,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e60920d5-8fbd-4d44-bfec-17d881c8e2da"",
-                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button2"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button2"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ButtonB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -293,10 +293,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""db67013f-3cec-4556-88e1-64328ee46552"",
-                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button5"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button5"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ButtonY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -304,10 +304,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b511f4cf-3e7d-4294-85da-9bb8ce2fd20c"",
-                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button4"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button4"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ButtonX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -315,10 +315,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c76560ed-5c44-4193-8ef2-0cd4bf4b879d"",
-                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button12"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button12"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ButtonStart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -326,10 +326,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b5721135-7d58-4079-9cd6-36a01a5bbe3f"",
-                    ""path"": ""<HID::ࣰ USB Gaming Keyboard >/button11"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button11"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ButtonSelect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
