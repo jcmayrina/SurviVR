@@ -1,136 +1,74 @@
-using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+//-----------------------------------------------------------------------
+// <copyright file="CardboardStartup.cs" company="Google LLC">
+// Copyright 2020 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// </copyright>
+//-----------------------------------------------------------------------
 
+using Google.XR.Cardboard;
 using UnityEngine;
-using UnityEngine.XR;
 
-namespace Google.XR.Cardboard
+/// <summary>
+/// Initializes Cardboard XR Plugin.
+/// </summary>
+public class CardboardStartup : MonoBehaviour
 {
     /// <summary>
-    /// Initializes Cardboard XR Plugin for 6DoF use.
+    /// Start is called before the first frame update.
     /// </summary>
-    public class CardboardStartup : MonoBehaviour
+    public void Start()
     {
-        private static IntPtr _inputPointer;
-        public static IntPtr inputPointer
+        // Configures the app to not shut down the screen and sets the brightness to maximum.
+        // Brightness control is expected to work only in iOS, see:
+        // https://docs.unity3d.com/ScriptReference/Screen-brightness.html.
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.brightness = 1.0f;
+        Application.targetFrameRate = 60;
+
+        // Checks if the device parameters are stored and scans them if not.
+        if (!Api.HasDeviceParams())
         {
-            get { if (isStarted) { return _inputPointer; } else { return IntPtr.Zero; } }
-            set { _inputPointer = value; }
+            Api.ScanDeviceParams();
+        }
+    }
+
+    /// <summary>
+    /// Update is called once per frame.
+    /// </summary>
+    public void Update()
+    {
+        if (Api.IsGearButtonPressed)
+        {
+            Api.ScanDeviceParams();
         }
 
-        private static IntPtr _displayPointer;
-        public static IntPtr displayPointer
+        if (Api.IsCloseButtonPressed)
         {
-            get { if (isStarted) { return _displayPointer; } else { return IntPtr.Zero; } }
-            set { _displayPointer = value; }
+            Application.Quit();
         }
 
-        private XRLoader loader;
-
-        public static bool isInitialized = false;
-        public static bool isStarted = false;
-
-        private string inputMatch = "Input";
-
-        private void Start()
+        if (Api.IsTriggerHeldPressed)
         {
-            StartCardboard();
+            Api.Recenter();
         }
 
-        public void StartCardboard()
+        if (Api.HasNewDeviceParams())
         {
-            // Configures the app to not shut down the screen and sets the brightness to maximum.
-            // Brightness control is expected to work only in iOS, see:
-            // https://docs.unity3d.com/ScriptReference/Screen-brightness.html.
-            Screen.sleepTimeout = SleepTimeout.NeverSleep;
-            Screen.brightness = 1.0f;
-
-            Application.targetFrameRate = 60;
-
-            if (!loader)
-            {
-                loader = ScriptableObject.CreateInstance<XRLoader>();
-            }
-#if !UNITY_EDITOR
-            loader.Initialize();
-#endif
-            loader.Start();
-            ConnectCardboardInputSystem();
-
-            isStarted = true;
-
-            ReloadDeviceParams();
-
-            // Checks if the device parameters are stored and scans them if not.
-            if (!Api.HasDeviceParams())
-            {
-                Api.ScanDeviceParams();
-            }
-        }
-
-        public void StopCardboard()
-        {
-            if (loader)
-            {
-                loader.Stop();
-                loader.Deinitialize();
-            }
-            isStarted = false;
-        }
-
-        public void ReloadDeviceParams()
-        {
-            if (!isStarted)
-            {
-                return;
-            }
             Api.ReloadDeviceParams();
         }
-
-        public void Update()
-        {
-            if (!isStarted)
-            {
-                return;
-            }
-
-            if (Api.IsGearButtonPressed)
-            {
-                Api.ScanDeviceParams();
-            }
-
-            if (Api.IsCloseButtonPressed)
-            {
-                Application.Quit();
-            }
-
-            if (Api.HasNewDeviceParams())
-            {
-                Api.ReloadDeviceParams();
-            }
-
-            Api.UpdateScreenParams();
-        }
-
-        private void ConnectCardboardInputSystem()
-        {
-            List<XRInputSubsystemDescriptor> inputs = new List<XRInputSubsystemDescriptor>();
-            SubsystemManager.GetSubsystemDescriptors(inputs);
-
-            foreach (var d in inputs)
-            {
-                if (d.id.Equals(inputMatch))
-                {
-                    XRInputSubsystem inputInst = d.Create();
-
-                    if (inputInst != null)
-                    {
-                        GCHandle handle = GCHandle.Alloc(inputInst);
-                        inputPointer = GCHandle.ToIntPtr(handle);
-                    }
-                }
-            }
-        }
+#if !UNITY_EDITOR
+        Api.UpdateScreenParams();
+#endif
     }
 }

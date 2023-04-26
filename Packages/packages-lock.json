@@ -1,21 +1,14 @@
 {
   "dependencies": {
-    "com.aryzon.unity-sdk": {
-      "version": "https://github.com/Aryzon/unity-sdk.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "0a11652325510550007fa22aba77fdec038f622e"
-    },
     "com.google.xr.cardboard": {
-      "version": "https://github.com/Aryzon/cardboard-xr-plugin.git",
+      "version": "https://github.com/googlevr/cardboard-xr-plugin.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.xr.management": "3.2.9",
         "com.unity.xr.legacyinputhelpers": "2.1.4"
       },
-      "hash": "c258cfd1c5470ef1b09e62e85f9985d19dc9046a"
+      "hash": "904b84189b30d583bb58e58bba5b6e9189d112df"
     },
     "com.unity.collab-proxy": {
       "version": "1.17.2",
@@ -39,19 +32,6 @@
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
-    },
-    "com.unity.feature.ar": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.xr.arfoundation": "4.2.3",
-        "com.unity.xr.arkit": "4.2.3",
-        "com.unity.xr.arcore": "4.2.3",
-        "com.unity.xr.magicleap": "6.4.1",
-        "com.unity.xr.arkit-face-tracking": "4.2.3",
-        "com.unity.xr.openxr": "1.4.2"
-      }
     },
     "com.unity.feature.development": {
       "version": "1.0.1",
@@ -212,69 +192,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.xr.arcore": {
-      "version": "4.2.7",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.xr.arsubsystems": "4.2.7",
-        "com.unity.xr.management": "4.0.1",
-        "com.unity.modules.androidjni": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.arfoundation": {
-      "version": "4.2.3",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.xr.arsubsystems": "4.2.3",
-        "com.unity.xr.management": "4.0.1",
-        "com.unity.modules.particlesystem": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.arkit": {
-      "version": "4.2.3",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.editorcoroutines": "1.0.0",
-        "com.unity.xr.arsubsystems": "4.2.3",
-        "com.unity.xr.management": "4.0.1"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.arkit-face-tracking": {
-      "version": "4.2.3",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.xr.arkit": "4.2.3",
-        "com.unity.xr.arsubsystems": "4.2.3"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.arsubsystems": {
-      "version": "4.2.7",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.subsystemregistration": "1.1.0",
-        "com.unity.xr.management": "4.0.1"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.interactionsubsystems": {
-      "version": "1.0.1",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.subsystemregistration": "1.0.5"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.10",
       "depth": 1,
@@ -282,21 +199,6 @@
       "dependencies": {
         "com.unity.modules.vr": "1.0.0",
         "com.unity.modules.xr": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.magicleap": {
-      "version": "6.4.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.screencapture": "1.0.0",
-        "com.unity.modules.vr": "1.0.0",
-        "com.unity.modules.xr": "1.0.0",
-        "com.unity.ugui": "1.0.0",
-        "com.unity.xr.arsubsystems": "4.0.12",
-        "com.unity.xr.interactionsubsystems": "1.0.1",
-        "com.unity.xr.management": "4.0.7"
       },
       "url": "https://packages.unity.com"
     },
@@ -310,17 +212,6 @@
         "com.unity.modules.xr": "1.0.0",
         "com.unity.xr.legacyinputhelpers": "2.1.7",
         "com.unity.subsystemregistration": "1.0.6"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.openxr": {
-      "version": "1.4.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.xr.management": "4.0.1",
-        "com.unity.xr.legacyinputhelpers": "2.1.2",
-        "com.unity.inputsystem": "1.3.0"
       },
       "url": "https://packages.unity.com"
     },

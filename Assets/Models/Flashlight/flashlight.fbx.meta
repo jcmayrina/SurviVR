@@ -3,7 +3,27 @@ guid: 65faedcbf508ea54d9ad70d2d0bd95dc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: a06d0c076eead514b8b3ebcb12645db2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: bfb42d067b6f89e4bbb7ddcb51e23f61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal Ring
+    second: {fileID: 2100000, guid: 3d13e820f104b0943bc6f3ceff9531bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Switch
+    second: {fileID: 2100000, guid: 89acdb0d0d011d847bcdfc04ee639f88, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
