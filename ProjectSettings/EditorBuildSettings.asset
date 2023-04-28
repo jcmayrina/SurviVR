@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EQ_school.unity
+    guid: cdfc4fc737fd2764c9e1b7b3a4c94be2
+  - enabled: 1
     path: Assets/Scenes/Level-1/Level-1.unity
     guid: 1e12f20363720a44584213b0692f317b
   - enabled: 1

@@ -4,24 +4,30 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    //-----Player related objects and variables
+
     public float speed = 5f;
     private float gravity = 10f;
-    private CharacterController controller;
-    public PlayerInputActions playerControls;
     public CharacterController rigidbodyfreeze;
     Rigidbody myRb;
-    
-    private InputAction fire,buttB,buttY,buttX,buttSel,buttSt;
-    private InputAction navigate;
     public Image img;
     public GameObject flashlight;
     private Camera cam;
     private PlayerUI playerUI;
     public GameObject hotbarUI;
     string itemChoose = "";
-    //private InputManager inputManager;
+
+    //-----Controller related objects and variables
+    private CharacterController controller;
+    public PlayerInputActions playerControls;
+    private InputAction fire,buttB,buttY,buttX,buttSel,buttSt;
+    private InputAction navigate;
+
+    //-----Serialize Fields for Raycast
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
+
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -32,9 +38,11 @@ public class PlayerMovement : MonoBehaviour
         fire.Enable();
         fire.performed += Fire;
 
+        //Delete this after choosing controller button
         navigate = playerControls.Player.Navigate;
         navigate.Enable();
         navigate.performed += Navigate;
+        
         buttB = playerControls.Player.ButtonB;
         buttB.Enable();
         buttB.performed += ButtonB;
@@ -62,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        controller =  GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
         playerUI = GetComponent<PlayerUI>();
         myRb = GetComponent<Rigidbody>();
         hotbarUI.SetActive(false);
@@ -96,6 +104,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    private RaycastHit raycast() {
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        RaycastHit hitInfo;
+        Debug.DrawRay(ray.origin, ray.direction * maxDistance);
+
+        return Physics.Raycast(ray, out hitInfo, maxDistance, mask) ? hitInfo : null;
+
+    }
     private void playerMove(){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -122,15 +139,21 @@ public class PlayerMovement : MonoBehaviour
         }
         else {
             Debug.Log("buttonA");
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
                 if(hitInfo.collider.GetComponent<Interactable>() != null) {
                     hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
                 }
             }
+
             if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
                 if(hitInfo.collider.GetComponent<Equipable>() != null) {
                     hitInfo.collider.GetComponent<Equipable>().EquipPass();
                     hotbarUI.SetActive(true);
+                }
+            }
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.GetComponent<Television>() != null) {
+                    hitInfo.collider.GetComponent<Television>().TelevisionPass();
                 }
             }
         }
@@ -148,11 +171,6 @@ public class PlayerMovement : MonoBehaviour
             else {
                 Debug.Log("Whistle");
                 itemChoose = "slot1";
-            }
-        }
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Television>() != null) {
-                hitInfo.collider.GetComponent<Television>().TelevisionPass();
             }
         }
     }
