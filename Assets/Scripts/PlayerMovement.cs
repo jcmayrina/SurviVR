@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
-{
+{   
+    public GameObject hotbarUI;
+    public GameObject flashlight;
+    public String itemChoose="";
     public float speed = 5f;
     private float gravity = 10f;
     private CharacterController controller;
@@ -57,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
         myRb = GetComponent<Rigidbody>();
         cam = Camera.main;
         playerUI = GetComponent<PlayerUI>();
+        hotbarUI.SetActive(false);
+        flashlight.SetActive(false);
     }
     void Update(){
         playerMove();
@@ -99,22 +105,33 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         Debug.Log("buttonA");
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+        if(itemChoose.Equals("slot1")) {
+            Debug.Log("WHISTLE NASAAN NA");
+        }
+        else if(itemChoose.Equals("slot2")) {
+            if(flashlight.activeSelf) {
+                flashlight.SetActive(false);
+            }
+            else {
+                flashlight.SetActive(true);
             }
         }
+        else {
+            Debug.Log("buttonA");
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                    hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                }
+                if(hitInfo.collider.GetComponent<Equipable>() != null) {
                 hitInfo.collider.GetComponent<Equipable>().EquipPass();
-            }
-        }
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Television>() != null) {
+                hotbarUI.SetActive(true);
+                }
+                if(hitInfo.collider.GetComponent<Television>() != null) {
                 hitInfo.collider.GetComponent<Television>().TelevisionPass();
+                }
+            }
             }
         }
-    }
     private void ButtonB(InputAction.CallbackContext context){
         rigidbodyfreeze.enabled = true;
         Debug.Log("buttonB");
@@ -123,7 +140,29 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("buttonX");
     }
     private void ButtonY(InputAction.CallbackContext context){
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        RaycastHit hitInfo;
+        Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         Debug.Log("buttonY");
+        if(hotbarUI.activeSelf) {
+            if(itemChoose.Equals("slot1")) {
+                Debug.Log("Flashlight");
+                itemChoose = "slot2";
+            }
+            else if(itemChoose.Equals("slot2")) {
+                Debug.Log("Hand");
+                itemChoose = "";
+            }
+            else {
+                Debug.Log("Whistle");
+                itemChoose = "slot1";
+            }
+        }
+        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(hitInfo.collider.GetComponent<Television>() != null) {
+                hitInfo.collider.GetComponent<Television>().TelevisionPass();
+            }
+        }
     }
     private void ButtonSelect(InputAction.CallbackContext context){
         Debug.Log("buttonSelect");
