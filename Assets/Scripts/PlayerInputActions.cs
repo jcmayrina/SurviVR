@@ -323,6 +323,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""4d5c2ba6-6a83-4855-a14b-fd0c05b2fded"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c76560ed-5c44-4193-8ef2-0cd4bf4b879d"",
                     ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button12"",
                     ""interactions"": """",

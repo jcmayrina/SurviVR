@@ -6,17 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
 
     //-----Player related objects and variables
-
+    public Transform head;
     public float speed = 5f;
     private float gravity = 10f;
     public CharacterController rigidbodyfreeze;
     Rigidbody myRb;
     public Image img;
     public GameObject flashlight;
+    public GameObject hotbarUI;
     private Camera cam;
     private PlayerUI playerUI;
-    public GameObject hotbarUI;
     string itemChoose = "";
+    private bool isActive;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -73,8 +74,8 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerUI = GetComponent<PlayerUI>();
         myRb = GetComponent<Rigidbody>();
-        hotbarUI.SetActive(false);
         flashlight.SetActive(false);
+        hotbarUI.SetActive(false);
         cam = Camera.main;
     }
     void Update(){
@@ -87,32 +88,27 @@ public class PlayerMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
+                itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                Debug.Log(itemChoose);
                 img.gameObject.SetActive(true);
             }
-        }
-        
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Equipable>() != null) {
+
+            else if(hitInfo.collider.GetComponent<Equipable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
                 img.gameObject.SetActive(true);
             }
-        }
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Television>() != null) {
+
+            else if(hitInfo.collider.GetComponent<Television>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Television>().promptMessage);
                 img.gameObject.SetActive(true);
             }
         }
+        if(hotbarUI.activeSelf) {
+            hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
+            hotbarUI.transform.forward *= -1;
+        }
     }
 
-    private RaycastHit raycast() {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-        Debug.DrawRay(ray.origin, ray.direction * maxDistance);
-
-        return Physics.Raycast(ray, out hitInfo, maxDistance, mask) ? hitInfo : null;
-
-    }
     private void playerMove(){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -126,53 +122,34 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
-        if(itemChoose.Equals("slot1")) {
-            Debug.Log("WHISTLE NASAAN NA");
-        }
-        else if(itemChoose.Equals("slot2")) {
-            if(flashlight.activeSelf) {
-                flashlight.SetActive(false);
+
+        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(hotbarUI.activeSelf == true) {
+                itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                Debug.Log(itemChoose);
             }
             else {
-                flashlight.SetActive(true);
-            }
-        }
-        else {
-            Debug.Log("buttonA");
-            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                    hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
-                }
-            }
+                Debug.Log("buttonA");
 
-            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                if(hitInfo.collider.GetComponent<Equipable>() != null) {
-                    hitInfo.collider.GetComponent<Equipable>().EquipPass();
-                    hotbarUI.SetActive(true);
+                if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                    if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                        hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                        hitInfo.collider.GetComponent<Equipable>().EquipPass();
+                        // hotbarUI.SetActive(true);
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Television>() != null) {
+                        hitInfo.collider.GetComponent<Television>().TelevisionPass();
+                    }
                 }
-            }
-            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                if(hitInfo.collider.GetComponent<Television>() != null) {
-                    hitInfo.collider.GetComponent<Television>().TelevisionPass();
-                }
-            }
+        }
         }
     }
     private void Navigate(InputAction.CallbackContext context) {
-        if(hotbarUI.activeSelf) {
-            if(itemChoose.Equals("slot1")) {
-                Debug.Log("Flashlight");
-                itemChoose = "slot2";
-            }
-            else if(itemChoose.Equals("slot2")) {
-                Debug.Log("Hand");
-                itemChoose = "";
-            }
-            else {
-                Debug.Log("Whistle");
-                itemChoose = "slot1";
-            }
-        }
+        
     }
     private void ButtonB(InputAction.CallbackContext context){
         rigidbodyfreeze.enabled = true;
@@ -180,6 +157,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ButtonX(InputAction.CallbackContext context){
         Debug.Log("buttonX");
+        isActive = !hotbarUI.activeSelf;
+        hotbarUI.SetActive(isActive);
+        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, (head.forward.y - 1), head.forward.z).normalized * 2;
     }
     private void ButtonY(InputAction.CallbackContext context){
         Debug.Log("buttonY");

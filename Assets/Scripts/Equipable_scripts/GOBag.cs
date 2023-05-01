@@ -1,17 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class EquipItem : Equipable
+public class GOBag : Equipable
 {
-    void Start()
-    {
-        
-    }
+    void Start() {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    }
+    void Update() {
+
     }
     protected override void Equip(){
         Debug.Log("equipped");
