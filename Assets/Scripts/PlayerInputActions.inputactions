@@ -268,6 +268,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7032e2a7-a02c-48d4-bd46-3d8bef3aa610",
+                    "path": "<HID::ࣛ 9999>/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e60920d5-8fbd-4d44-bfec-17d881c8e2da",
                     "path": "<HID::ࠁ USB Gaming Keyboard >/button2",
                     "interactions": "",
@@ -279,8 +290,30 @@
                 },
                 {
                     "name": "",
+                    "id": "701361ef-5533-4589-8b73-d4a0488f13f7",
+                    "path": "<HID::ࣛ 9999>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ButtonB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "db67013f-3cec-4556-88e1-64328ee46552",
                     "path": "<HID::ࠁ USB Gaming Keyboard >/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ButtonY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36de6828-ab9b-4197-ac0e-09a631956b17",
+                    "path": "<HID::ࣛ 9999>/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -312,6 +345,17 @@
                 },
                 {
                     "name": "",
+                    "id": "4b3be0fd-4c48-4586-87ff-d7edf362b4a4",
+                    "path": "<HID::ࣛ 9999>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ButtonX",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c76560ed-5c44-4193-8ef2-0cd4bf4b879d",
                     "path": "<HID::ࠁ USB Gaming Keyboard >/button12",
                     "interactions": "",
@@ -323,8 +367,30 @@
                 },
                 {
                     "name": "",
+                    "id": "b764cc58-8075-4a7a-ac64-44e3654a8dc6",
+                    "path": "<HID::ࣛ 9999>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ButtonStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b5721135-7d58-4079-9cd6-36a01a5bbe3f",
                     "path": "<HID::ࠁ USB Gaming Keyboard >/button11",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ButtonSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "382a3a00-5fb1-48f4-9ed5-387d15720d39",
+                    "path": "<HID::ࣛ 9999>/button7",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",

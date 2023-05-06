@@ -17,7 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private Camera cam;
     private PlayerUI playerUI;
     string itemChoose = "";
+
+    private Animation anim;
     private bool isActive;
+    private bool isAvailable;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -77,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         flashlight.SetActive(false);
         hotbarUI.SetActive(false);
         cam = Camera.main;
+        isAvailable = true;
     }
     void Update(){
         playerMove();
@@ -89,7 +93,8 @@ public class PlayerMovement : MonoBehaviour
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
                 itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                Debug.Log(itemChoose);
+                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                
                 img.gameObject.SetActive(true);
             }
 
@@ -106,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
         if(hotbarUI.activeSelf) {
             hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
             hotbarUI.transform.forward *= -1;
+            hotbarUI.transform.Rotate(90, 0, 0);
         }
     }
 
@@ -124,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
 
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hotbarUI.activeSelf == true) {
+            if(hotbarUI.activeSelf) {
                 itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
                 Debug.Log(itemChoose);
             }
@@ -138,7 +144,14 @@ public class PlayerMovement : MonoBehaviour
 
                     else if(hitInfo.collider.GetComponent<Equipable>() != null) {
                         hitInfo.collider.GetComponent<Equipable>().EquipPass();
-                        // hotbarUI.SetActive(true);
+                        
+                        if(string.Equals(hitInfo.collider.name, "Go Bag")) {
+                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                            // isAvailable = !isAvailable;
+                        }
+                        else {
+                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                        }
                     }
 
                     else if(hitInfo.collider.GetComponent<Television>() != null) {
@@ -157,9 +170,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ButtonX(InputAction.CallbackContext context){
         Debug.Log("buttonX");
-        isActive = !hotbarUI.activeSelf;
-        hotbarUI.SetActive(isActive);
-        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, (head.forward.y - 1), head.forward.z).normalized * 2;
+        if(isAvailable) {
+            isActive = !hotbarUI.activeSelf;
+            hotbarUI.SetActive(isActive);
+            hotbarUI.transform.position = head.position + new Vector3(head.forward.x, (head.forward.y - 1), (head.forward.z + 1)).normalized * 3;
+        }
     }
     private void ButtonY(InputAction.CallbackContext context){
         Debug.Log("buttonY");
@@ -169,5 +184,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ButtonStart(InputAction.CallbackContext context){
         Debug.Log("buttonStart");
+
     }
 }

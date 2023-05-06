@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ItemClick : Interactable
 {
-    // public string itemName;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +18,8 @@ public class ItemClick : Interactable
 
     protected override string ChooseItem() {
         return gameObject.name;
+    }
+    protected override void HoverItem() {
+        
     }
 }

@@ -6,9 +6,13 @@ public abstract class Interactable : MonoBehaviour
 {
     public string promptMessage;
     string itemName;
+    private Animation anim;
 
     public void HideDoorPass() {
         HideDoor();
+    }
+    public void Hover() {
+        HoverItem();
     }
 
     public string ClickItem() {
@@ -21,5 +25,8 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual string ChooseItem() {
         return name;
+    }
+    protected virtual void HoverItem() {
+        
     }
 }
