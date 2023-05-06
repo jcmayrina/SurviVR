@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 19
+  controlID: 59
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 20
+  controlID: 60
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 21
+  controlID: 61
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,15 +189,15 @@ MonoBehaviour:
     y: 0
     width: 1015
     height: 518
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 15}
   - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,8 +217,8 @@ MonoBehaviour:
     y: 0
     width: 231
     height: 518
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -243,16 +243,16 @@ MonoBehaviour:
     y: 518
     width: 1246
     height: 421
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 22}
-  m_Selected: 1
+  m_Selected: 0
   m_LastSelected: 4
 --- !u!114 &11
 MonoBehaviour:
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 674
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -333,9 +333,9 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 98857dcf
-    m_LastClickedID: -813857384
-    m_ExpandedIDs: aa5b378dcc0e129e0a6bcbdbc7ece6e37ddca40b8aad9d2cc3836c3607af373b13dc7e58
+    m_SelectedIDs: ebe1836a
+    m_LastClickedID: 1787027947
+    m_ExpandedIDs: aa5b378dcc0e129e5130a9b00a6bcbdbc7ece6e37ddca40b8aad9d2cc3836c3607af373b13dc7e58
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -369,14 +369,14 @@ MonoBehaviour:
         selectedIndex: -1
         scroll: {x: 0, y: 0}
       - itemId: 1275948795
-        selectedIndex: 36
-        scroll: {x: 0, y: 382}
+        selectedIndex: 1
+        scroll: {x: 0, y: 63.5}
       - itemId: -338471202
         selectedIndex: -1
-        scroll: {x: 0, y: 63.5}
+        scroll: {x: 0, y: 3}
       - itemId: 656259478
-        selectedIndex: 0
-        scroll: {x: 0, y: 0}
+        selectedIndex: 21
+        scroll: {x: 0, y: 131}
       - itemId: 378383742
         selectedIndex: -1
         scroll: {x: 0, y: 0}
@@ -438,13 +438,13 @@ MonoBehaviour:
         selectedIndex: -1
         scroll: {x: 0, y: 0}
       - itemId: 2121679712
-        selectedIndex: -1
+        selectedIndex: 31
         scroll: {x: 0, y: 348}
       - itemId: -1484854451
         selectedIndex: -1
         scroll: {x: 0, y: 0}
       - itemId: -1101518107
-        selectedIndex: 1
+        selectedIndex: -1
         scroll: {x: 0, y: 63.5}
       - itemId: -2037752786
         selectedIndex: -1
@@ -478,6 +478,36 @@ MonoBehaviour:
         scroll: {x: 0, y: 0}
       - itemId: 1396360392
         selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -589224957
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -728233463
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 1581240744
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -1457558922
+        selectedIndex: 1
+        scroll: {x: 0, y: 63.5}
+      - itemId: 1506129150
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 672857026
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: -1153836616
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 2100392506
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 81097376
+        selectedIndex: -1
+        scroll: {x: 0, y: 0}
+      - itemId: 1845683271
+        selectedIndex: 2
         scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
   m_ActionAssetManager:
@@ -516,65 +546,7 @@ MonoBehaviour:
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"978bfe49-cc26-4a3d-ab7b-7d7a29327403\",\n                   
-      \"path\": \"<Gamepad>/leftStick\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \";Gamepad\",\n                   
-      \"action\": \"Move\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"WASD\",\n                    \"id\": \"00ca640b-d935-4593-8157-c05846ea39b3\",\n                   
-      \"path\": \"Dpad\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"Move\",\n                    \"isComposite\": true,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"up\",\n                    \"id\": \"e2062cb9-1b15-46a2-838c-2f8d72a0bdd9\",\n                   
-      \"path\": \"<Keyboard>/w\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \";Keyboard&Mouse\",\n                   
-      \"action\": \"Move\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"up\",\n                    \"id\": \"8180e8bd-4097-4f4e-ab88-4523101a6ce9\",\n                   
-      \"path\": \"<Keyboard>/upArrow\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \";Keyboard&Mouse\",\n                   
-      \"action\": \"Move\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"down\",\n                    \"id\": \"320bffee-a40b-4347-ac70-c210eb8bc73a\",\n                   
-      \"path\": \"<Keyboard>/s\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \";Keyboard&Mouse\",\n                   
-      \"action\": \"Move\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"down\",\n                    \"id\": \"1c5327b5-f71c-4f60-99c7-4e737386f1d1\",\n                   
-      \"path\": \"<Keyboard>/downArrow\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \";Keyboard&Mouse\",\n                    \"action\": \"Move\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"left\",\n                   
-      \"id\": \"d2581a9b-1d11-4566-b27d-b92aff5fabbc\",\n                    \"path\":
-      \"<Keyboard>/a\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \";Keyboard&Mouse\",\n                   
-      \"action\": \"Move\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"left\",\n                    \"id\": \"2e46982e-44cc-431b-9f0b-c11910bf467a\",\n                   
-      \"path\": \"<Keyboard>/leftArrow\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \";Keyboard&Mouse\",\n                    \"action\": \"Move\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"right\",\n                   
-      \"id\": \"fcfe95b8-67b9-4526-84b5-5d0bc98d6400\",\n                    \"path\":
-      \"<Keyboard>/d\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \";Keyboard&Mouse\",\n                   
-      \"action\": \"Move\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": true\n                },\n                {\n                   
-      \"name\": \"right\",\n                    \"id\": \"77bff152-3580-4b21-b6de-dcd0c7e41164\",\n                   
-      \"path\": \"<Keyboard>/rightArrow\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \";Keyboard&Mouse\",\n                    \"action\": \"Move\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": true\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8\",\n                    \"path\":
-      \"<XRController>/{Primary2DAxis}\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"XR\",\n                    \"action\": \"Move\",\n                    \"isComposite\":
-      false,\n                    \"isPartOfComposite\": false\n                },\n               
-      {\n                    \"name\": \"\",\n                    \"id\": \"3ea4d645-4504-4529-b061-ab81934c3752\",\n                   
+      \"name\": \"\",\n                    \"id\": \"3ea4d645-4504-4529-b061-ab81934c3752\",\n                   
       \"path\": \"<Joystick>/stick\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Joystick\",\n                   
       \"action\": \"Move\",\n                    \"isComposite\": false,\n                   
@@ -607,43 +579,115 @@ MonoBehaviour:
       \"XR\",\n                    \"action\": \"Fire\",\n                    \"isComposite\":
       false,\n                    \"isPartOfComposite\": false\n                },\n               
       {\n                    \"name\": \"\",\n                    \"id\": \"250b618b-1465-45dd-b6dc-23c97c003215\",\n                   
-      \"path\": \"<HID::\u0801 USB Gaming Keyboard >/trigger\",\n                   
+      \"path\": \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/trigger\",\n                   
       \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
       \"groups\": \"Joystick;Gamepad;Touch;XR;Keyboard&Mouse\",\n                   
       \"action\": \"Fire\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"e60920d5-8fbd-4d44-bfec-17d881c8e2da\",\n                   
-      \"path\": \"<HID::\u0801 USB Gaming Keyboard >/button2\",\n                   
+      \"name\": \"\",\n                    \"id\": \"19b3ec1a-2a04-41fb-8c90-832623397a0d\",\n                   
+      \"path\": \"<HID::\u093D USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/trigger\",\n                   
       \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Joystick;Gamepad;XR;Touch;Keyboard&Mouse\",\n                   
-      \"action\": \"ButtonB\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"db67013f-3cec-4556-88e1-64328ee46552\",\n                   
-      \"path\": \"<HID::\u0801 USB Gaming Keyboard >/button5\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"Fire\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"935bd79f-ac11-4e45-9d38-bed8fce3f47c\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/trigger\",\n                   
       \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Joystick;Gamepad;XR;Touch;Keyboard&Mouse\",\n                   
-      \"action\": \"ButtonY\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"b511f4cf-3e7d-4294-85da-9bb8ce2fd20c\",\n                   
-      \"path\": \"<HID::\u0801 USB Gaming Keyboard >/button4\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"Fire\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"fadf75df-509d-403c-8371-a8c0b3461135\",\n                    \"path\":
+      \"<HID::\u093D USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button2\",\n                   
       \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
-      \"groups\": \"Joystick;Gamepad;Keyboard&Mouse;Touch;XR\",\n                   
-      \"action\": \"ButtonX\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"c76560ed-5c44-4193-8ef2-0cd4bf4b879d\",\n                   
-      \"path\": \"<HID::\u0801 USB Gaming Keyboard >/button12\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonB\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"17b9c3d6-bdd3-4881-b845-af1102cb6613\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button2\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonB\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"12fd7625-56af-4f69-a975-f83008c23708\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button2\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Joystick\",\n                    \"action\": \"ButtonB\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"b460b35a-671c-419c-a1fa-34ee9a89731c\",\n                    \"path\":
+      \"<HID::\u093D USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button5\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonY\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"c725bf80-0c20-4fff-92d0-ee9be69407ef\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button5\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonY\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"34961b15-a0b5-4aaa-9818-c7f54fa3ab9c\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button5\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Joystick\",\n                    \"action\": \"ButtonY\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"87ea95a3-206f-4cc4-9e07-8c0fb4817b62\",\n                    \"path\":
+      \"<HID::\u093D USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button4\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonX\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"0f208b34-9ca5-4ba6-9e95-39e33dd5222c\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button4\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonX\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"39700b55-7e60-4e00-bbb8-3a2202422c6b\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button4\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Joystick\",\n                    \"action\": \"ButtonX\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"c76560ed-5c44-4193-8ef2-0cd4bf4b879d\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button12\",\n                   
       \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
       \"groups\": \"Joystick;Gamepad;XR;Touch;Keyboard&Mouse\",\n                   
       \"action\": \"ButtonStart\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"b5721135-7d58-4079-9cd6-36a01a5bbe3f\",\n                   
-      \"path\": \"<HID::\u0801 USB Gaming Keyboard >/button11\",\n                   
+      \"name\": \"\",\n                    \"id\": \"d1e00c55-b67a-47cb-8246-738be37caae7\",\n                   
+      \"path\": \"<HID::\u093D USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button12\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonStart\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"ed08dcf4-3b38-42f5-bc88-2230f73ff4e2\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button12\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonStart\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"b5721135-7d58-4079-9cd6-36a01a5bbe3f\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button11\",\n                   
       \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
       \"groups\": \"Joystick;Gamepad;Keyboard&Mouse;Touch;XR\",\n                   
       \"action\": \"ButtonSelect\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"UI\",\n            \"id\": \"28e2028f-326c-4625-aecf-206dc0dec82c\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"Navigate\",\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"6f3e7edf-4881-4305-a811-a81b033d69a6\",\n                   
+      \"path\": \"<HID::\u093D USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button11\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonSelect\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"6717e743-4633-473c-a3c8-0f701180d81d\",\n                    \"path\":
+      \"<HID::\u0801 USB Gaming Keyboard \uFF00\uFF00d Soun\\u0002\u0200>/button11\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"Android Controls\",\n                    \"action\": \"ButtonSelect\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      }\n            ]\n        },\n        {\n            \"name\": \"UI\",\n           
+      \"id\": \"28e2028f-326c-4625-aecf-206dc0dec82c\",\n            \"actions\":
+      [\n                {\n                    \"name\": \"Navigate\",\n                   
       \"type\": \"PassThrough\",\n                    \"id\": \"64885957-e532-4e89-a651-f25e2602cca9\",\n                   
       \"expectedControlType\": \"Vector2\",\n                    \"processors\":
       \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
@@ -911,11 +955,13 @@ MonoBehaviour:
       }\n            ]\n        },\n        {\n            \"name\": \"XR\",\n           
       \"bindingGroup\": \"XR\",\n            \"devices\": [\n                {\n                   
       \"devicePath\": \"<XRController>\",\n                    \"isOptional\": false,\n                   
-      \"isOR\": false\n                }\n            ]\n        }\n    ]\n}"
+      \"isOR\": false\n                }\n            ]\n        },\n        {\n           
+      \"name\": \"Android Controls\",\n            \"bindingGroup\": \"Android Controls\",\n           
+      \"devices\": []\n        }\n    ]\n}"
     m_IsDirty: 0
   m_Toolbar:
     m_IsDirty: 0
-    m_SelectedControlSchemeIndex: -1
+    m_SelectedControlSchemeIndex: 3
     m_SelectedDeviceRequirementIndex: -1
     m_ControlSchemes:
     - m_Name: Keyboard&Mouse
@@ -945,6 +991,9 @@ MonoBehaviour:
       m_DeviceRequirements:
       - m_ControlPath: <XRController>
         m_Flags: 0
+    - m_Name: Android Controls
+      m_BindingGroup: Android Controls
+      m_DeviceRequirements: []
     m_SearchText: 
   m_DirtyTitle:
     m_Text: (*) PlayerInputActions (Input Actions)
@@ -1207,9 +1256,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.6864223, y: 2.077188, z: -8.336404}
+    m_Target: {x: 1.8373225, y: 6.8066015, z: -15.463704}
     speed: 2
-    m_Value: {x: 1.6864223, y: 2.077188, z: -8.336404}
+    m_Value: {x: 1.8373225, y: 6.8066015, z: -15.463704}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1256,13 +1305,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.1683607, y: -0.3029403, z: 0.0545246, w: 0.93648636}
+    m_Target: {x: 0.13797949, y: -0.16495673, z: 0.023367152, w: 0.9763772}
     speed: 2
-    m_Value: {x: 0.16835247, y: -0.3029255, z: 0.054521937, w: 0.9364406}
+    m_Value: {x: 0.13797207, y: -0.16494787, z: 0.023365896, w: 0.9763247}
   m_Size:
-    m_Target: 8.025496
+    m_Target: 5.646205
     speed: 2
-    m_Value: 8.025496
+    m_Value: 5.646205
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1346,9 +1395,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e491f5ff
-      m_LastClickedID: -683548
-      m_ExpandedIDs: aa9ef5ff10adf5ffd4b4f5ffb2e1f5ff48f7f5ff2afbf5ff7efbf5ffe611f6ffb626f6ffc04af7ff0a4bf7ff5c61f7ff3076f7ffea90f7ff3492f7ff7e92f7ff48a7f7ff14bcf7ff14d3f7ff02edf7ff6204f8ffe61df8ff9c33f8ffd836f8ff2c37f8fff64bf8ffc260f8ff487bf8ffa27ff8fff07ff8ffba94f8ff86a9f8ff1cc1f8ff36d9f8ffc4eef8ffd207f9ff061ff9ffd435f9ffa64cf9ff2462f9ffa079f9ff148ff9ff68aaf9ff92aff9ffdaaff9ffa8c4f9ff7ed9f9ffeaf1f9ff4afff9ff92fff9ff5c14faff2829faff2c2ffaff7a2ffaff4444faff1059faffe062faff2863fafff277faffbe8cfafff0a4faff58c1faff8ee0faff38f8fafff010fbff4c2efbff7240fbffc240fbff8c55fbff586afbff8a6dfbffda6dfbff2a84fbfff698fbff40bdfbff90bdfbff5ad2fbff26e7fbff28edfbff70edfbffc003fcff8c18fcff101dfcff5e1dfcffae33fcff7a48fcffa060fcff9462fcfff062fcff8466fcffd266fcff247dfcfff091fcff30bbfcff96bbfcffbcd0fcff3ed1fcff44d3fcff48e9fcff96e9fcff7e00fdff4a15fdffc02bfdffcc40fdffd855fdffe46afdff8e88fdff9a9dfdffb0b2fdffcec7fdffe4dcfdff68f2fdff7e07feff8a1cfeffa031feffd047feff5e5efeff8a77feff5a8efeffb6a3feffc6b8feffcacdfeff22f9feff1610ffff703dffff7654ffff8c9effff8eb5ffff02fbffff4c6a000070260200da280200262d0200dc2d0200322e0200788602007ca10200a6b202006e430300e60404009e350400ae350400bc350400da350400243604001e450400924c0400cce40400dce40400eae4040008e5040094ef040016ae050030c005007cc10500e8280600f02a06009e2f0600b84106004442060004430600860c0700a01e0700ec1f0700447f0700108a0700ce8d07005e910700caca0700f4cc070074d10700d6ef0700960508008e09080072180800301b0800d01b0800923108002e3808000e7f080070ed0800d4ee080020f008002e5a090092db09009a050a0066600a009a650a008e960a0018970a00e4df0a00fc120b00da370b0064380b00f63e0b001e410b00bc6a0b00fa6a0b00226d0b0026810b00b0810b008ed70b0082010c00ea8a0c00c4af0c0020cc0c0062d80c0040a10d0046a30d004cb410009ed41000280c1100
+      m_SelectedIDs: dc750000
+      m_LastClickedID: 0
+      m_ExpandedIDs: eec2ffff22d8ffff02fbffffd2650000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1425,10 +1474,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 804}
-    m_SelectedIDs: f47a0000
-    m_LastClickedID: 31476
-    m_ExpandedIDs: 00000000627a0000647a0000667a0000687a00006a7a00006c7a00006e7a0000707a0000ec7a0000f47a0000007b000028350400483504004a3504005835040000ca9a3b
+    scrollPos: {x: 0, y: 772}
+    m_SelectedIDs: 40770000
+    m_LastClickedID: 30528
+    m_ExpandedIDs: 0000000066760000687600006a7600006c7600006e76000070760000727600007476000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1456,7 +1505,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000627a0000647a0000667a0000687a00006a7a00006c7a00006e7a0000707a0000
+    m_ExpandedIDs: 0000000066760000687600006a7600006c7600006e760000707600007276000074760000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1481,9 +1530,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 7896f5ff
-    m_LastClickedInstanceID: -682376
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000ca660000fc6100004484000092680000ba6600003472000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1561,9 +1610,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 592
+    y: 591
     width: 1245
-    height: 399
+    height: 400
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1634,7 +1683,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 1117224
+  m_LastSelectedObjectID: -88238
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52

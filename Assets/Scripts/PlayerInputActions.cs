@@ -94,127 +94,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""978bfe49-cc26-4a3d-ab7b-7d7a29327403"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""00ca640b-d935-4593-8157-c05846ea39b3"",
-                    ""path"": ""Dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""e2062cb9-1b15-46a2-838c-2f8d72a0bdd9"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d2581a9b-1d11-4566-b27d-b92aff5fabbc"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
-                    ""path"": ""<XRController>/{Primary2DAxis}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""3ea4d645-4504-4529-b061-ab81934c3752"",
                     ""path"": ""<Joystick>/stick"",
                     ""interactions"": """",
@@ -282,7 +161,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""250b618b-1465-45dd-b6dc-23c97c003215"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/trigger"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick;Gamepad;Touch;XR;Keyboard&Mouse"",
@@ -292,33 +171,121 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e60920d5-8fbd-4d44-bfec-17d881c8e2da"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button2"",
+                    ""id"": ""19b3ec1a-2a04-41fb-8c90-832623397a0d"",
+                    ""path"": ""<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Joystick;Gamepad;XR;Touch;Keyboard&Mouse"",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""935bd79f-ac11-4e45-9d38-bed8fce3f47c"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fadf75df-509d-403c-8371-a8c0b3461135"",
+                    ""path"": ""<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
                     ""action"": ""ButtonB"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""db67013f-3cec-4556-88e1-64328ee46552"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button5"",
+                    ""id"": ""17b9c3d6-bdd3-4881-b845-af1102cb6613"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button2"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Joystick;Gamepad;XR;Touch;Keyboard&Mouse"",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""ButtonB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12fd7625-56af-4f69-a975-f83008c23708"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""ButtonB"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b460b35a-671c-419c-a1fa-34ee9a89731c"",
+                    ""path"": ""<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
                     ""action"": ""ButtonY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b511f4cf-3e7d-4294-85da-9bb8ce2fd20c"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button4"",
+                    ""id"": ""c725bf80-0c20-4fff-92d0-ee9be69407ef"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button5"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Joystick;Gamepad;Keyboard&Mouse;Touch;XR"",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""ButtonY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""34961b15-a0b5-4aaa-9818-c7f54fa3ab9c"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""ButtonY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87ea95a3-206f-4cc4-9e07-8c0fb4817b62"",
+                    ""path"": ""<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""ButtonX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f208b34-9ca5-4ba6-9e95-39e33dd5222c"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""ButtonX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39700b55-7e60-4e00-bbb8-3a2202422c6b"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
                     ""action"": ""ButtonX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -326,7 +293,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c76560ed-5c44-4193-8ef2-0cd4bf4b879d"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button12"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button12"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick;Gamepad;XR;Touch;Keyboard&Mouse"",
@@ -336,11 +303,55 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d1e00c55-b67a-47cb-8246-738be37caae7"",
+                    ""path"": ""<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""ButtonStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed08dcf4-3b38-42f5-bc88-2230f73ff4e2"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""ButtonStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""b5721135-7d58-4079-9cd6-36a01a5bbe3f"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button11"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button11"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick;Gamepad;Keyboard&Mouse;Touch;XR"",
+                    ""action"": ""ButtonSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f3e7edf-4881-4305-a811-a81b033d69a6"",
+                    ""path"": ""<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button11"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
+                    ""action"": ""ButtonSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6717e743-4633-473c-a3c8-0f701180d81d"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button11"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Android Controls"",
                     ""action"": ""ButtonSelect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -924,6 +935,11 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Android Controls"",
+            ""bindingGroup"": ""Android Controls"",
+            ""devices"": []
         }
     ]
 }");
@@ -1232,6 +1248,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         {
             if (m_XRSchemeIndex == -1) m_XRSchemeIndex = asset.FindControlSchemeIndex("XR");
             return asset.controlSchemes[m_XRSchemeIndex];
+        }
+    }
+    private int m_AndroidControlsSchemeIndex = -1;
+    public InputControlScheme AndroidControlsScheme
+    {
+        get
+        {
+            if (m_AndroidControlsSchemeIndex == -1) m_AndroidControlsSchemeIndex = asset.FindControlSchemeIndex("Android Controls");
+            return asset.controlSchemes[m_AndroidControlsSchemeIndex];
         }
     }
     public interface IPlayerActions

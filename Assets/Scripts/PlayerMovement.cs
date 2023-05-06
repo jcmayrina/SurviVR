@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask mask;
     private void Awake()
     {
+        if(Input.anyKeyDown)
+    Debug.Log(Input.inputString);
         playerControls = new PlayerInputActions();
     }
     private void OnEnable()
