@@ -7,6 +7,8 @@ TagManager:
   - Selectable
   - Door
   - TV
+  - Ref
+  - Hotbar
   layers:
   - Default
   - TransparentFX

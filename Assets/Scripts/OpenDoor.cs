@@ -3,12 +3,11 @@ using System.Collections;
 
 public class OpenDoor : Interactable
 {
-    public MeshRenderer gameobj;
-    public MeshRenderer gameobj2;
     public BoxCollider boxcollider;
+    private Animation anim;
     void Start()
     {
-        
+        anim = gameObject.GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -18,17 +17,21 @@ public class OpenDoor : Interactable
     }
     protected override void HideDoor(){
         Debug.Log("open door");
-        gameobj.enabled=false;
-        gameobj2.enabled=false;
         boxcollider.enabled=false;
+        if (gameObject.tag =="Door")
+        anim.Play("doorOpen");
+        if (gameObject.tag =="Ref")
+        anim.Play("refOpen");
         StartCoroutine(waiter());
     }
     IEnumerator waiter()
     {
         //Wait for 2 seconds
         yield return new WaitForSecondsRealtime(4);
-        gameobj.enabled=true;
-        gameobj2.enabled=true;
         boxcollider.enabled=true;
+        if (gameObject.tag =="Door")
+        anim.Play("doorClose");
+        if (gameObject.tag =="Ref")
+        anim.Play("refClose");
     }
 }

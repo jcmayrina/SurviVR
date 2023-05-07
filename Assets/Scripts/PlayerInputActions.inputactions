@@ -67,15 +67,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Navigate",
-                    "type": "Button",
-                    "id": "9a477890-d717-4ca2-b243-e7e4ebfcaf01",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -148,7 +139,7 @@
                 {
                     "name": "",
                     "id": "250b618b-1465-45dd-b6dc-23c97c003215",
-                    "path": "<HID::ु USB Gaming Keyboard >/trigger",
+                    "path": "<Joystick>/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick;Gamepad;Touch;XR;Keyboard&Mouse",
@@ -159,7 +150,7 @@
                 {
                     "name": "",
                     "id": "19b3ec1a-2a04-41fb-8c90-832623397a0d",
-                    "path": "<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/trigger",
+                    "path": "<HID::SEMICO   USB Gaming Keyboard >/trigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Android Controls",
@@ -181,7 +172,7 @@
                 {
                     "name": "",
                     "id": "fadf75df-509d-403c-8371-a8c0b3461135",
-                    "path": "<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button2",
+                    "path": "<HID::SEMICO   USB Gaming Keyboard >/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "Android Controls",
@@ -214,7 +205,7 @@
                 {
                     "name": "",
                     "id": "b460b35a-671c-419c-a1fa-34ee9a89731c",
-                    "path": "<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button5",
+                    "path": "<HID::SEMICO   USB Gaming Keyboard >/button5",
                     "interactions": "",
                     "processors": "",
                     "groups": "Android Controls",
@@ -247,7 +238,7 @@
                 {
                     "name": "",
                     "id": "87ea95a3-206f-4cc4-9e07-8c0fb4817b62",
-                    "path": "<HID::ऽ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button4",
+                    "path": "<HID::SEMICO   USB Gaming Keyboard >/button4",
                     "interactions": "",
                     "processors": "",
                     "groups": "Android Controls",
@@ -280,7 +271,7 @@
                 {
                     "name": "",
                     "id": "c76560ed-5c44-4193-8ef2-0cd4bf4b879d",
-                    "path": "<HID::ु USB Gaming Keyboard >/button12",
+                    "path": "<HID::SEMICO   USB Gaming Keyboard >/button12",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick;Gamepad;XR;Touch;Keyboard&Mouse",
@@ -313,7 +304,7 @@
                 {
                     "name": "",
                     "id": "b5721135-7d58-4079-9cd6-36a01a5bbe3f",
-                    "path": "<HID::ु USB Gaming Keyboard >/button11",
+                    "path": "<HID::SEMICO   USB Gaming Keyboard >/button11",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick;Gamepad;Keyboard&Mouse;Touch;XR",
