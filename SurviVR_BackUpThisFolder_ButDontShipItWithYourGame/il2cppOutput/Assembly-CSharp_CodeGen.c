@@ -88,18 +88,18 @@ extern void OpenDoor_HideDoor_m1FC6CA7644194E7B450B2C151DAB37A2AAA8D8C7 (void);
 extern void OpenDoor_waiter_mF8E494E0A1232D670F146492013AD00ECDB534CA (void);
 // 0x00000026 System.Void OpenDoor::.ctor()
 extern void OpenDoor__ctor_mCEC62A62CF6E323A4BE652D3A882C3701BDA1412 (void);
-// 0x00000027 System.Void OpenDoor/<waiter>d__6::.ctor(System.Int32)
-extern void U3CwaiterU3Ed__6__ctor_m78E92C78E5E141646F231BFB206109353D14A403 (void);
-// 0x00000028 System.Void OpenDoor/<waiter>d__6::System.IDisposable.Dispose()
-extern void U3CwaiterU3Ed__6_System_IDisposable_Dispose_mEF0EB0D93C940EC07AA2594EFB8BA2949BA0A493 (void);
-// 0x00000029 System.Boolean OpenDoor/<waiter>d__6::MoveNext()
-extern void U3CwaiterU3Ed__6_MoveNext_m425691663603D4AF8C618ACF6575DF12E956D0BF (void);
-// 0x0000002A System.Object OpenDoor/<waiter>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CwaiterU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7FD503FD4B8B677932E792897037E82FEC57B3E9 (void);
-// 0x0000002B System.Void OpenDoor/<waiter>d__6::System.Collections.IEnumerator.Reset()
-extern void U3CwaiterU3Ed__6_System_Collections_IEnumerator_Reset_m73FBD38383A4ED9A7832957B5B0CAC3D932EB037 (void);
-// 0x0000002C System.Object OpenDoor/<waiter>d__6::System.Collections.IEnumerator.get_Current()
-extern void U3CwaiterU3Ed__6_System_Collections_IEnumerator_get_Current_mFCCC676403494AF86C7A5CD67356EE9244E5A5B1 (void);
+// 0x00000027 System.Void OpenDoor/<waiter>d__5::.ctor(System.Int32)
+extern void U3CwaiterU3Ed__5__ctor_m0479F6F26D198F2FD44511D6533BEB59AAF61FC9 (void);
+// 0x00000028 System.Void OpenDoor/<waiter>d__5::System.IDisposable.Dispose()
+extern void U3CwaiterU3Ed__5_System_IDisposable_Dispose_m1CFCC5ECA07F757FBB9D599F5BC4FDAA1195950E (void);
+// 0x00000029 System.Boolean OpenDoor/<waiter>d__5::MoveNext()
+extern void U3CwaiterU3Ed__5_MoveNext_mED13921CB6305FA51F0183B252642E08E67B46C6 (void);
+// 0x0000002A System.Object OpenDoor/<waiter>d__5::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CwaiterU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA8C466A1873CE46400F397AB8E38367B5466983E (void);
+// 0x0000002B System.Void OpenDoor/<waiter>d__5::System.Collections.IEnumerator.Reset()
+extern void U3CwaiterU3Ed__5_System_Collections_IEnumerator_Reset_mB12E823519F5EF76AAF2CB7AE5B24A9D9E4607AB (void);
+// 0x0000002C System.Object OpenDoor/<waiter>d__5::System.Collections.IEnumerator.get_Current()
+extern void U3CwaiterU3Ed__5_System_Collections_IEnumerator_get_Current_m4848A59CCF96AE3896F6C67235B1B1E23086CCC2 (void);
 // 0x0000002D UnityEngine.InputSystem.InputActionAsset PlayerInputActions::get_asset()
 extern void PlayerInputActions_get_asset_m9B9C68DD9768FCB1CF6BD634D275E31D0235D444 (void);
 // 0x0000002E System.Void PlayerInputActions::.ctor()
@@ -229,73 +229,57 @@ extern void UIActions_SetCallbacks_mDB07748C0E11C6BBED0CE47CA9265F683369484D (vo
 // 0x00000074 System.Void PlayerInputActions/IUIActions::OnTrackedDeviceOrientation(UnityEngine.InputSystem.InputAction/CallbackContext)
 // 0x00000075 System.Void PlayerMovement::Awake()
 extern void PlayerMovement_Awake_m7E8376225AEB5B44C88D56C73B36BD3E3F09CC1F (void);
-// 0x00000076 System.Void PlayerMovement::OnEnable()
-extern void PlayerMovement_OnEnable_mC174B01E97C5048AFEA84EAF74190FD66CCDA0ED (void);
-// 0x00000077 System.Void PlayerMovement::OnDisable()
-extern void PlayerMovement_OnDisable_m27A81E0BBA333A85AB67863E8ADB06B73F36739E (void);
-// 0x00000078 System.Void PlayerMovement::Start()
+// 0x00000076 System.Void PlayerMovement::Start()
 extern void PlayerMovement_Start_m83FD44DCA324CE3D05A71FD2E2991FCD743F003A (void);
-// 0x00000079 System.Void PlayerMovement::Update()
+// 0x00000077 System.Void PlayerMovement::Update()
 extern void PlayerMovement_Update_m5BB6CE35AF68EE00CFEB4BA5EBA17E10667551D3 (void);
-// 0x0000007A System.Void PlayerMovement::playerMove()
+// 0x00000078 System.Void PlayerMovement::playerMove()
 extern void PlayerMovement_playerMove_m5C07C783EE78F78C9F022D6118EAADB6EADBD5BD (void);
-// 0x0000007B System.Void PlayerMovement::Fire(UnityEngine.InputSystem.InputAction/CallbackContext)
-extern void PlayerMovement_Fire_m006B2870B21E6E9FA77417C0502DCBE70C209C0D (void);
-// 0x0000007C System.Void PlayerMovement::ButtonB(UnityEngine.InputSystem.InputAction/CallbackContext)
-extern void PlayerMovement_ButtonB_m47E512FED112D36DFC9DCA3DC8D16D62F7CF0901 (void);
-// 0x0000007D System.Void PlayerMovement::ButtonX(UnityEngine.InputSystem.InputAction/CallbackContext)
-extern void PlayerMovement_ButtonX_m679692404CFCE79BA4ECDAF5AFC44F2CF29DFDAC (void);
-// 0x0000007E System.Void PlayerMovement::ButtonY(UnityEngine.InputSystem.InputAction/CallbackContext)
-extern void PlayerMovement_ButtonY_m8ECF6F1D9FB0ADD1CFEF7ED83A7DA11AD3F47AE5 (void);
-// 0x0000007F System.Void PlayerMovement::ButtonSelect(UnityEngine.InputSystem.InputAction/CallbackContext)
-extern void PlayerMovement_ButtonSelect_m0CE5002EAE901D669799919161DDEC19E77425BA (void);
-// 0x00000080 System.Void PlayerMovement::ButtonStart(UnityEngine.InputSystem.InputAction/CallbackContext)
-extern void PlayerMovement_ButtonStart_m336AFC48BC31216C25779967D55D4CACDD360326 (void);
-// 0x00000081 System.Void PlayerMovement::.ctor()
+// 0x00000079 System.Void PlayerMovement::.ctor()
 extern void PlayerMovement__ctor_mB37559C5B0638161878D20E00B7C672FC38BBBAA (void);
-// 0x00000082 System.Void PlayerUI::Start()
+// 0x0000007A System.Void PlayerUI::Start()
 extern void PlayerUI_Start_m0B6A9FBFAEF0F63EDFD57EB4C76F56612753D8AF (void);
-// 0x00000083 System.Void PlayerUI::UpdateText(System.String)
+// 0x0000007B System.Void PlayerUI::UpdateText(System.String)
 extern void PlayerUI_UpdateText_mE4EF2CEAB44AD2C8955DFE01FA8099C7195EA829 (void);
-// 0x00000084 System.Void PlayerUI::.ctor()
+// 0x0000007C System.Void PlayerUI::.ctor()
 extern void PlayerUI__ctor_m25228057D467B6416C0249B763FFF27D42149C01 (void);
-// 0x00000085 System.Void SceneSwitch::OnTriggerEnter(UnityEngine.Collider)
+// 0x0000007D System.Void SceneSwitch::OnTriggerEnter(UnityEngine.Collider)
 extern void SceneSwitch_OnTriggerEnter_mAB129706564136FBD8C3E6A6157362C23F509D7E (void);
-// 0x00000086 System.Void SceneSwitch::.ctor()
+// 0x0000007E System.Void SceneSwitch::.ctor()
 extern void SceneSwitch__ctor_mD1B7AE904BCF221FA36B02267BB1B97B297259AD (void);
-// 0x00000087 System.Void ShowMessage::Start()
+// 0x0000007F System.Void ShowMessage::Start()
 extern void ShowMessage_Start_mB463EB203F6722E6AAED11DB4B86AF9FB1AD2A5A (void);
-// 0x00000088 System.Void ShowMessage::Update()
+// 0x00000080 System.Void ShowMessage::Update()
 extern void ShowMessage_Update_mAB48C2CBFC9C8CC9E415B2C14A0D074A596BBA53 (void);
-// 0x00000089 System.Void ShowMessage::HideDoor()
+// 0x00000081 System.Void ShowMessage::HideDoor()
 extern void ShowMessage_HideDoor_m974D1AF826CA9E8A53C64484B66E3E5083DC217E (void);
-// 0x0000008A System.Void ShowMessage::.ctor()
+// 0x00000082 System.Void ShowMessage::.ctor()
 extern void ShowMessage__ctor_m1B4D1C502379DEDE3CBED9BC9B87AFE123449E87 (void);
-// 0x0000008B System.Void Television::TelevisionPass()
+// 0x00000083 System.Void Television::TelevisionPass()
 extern void Television_TelevisionPass_mA922FAAE44FEA31759D8B030EBAEF0E971A796FF (void);
-// 0x0000008C System.Void Television::TelevisionSwitch()
+// 0x00000084 System.Void Television::TelevisionSwitch()
 extern void Television_TelevisionSwitch_mD334B29A395142FA6A4B228F39EED89AD4BEA587 (void);
-// 0x0000008D System.Void Television::.ctor()
+// 0x00000085 System.Void Television::.ctor()
 extern void Television__ctor_m6CC8F000808E122840FF0B12B03FE561CB601800 (void);
-// 0x0000008E System.Void TVfreeze::Start()
+// 0x00000086 System.Void TVfreeze::Start()
 extern void TVfreeze_Start_mBC4550769B2F8B34ACDE3E5E08D803EB3A744F2A (void);
-// 0x0000008F System.Void TVfreeze::Update()
+// 0x00000087 System.Void TVfreeze::Update()
 extern void TVfreeze_Update_m370848335053257933143419871DE252355E23BC (void);
-// 0x00000090 System.Void TVfreeze::TurnOffControls()
+// 0x00000088 System.Void TVfreeze::TurnOffControls()
 extern void TVfreeze_TurnOffControls_m7F563AD664313D2C4C5AC3FDDD7FB9B69A10E497 (void);
-// 0x00000091 System.Void TVfreeze::TurnOnControls()
+// 0x00000089 System.Void TVfreeze::TurnOnControls()
 extern void TVfreeze_TurnOnControls_m2BB4F8CCBC1EC257F24C3AEB8A2E1CC19145374F (void);
-// 0x00000092 System.Void TVfreeze::.ctor()
+// 0x0000008A System.Void TVfreeze::.ctor()
 extern void TVfreeze__ctor_m89F564CF67672EBFCB12E8650BDD62AE4BF35037 (void);
-// 0x00000093 System.Void TVswitch::Start()
+// 0x0000008B System.Void TVswitch::Start()
 extern void TVswitch_Start_m6842C17EBED46CB834D602141B413AA2308AB136 (void);
-// 0x00000094 System.Void TVswitch::Update()
+// 0x0000008C System.Void TVswitch::Update()
 extern void TVswitch_Update_m4F60077C07271A79B21C08346656D03EE83DB893 (void);
-// 0x00000095 System.Void TVswitch::TelevisionSwitch()
+// 0x0000008D System.Void TVswitch::TelevisionSwitch()
 extern void TVswitch_TelevisionSwitch_m2D0EF793551BD28E5F946983C06375A0DFF4FBBD (void);
-// 0x00000096 System.Void TVswitch::.ctor()
+// 0x0000008E System.Void TVswitch::.ctor()
 extern void TVswitch__ctor_m5528AA0F5D3DF486822E002F24379CE9F6899422 (void);
-static Il2CppMethodPointer s_methodPointers[150] = 
+static Il2CppMethodPointer s_methodPointers[142] = 
 {
 	CardboardStartup_Start_m35E3138C09D62411C4C8503DD4D47DA2AF9BF6E2,
 	CardboardStartup_Update_m4D4D770B4F4BA807AB64DB40B6730226BB821883,
@@ -335,12 +319,12 @@ static Il2CppMethodPointer s_methodPointers[150] =
 	OpenDoor_HideDoor_m1FC6CA7644194E7B450B2C151DAB37A2AAA8D8C7,
 	OpenDoor_waiter_mF8E494E0A1232D670F146492013AD00ECDB534CA,
 	OpenDoor__ctor_mCEC62A62CF6E323A4BE652D3A882C3701BDA1412,
-	U3CwaiterU3Ed__6__ctor_m78E92C78E5E141646F231BFB206109353D14A403,
-	U3CwaiterU3Ed__6_System_IDisposable_Dispose_mEF0EB0D93C940EC07AA2594EFB8BA2949BA0A493,
-	U3CwaiterU3Ed__6_MoveNext_m425691663603D4AF8C618ACF6575DF12E956D0BF,
-	U3CwaiterU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7FD503FD4B8B677932E792897037E82FEC57B3E9,
-	U3CwaiterU3Ed__6_System_Collections_IEnumerator_Reset_m73FBD38383A4ED9A7832957B5B0CAC3D932EB037,
-	U3CwaiterU3Ed__6_System_Collections_IEnumerator_get_Current_mFCCC676403494AF86C7A5CD67356EE9244E5A5B1,
+	U3CwaiterU3Ed__5__ctor_m0479F6F26D198F2FD44511D6533BEB59AAF61FC9,
+	U3CwaiterU3Ed__5_System_IDisposable_Dispose_m1CFCC5ECA07F757FBB9D599F5BC4FDAA1195950E,
+	U3CwaiterU3Ed__5_MoveNext_mED13921CB6305FA51F0183B252642E08E67B46C6,
+	U3CwaiterU3Ed__5_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA8C466A1873CE46400F397AB8E38367B5466983E,
+	U3CwaiterU3Ed__5_System_Collections_IEnumerator_Reset_mB12E823519F5EF76AAF2CB7AE5B24A9D9E4607AB,
+	U3CwaiterU3Ed__5_System_Collections_IEnumerator_get_Current_m4848A59CCF96AE3896F6C67235B1B1E23086CCC2,
 	PlayerInputActions_get_asset_m9B9C68DD9768FCB1CF6BD634D275E31D0235D444,
 	PlayerInputActions__ctor_m3007C78241520148B12C773C76D25024D9B20E3A,
 	PlayerInputActions_Dispose_m2AC2D95301CC2FB85875111A7A90697EED5886F4,
@@ -414,17 +398,9 @@ static Il2CppMethodPointer s_methodPointers[150] =
 	NULL,
 	NULL,
 	PlayerMovement_Awake_m7E8376225AEB5B44C88D56C73B36BD3E3F09CC1F,
-	PlayerMovement_OnEnable_mC174B01E97C5048AFEA84EAF74190FD66CCDA0ED,
-	PlayerMovement_OnDisable_m27A81E0BBA333A85AB67863E8ADB06B73F36739E,
 	PlayerMovement_Start_m83FD44DCA324CE3D05A71FD2E2991FCD743F003A,
 	PlayerMovement_Update_m5BB6CE35AF68EE00CFEB4BA5EBA17E10667551D3,
 	PlayerMovement_playerMove_m5C07C783EE78F78C9F022D6118EAADB6EADBD5BD,
-	PlayerMovement_Fire_m006B2870B21E6E9FA77417C0502DCBE70C209C0D,
-	PlayerMovement_ButtonB_m47E512FED112D36DFC9DCA3DC8D16D62F7CF0901,
-	PlayerMovement_ButtonX_m679692404CFCE79BA4ECDAF5AFC44F2CF29DFDAC,
-	PlayerMovement_ButtonY_m8ECF6F1D9FB0ADD1CFEF7ED83A7DA11AD3F47AE5,
-	PlayerMovement_ButtonSelect_m0CE5002EAE901D669799919161DDEC19E77425BA,
-	PlayerMovement_ButtonStart_m336AFC48BC31216C25779967D55D4CACDD360326,
 	PlayerMovement__ctor_mB37559C5B0638161878D20E00B7C672FC38BBBAA,
 	PlayerUI_Start_m0B6A9FBFAEF0F63EDFD57EB4C76F56612753D8AF,
 	PlayerUI_UpdateText_mE4EF2CEAB44AD2C8955DFE01FA8099C7195EA829,
@@ -509,7 +485,7 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[29] =
 	{ 0x06000061, UIActions_get_enabled_m9302A9063DFF56B6B063875BE402BBD7414CDEA4_AdjustorThunk },
 	{ 0x06000063, UIActions_SetCallbacks_mDB07748C0E11C6BBED0CE47CA9265F683369484D_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[150] = 
+static const int32_t s_InvokerIndices[142] = 
 {
 	4656,
 	4656,
@@ -633,14 +609,6 @@ static const int32_t s_InvokerIndices[150] =
 	4656,
 	4656,
 	4656,
-	3808,
-	3808,
-	3808,
-	3808,
-	3808,
-	3808,
-	4656,
-	4656,
 	3695,
 	4656,
 	3695,
@@ -666,7 +634,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	150,
+	142,
 	s_methodPointers,
 	29,
 	s_adjustorThunks,

@@ -742,8 +742,6 @@ struct MeasureFunction_t60EBED1328F5328D4FA7E26335967E59E73B4D09;
 struct Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4;
 // UnityEngine.MeshCollider
 struct MeshCollider_tB525E4DDE383252364ED0BDD32CF2B53914EE455;
-// UnityEngine.MeshRenderer
-struct MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE;
 // UnityEngineInternal.Input.NativeUpdateCallback
 struct NativeUpdateCallback_tC5CA5A9117B79251968A4DA3758552EFE1D37495;
 // UnityEngine.Object
@@ -4069,14 +4067,14 @@ struct U3CU3Ec_t90F8CB10B454B45A81BE65AA841DD85FE08EA21A_StaticFields
 	U3CU3Ec_t90F8CB10B454B45A81BE65AA841DD85FE08EA21A* ___U3CU3E9_0;
 };
 
-// OpenDoor/<waiter>d__6
-struct U3CwaiterU3Ed__6_t3D9A965E51FE663CBAB7DEBB82244113ACC1A940  : public RuntimeObject
+// OpenDoor/<waiter>d__5
+struct U3CwaiterU3Ed__5_t9D1CC99B6DA031F76B7B2A96A8906094B59D0C1B  : public RuntimeObject
 {
-	// System.Int32 OpenDoor/<waiter>d__6::<>1__state
+	// System.Int32 OpenDoor/<waiter>d__5::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object OpenDoor/<waiter>d__6::<>2__current
+	// System.Object OpenDoor/<waiter>d__5::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// OpenDoor OpenDoor/<waiter>d__6::<>4__this
+	// OpenDoor OpenDoor/<waiter>d__5::<>4__this
 	OpenDoor_tB4038414AED00A0282ABD9DC3506B38064C60649* ___U3CU3E4__this_2;
 };
 
@@ -14166,12 +14164,10 @@ struct Mask_tE8E16C858EC6ECCE545C03802BD1399F7F406213  : public UIBehaviour_tB9D
 // OpenDoor
 struct OpenDoor_tB4038414AED00A0282ABD9DC3506B38064C60649  : public Interactable_t8827E5DAD48A2075EDFB2410F54F284C645E3E11
 {
-	// UnityEngine.MeshRenderer OpenDoor::gameobj
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___gameobj_6;
-	// UnityEngine.MeshRenderer OpenDoor::gameobj2
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___gameobj2_7;
 	// UnityEngine.BoxCollider OpenDoor::boxcollider
-	BoxCollider_tFA5D239388334D6DE0B8FFDAD6825C5B03786E23* ___boxcollider_8;
+	BoxCollider_tFA5D239388334D6DE0B8FFDAD6825C5B03786E23* ___boxcollider_6;
+	// UnityEngine.Animation OpenDoor::anim
+	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___anim_7;
 };
 
 // UnityEngine.UIElements.PanelEventHandler
@@ -16741,10 +16737,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4014[5] =
 	static_cast<int32_t>(offsetof(IsWatching_tE1C94FF4C8391ACCD29D01D4C25DC595B3D8E446, ___timer_4)),static_cast<int32_t>(offsetof(IsWatching_tE1C94FF4C8391ACCD29D01D4C25DC595B3D8E446, ___mytimer_5)),static_cast<int32_t>(offsetof(IsWatching_tE1C94FF4C8391ACCD29D01D4C25DC595B3D8E446, ___textWatch_6)),static_cast<int32_t>(offsetof(IsWatching_tE1C94FF4C8391ACCD29D01D4C25DC595B3D8E446, ___bgColor_7)),static_cast<int32_t>(offsetof(IsWatching_tE1C94FF4C8391ACCD29D01D4C25DC595B3D8E446, ___myAnimController_8)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4016[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CwaiterU3Ed__6_t3D9A965E51FE663CBAB7DEBB82244113ACC1A940, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CwaiterU3Ed__6_t3D9A965E51FE663CBAB7DEBB82244113ACC1A940, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CwaiterU3Ed__6_t3D9A965E51FE663CBAB7DEBB82244113ACC1A940, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4017[3] = 
+	static_cast<int32_t>(offsetof(U3CwaiterU3Ed__5_t9D1CC99B6DA031F76B7B2A96A8906094B59D0C1B, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CwaiterU3Ed__5_t9D1CC99B6DA031F76B7B2A96A8906094B59D0C1B, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CwaiterU3Ed__5_t9D1CC99B6DA031F76B7B2A96A8906094B59D0C1B, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4017[2] = 
 {
-	static_cast<int32_t>(offsetof(OpenDoor_tB4038414AED00A0282ABD9DC3506B38064C60649, ___gameobj_6)),static_cast<int32_t>(offsetof(OpenDoor_tB4038414AED00A0282ABD9DC3506B38064C60649, ___gameobj2_7)),static_cast<int32_t>(offsetof(OpenDoor_tB4038414AED00A0282ABD9DC3506B38064C60649, ___boxcollider_8)),};
+	static_cast<int32_t>(offsetof(OpenDoor_tB4038414AED00A0282ABD9DC3506B38064C60649, ___boxcollider_6)),static_cast<int32_t>(offsetof(OpenDoor_tB4038414AED00A0282ABD9DC3506B38064C60649, ___anim_7)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4018[1] = 
 {
 	static_cast<int32_t>(offsetof(PlayerActions_tBE4F44981B90C2F63310A719AB5531126369CB5C, ___m_Wrapper_0)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
