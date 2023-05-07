@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {   
+    public Transform head;
     public GameObject hotbarUI;
     public GameObject flashlight;
     public String itemChoose="";
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     //private InputManager inputManager;
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
+    private bool isActive;
     private void Awake()
     {
         if(Input.anyKeyDown)
@@ -76,21 +78,24 @@ public class PlayerMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
+                itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                Debug.Log(itemChoose);
                 img.gameObject.SetActive(true);
             }
-        }
-        
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Equipable>() != null) {
+
+            else if(hitInfo.collider.GetComponent<Equipable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
                 img.gameObject.SetActive(true);
             }
-        }
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Television>() != null) {
+
+            else if(hitInfo.collider.GetComponent<Television>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Television>().promptMessage);
                 img.gameObject.SetActive(true);
             }
+        }
+        if(hotbarUI.activeSelf) {
+            hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
+            hotbarUI.transform.forward *= -1;
         }
     }
     private void playerMove(){
@@ -138,8 +143,12 @@ public class PlayerMovement : MonoBehaviour
         rigidbodyfreeze.enabled = true;
         Debug.Log("buttonB");
     }
+
     private void ButtonX(InputAction.CallbackContext context){
         Debug.Log("buttonX");
+        isActive = !hotbarUI.activeSelf;
+        hotbarUI.SetActive(isActive);
+        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, (head.forward.y - 1), head.forward.z).normalized * 2;
     }
     private void ButtonY(InputAction.CallbackContext context){
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);

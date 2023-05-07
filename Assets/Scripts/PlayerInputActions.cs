@@ -161,7 +161,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""250b618b-1465-45dd-b6dc-23c97c003215"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/trigger"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick;Gamepad;Touch;XR;Keyboard&Mouse"",
@@ -216,7 +216,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""12fd7625-56af-4f69-a975-f83008c23708"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button2"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
@@ -249,7 +249,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""34961b15-a0b5-4aaa-9818-c7f54fa3ab9c"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button5"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
@@ -282,7 +282,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""39700b55-7e60-4e00-bbb8-3a2202422c6b"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button4"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
@@ -293,7 +293,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c76560ed-5c44-4193-8ef2-0cd4bf4b879d"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button12"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button12"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick;Gamepad;XR;Touch;Keyboard&Mouse"",
@@ -326,7 +326,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b5721135-7d58-4079-9cd6-36a01a5bbe3f"",
-                    ""path"": ""<HID::ࠁ USB Gaming Keyboard ＀＀d Soun\u0002Ȁ>/button11"",
+                    ""path"": ""<HID::ࠁ USB Gaming Keyboard >/button11"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick;Gamepad;Keyboard&Mouse;Touch;XR"",
