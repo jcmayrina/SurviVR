@@ -113,34 +113,39 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
-        Debug.Log("buttonA");
-        if(itemChoose.Equals("slot1")) {
-            Debug.Log("WHISTLE NASAAN NA");
-        }
-        else if(itemChoose.Equals("slot2")) {
-            if(flashlight.activeSelf) {
-                flashlight.SetActive(false);
+
+        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            if(hotbarUI.activeSelf) {
+                itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                Debug.Log(itemChoose);
             }
             else {
-                flashlight.SetActive(true);
-            }
+                Debug.Log("buttonA");
+
+                if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                    if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                        hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                        hitInfo.collider.GetComponent<Equipable>().EquipPass();
+                        
+                        if(string.Equals(hitInfo.collider.name, "Go Bag")) {
+                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                            // isAvailable = !isAvailable;
+                        }
+                        else {
+                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                        }
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Television>() != null) {
+                        hitInfo.collider.GetComponent<Television>().TelevisionPass();
+                    }
+                }
         }
-        else {
-            Debug.Log("buttonA");
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                    hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
-                }
-                if(hitInfo.collider.GetComponent<Equipable>() != null) {
-                hitInfo.collider.GetComponent<Equipable>().EquipPass();
-                hotbarUI.SetActive(true);
-                }
-                if(hitInfo.collider.GetComponent<Television>() != null) {
-                hitInfo.collider.GetComponent<Television>().TelevisionPass();
-                }
-            }
-            }
         }
+    }
     private void ButtonB(InputAction.CallbackContext context){
         rigidbodyfreeze.enabled = true;
         Debug.Log("buttonB");

@@ -21,7 +21,7 @@ public class IsWatching : MonoBehaviour
     {
         timer += 1 * Time.deltaTime;
         mytimer = (int) timer;
-        Debug.Log(mytimer);
+        //Debug.Log(mytimer);
         if(mytimer==10){
         bgColor.SetActive(true);
         textWatch.SetText("Press 'B' to move around while watching.");
