@@ -79,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
                 itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                Debug.Log(itemChoose);
+                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                
                 img.gameObject.SetActive(true);
             }
 
@@ -96,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         if(hotbarUI.activeSelf) {
             hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
             hotbarUI.transform.forward *= -1;
+            hotbarUI.transform.Rotate(90, 0, 0);
         }
     }
     private void playerMove(){
