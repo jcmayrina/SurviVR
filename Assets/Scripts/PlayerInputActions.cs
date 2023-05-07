@@ -89,6 +89,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a477890-d717-4ca2-b243-e7e4ebfcaf01"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -952,6 +961,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_ButtonX = m_Player.FindAction("ButtonX", throwIfNotFound: true);
         m_Player_ButtonStart = m_Player.FindAction("ButtonStart", throwIfNotFound: true);
         m_Player_ButtonSelect = m_Player.FindAction("ButtonSelect", throwIfNotFound: true);
+        m_Player_Navigate = m_Player.FindAction("Navigate", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1030,6 +1040,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ButtonX;
     private readonly InputAction m_Player_ButtonStart;
     private readonly InputAction m_Player_ButtonSelect;
+    private readonly InputAction m_Player_Navigate;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1041,6 +1052,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @ButtonX => m_Wrapper.m_Player_ButtonX;
         public InputAction @ButtonStart => m_Wrapper.m_Player_ButtonStart;
         public InputAction @ButtonSelect => m_Wrapper.m_Player_ButtonSelect;
+        public InputAction @Navigate => m_Wrapper.m_Player_Navigate;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1071,6 +1083,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @ButtonSelect.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonSelect;
                 @ButtonSelect.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonSelect;
                 @ButtonSelect.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnButtonSelect;
+                @Navigate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNavigate;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1096,6 +1111,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @ButtonSelect.started += instance.OnButtonSelect;
                 @ButtonSelect.performed += instance.OnButtonSelect;
                 @ButtonSelect.canceled += instance.OnButtonSelect;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
             }
         }
     }
@@ -1268,6 +1286,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnButtonX(InputAction.CallbackContext context);
         void OnButtonStart(InputAction.CallbackContext context);
         void OnButtonSelect(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

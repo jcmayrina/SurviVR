@@ -11,15 +11,26 @@ public class PlayerMovement : MonoBehaviour
     public String itemChoose="";
     public float speed = 5f;
     private float gravity = 10f;
-    private CharacterController controller;
-    public PlayerInputActions playerControls;
     public CharacterController rigidbodyfreeze;
     Rigidbody myRb;
-    private InputAction fire,buttB,buttY,buttX,buttSel,buttSt;
     public Image img;
+    public GameObject flashlight;
+    public GameObject hotbarUI;
     private Camera cam;
     private PlayerUI playerUI;
-    //private InputManager inputManager;
+    string itemChoose = "";
+
+    private Animation anim;
+    private bool isActive;
+    private bool isAvailable;
+
+    //-----Controller related objects and variables
+    private CharacterController controller;
+    public PlayerInputActions playerControls;
+    private InputAction fire,buttB,buttY,buttX,buttSel,buttSt;
+    private InputAction navigate;
+
+    //-----Serialize Fields for Raycast
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
     private bool isActive;
@@ -34,6 +45,12 @@ public class PlayerMovement : MonoBehaviour
         fire = playerControls.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
+
+        //Delete this after choosing controller button
+        navigate = playerControls.Player.Navigate;
+        navigate.Enable();
+        navigate.performed += Navigate;
+        
         buttB = playerControls.Player.ButtonB;
         buttB.Enable();
         buttB.performed += ButtonB;
@@ -61,8 +78,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        controller =  GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+        playerUI = GetComponent<PlayerUI>();
         myRb = GetComponent<Rigidbody>();
+        flashlight.SetActive(false);
+        hotbarUI.SetActive(false);
         cam = Camera.main;
         playerUI = GetComponent<PlayerUI>();
         hotbarUI.SetActive(false);
@@ -81,13 +101,20 @@ public class PlayerMovement : MonoBehaviour
                 itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
                 hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
                 
+                itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                
                 img.gameObject.SetActive(true);
             }
+
+            else if(hitInfo.collider.GetComponent<Equipable>() != null) {
 
             else if(hitInfo.collider.GetComponent<Equipable>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
                 img.gameObject.SetActive(true);
             }
+
+            else if(hitInfo.collider.GetComponent<Television>() != null) {
 
             else if(hitInfo.collider.GetComponent<Television>() != null) {
                 playerUI.UpdateText(hitInfo.collider.GetComponent<Television>().promptMessage);
@@ -99,7 +126,13 @@ public class PlayerMovement : MonoBehaviour
             hotbarUI.transform.forward *= -1;
             hotbarUI.transform.Rotate(90, 0, 0);
         }
+        if(hotbarUI.activeSelf) {
+            hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
+            hotbarUI.transform.forward *= -1;
+            hotbarUI.transform.Rotate(90, 0, 0);
+        }
     }
+
     private void playerMove(){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -187,5 +220,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ButtonStart(InputAction.CallbackContext context){
         Debug.Log("buttonStart");
+
     }
 }
