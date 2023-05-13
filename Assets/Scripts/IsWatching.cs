@@ -8,6 +8,8 @@ public class IsWatching : MonoBehaviour
     public TextMeshProUGUI textWatch;
     public GameObject bgColor;
     [SerializeField] private Animator myAnimController;
+    public Transform head;
+    public GameObject text;
    
     
     void Start()
@@ -27,6 +29,9 @@ public class IsWatching : MonoBehaviour
         textWatch.SetText("Press 'B' to move around while watching.");
         myAnimController.SetBool("showText",true);
         }
+        text.transform.LookAt(new Vector3(head.position.x, text.transform.position.y, head.position.z));
+        text.transform.forward *= -1;
+        text.transform.Rotate(0, 8, 0);
     }
     void OnTriggerEnter(Collider other)
     {
