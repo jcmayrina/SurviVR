@@ -12,6 +12,5 @@ public abstract class Equipable : MonoBehaviour
     }
 
     protected virtual void Equip() {
-
     }
 }

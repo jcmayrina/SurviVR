@@ -14,9 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = 10f;
     public CharacterController rigidbodyfreeze;
     Rigidbody myRb;
-    public Image img;
     private Camera cam;
-    private PlayerUI playerUI;
     private Animation anim;
     private bool isActive;
     private bool isAvailable;
@@ -39,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        playerUI = GetComponent<PlayerUI>();
         myRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
         hotbarUI.SetActive(false);
@@ -47,32 +44,24 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update(){
         playerMove();
-        playerUI.UpdateText(string.Empty);
-        img.gameObject.SetActive(false);
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
-                
+                hitInfo.collider.GetComponent<OutlineBorder>().enabled = true;
                 if(hitInfo.collider.tag == "Hotbar"){
                 itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
                 hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
                 }
-                img.gameObject.SetActive(true);
             }
 
 
             else if(hitInfo.collider.GetComponent<Equipable>() != null) {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
-                img.gameObject.SetActive(true);
             }
 
 
             else if(hitInfo.collider.GetComponent<Television>() != null) {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Television>().promptMessage);
-                img.gameObject.SetActive(true);
             }
         }
         if(hotbarUI.activeSelf) {
@@ -131,11 +120,6 @@ public class PlayerMovement : MonoBehaviour
                 else {
                     Debug.Log("Whistle");
                     itemChoose = "slot1";
-                }
-            }
-            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                if(hitInfo.collider.GetComponent<Television>() != null) {
-                    hitInfo.collider.GetComponent<Television>().TelevisionPass();
                 }
             }
         }

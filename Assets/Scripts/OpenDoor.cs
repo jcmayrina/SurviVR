@@ -3,7 +3,6 @@ using System.Collections;
 
 public class OpenDoor : Interactable
 {
-    public BoxCollider boxcollider;
     private Animation anim;
     void Start()
     {
@@ -17,21 +16,29 @@ public class OpenDoor : Interactable
     }
     protected override void HideDoor(){
         Debug.Log("open door");
-        boxcollider.enabled=false;
+        gameObject.GetComponent<BoxCollider>().enabled=false;
         if (gameObject.tag =="Door")
         anim.Play("doorOpen");
         if (gameObject.tag =="Ref")
         anim.Play("refOpen");
+        if (gameObject.tag =="CabinetL")
+        anim.Play("LcabinetOpen");
+        if (gameObject.tag =="CabinetR")
+        anim.Play("RcabinetOpen");
         StartCoroutine(waiter());
     }
     IEnumerator waiter()
     {
         //Wait for 2 seconds
         yield return new WaitForSecondsRealtime(4);
-        boxcollider.enabled=true;
+        gameObject.GetComponent<BoxCollider>().enabled=true;
         if (gameObject.tag =="Door")
         anim.Play("doorClose");
         if (gameObject.tag =="Ref")
         anim.Play("refClose");
+        if (gameObject.tag =="CabinetL")
+        anim.Play("LcabinetClose");
+        if (gameObject.tag =="CabinetR")
+        anim.Play("RcabinetClose");
     }
 }
