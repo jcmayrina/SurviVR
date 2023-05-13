@@ -12,12 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public String itemChoose="";
     public float speed = 5f;
     private float gravity = 10f;
-    public CharacterController rigidbodyfreeze;
     Rigidbody myRb;
     private Camera cam;
     private Animation anim;
     private bool isActive;
     private bool isAvailable;
+    public AudioSource footsteps;
+    private float keyDelay = .1f;
+    private float timePassed = 0f;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -30,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask mask;
     private void Awake()
     {
-        if(Input.anyKeyDown)
-    Debug.Log(Input.inputString);
         playerControls = new PlayerInputActions();
     }
     void Start()
@@ -43,13 +43,13 @@ public class PlayerMovement : MonoBehaviour
         cam = Camera.main;
     }
     void Update(){
+        timePassed += Time.deltaTime;
         playerMove();
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                hitInfo.collider.GetComponent<OutlineBorder>().enabled = true;
                 if(hitInfo.collider.tag == "Hotbar"){
                 itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
                 hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
@@ -64,12 +64,13 @@ public class PlayerMovement : MonoBehaviour
             else if(hitInfo.collider.GetComponent<Television>() != null) {
             }
         }
+        
         if(hotbarUI.activeSelf) {
             hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
             hotbarUI.transform.forward *= -1;
             hotbarUI.transform.Rotate(90, 0, 0);
         }
-        if(Input.GetButton("ButtonA")){
+        if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
             
             if(hotbarUI.activeSelf) {
                     itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
@@ -100,13 +101,15 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
         }
+        timePassed = 0f;
         }
         
-        if(Input.GetButton("ButtonB")){
-            rigidbodyfreeze.enabled = true;
+        if(Input.GetButton("ButtonB") && timePassed >= keyDelay){
+            //gameObject.GetComponent<CharacterController>().enabled = true;
             Debug.Log("joystick buttonB");
+            timePassed = 0f;
         }
-        if(Input.GetButton("ButtonY")){
+        if(Input.GetButton("ButtonY") && timePassed >= keyDelay){
             Debug.Log("joystick buttonY");
             if(hotbarUI.activeSelf) {
                 if(itemChoose.Equals("slot1")) {
@@ -122,18 +125,23 @@ public class PlayerMovement : MonoBehaviour
                     itemChoose = "slot1";
                 }
             }
+            
+        timePassed = 0f;
         }
-        if(Input.GetButton("ButtonX")){
+        if(Input.GetButton("ButtonX") && timePassed >= keyDelay){
             Debug.Log("joystick buttonX");
             isActive = !hotbarUI.activeSelf;
             hotbarUI.SetActive(isActive);
             hotbarUI.transform.position = head.position + new Vector3(head.forward.x, (head.forward.y - 1), head.forward.z).normalized * 2;
+        timePassed = 0f;
         }
-        if(Input.GetButton("ButtonStart")){
+        if(Input.GetButton("ButtonStart") && timePassed >= keyDelay){
             Debug.Log("joystick buttonStart");
+        timePassed = 0f;
         }
-        if(Input.GetButton("ButtonSelect")){
+        if(Input.GetButton("ButtonSelect") && timePassed >= keyDelay){
             Debug.Log("joystick buttonSelect");
+        timePassed = 0f;
         }
     }
 
@@ -145,6 +153,15 @@ public class PlayerMovement : MonoBehaviour
         velocity = Camera.main.transform.TransformDirection(velocity);
         velocity.y -= gravity;
         controller.Move(velocity * Time.deltaTime);
+        if(controller.isGrounded == true && controller.velocity.magnitude>2f)
+        {
+            footsteps.volume = UnityEngine.Random.Range(.8f,1f);
+            footsteps.pitch = UnityEngine.Random.Range(.8f,1.1f);
+            footsteps.enabled=true;
+        }
+        else{
+            footsteps.enabled=false;
+        }
     }
 
 }
