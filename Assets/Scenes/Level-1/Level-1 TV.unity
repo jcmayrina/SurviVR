@@ -23322,7 +23322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf7ff668e96c264ca94dabe2dc8d3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 412160518}
   textWatch: {fileID: 949473360}
   bgColor: {fileID: 867642579}
   myAnimController: {fileID: 867642585}
