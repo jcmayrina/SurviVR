@@ -9,7 +9,7 @@ public class TVfreeze : MonoBehaviour
     public GameObject Player;
     public VideoPlayer video;
     private bool checkPlay=false;
-    private float keyDelay = .1f;
+    private float keyDelay = .2f;
     private float timePassed = 0f;
     //-----Serialize Fields for Raycast
     [SerializeField] private float maxDistance = 3f;
@@ -32,8 +32,6 @@ public class TVfreeze : MonoBehaviour
                     if(video.isPlaying==false){
                         video.Play();
                         checkPlay = true;
-                        Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
-                        Player.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
                     }
                     else{
                         video.Pause();
@@ -50,6 +48,9 @@ public class TVfreeze : MonoBehaviour
             TurnOnControls();
         }
         else if(mycrouchtimer < 64){
+            Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
+            Player.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
+            TurnOffControls();
         }
         }
     }

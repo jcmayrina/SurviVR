@@ -18,8 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isActive;
     private bool isAvailable;
     public AudioSource footsteps;
-    private float keyDelay = .1f;
+    private float keyDelay = .2f;
     private float timePassed = 0f;
+    public bool canMove;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
+        canMove = true;
         controller = GetComponent<CharacterController>();
         myRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
@@ -146,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void playerMove(){
+        if(canMove){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical);
@@ -153,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
         velocity = Camera.main.transform.TransformDirection(velocity);
         velocity.y -= gravity;
         controller.Move(velocity * Time.deltaTime);
-        if(controller.isGrounded == true && controller.velocity.magnitude>2f)
+        if(controller.isGrounded == true && controller.velocity.magnitude>3f)
         {
             footsteps.volume = UnityEngine.Random.Range(.8f,1f);
             footsteps.pitch = UnityEngine.Random.Range(.8f,1.1f);
@@ -161,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else{
             footsteps.enabled=false;
-        }
+        }}
     }
 
 }
