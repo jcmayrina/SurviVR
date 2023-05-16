@@ -32,10 +32,12 @@ public class TVfreeze : MonoBehaviour
                     if(video.isPlaying==false){
                         video.Play();
                         checkPlay = true;
+                        Player.GetComponentInChildren<CardboardReticlePointer>().GetComponent<MeshRenderer>().enabled = false;
                     }
                     else{
                         video.Pause();
                         TurnOnControls();
+                        Player.GetComponentInChildren<CardboardReticlePointer>().GetComponent<MeshRenderer>().enabled = true;
                     }
                     timePassed = 0f;
                 }
@@ -49,7 +51,7 @@ public class TVfreeze : MonoBehaviour
         }
         else if(mycrouchtimer < 64){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
-            Player.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
+            Player.transform.rotation = Quaternion.Euler(new Vector3(6.9f,0f,0f));
             TurnOffControls();
         }
         }

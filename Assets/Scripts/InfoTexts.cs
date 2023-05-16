@@ -5,15 +5,16 @@ using System.Collections;
 
 public class InfoTexts : MonoBehaviour
 {
+    public GameObject rotateText;
     float timer;
     int mytimer;
     private bool enterOnce=false;
     private bool stayOnce=false;
     private bool exitOnce=false;
     public GameObject Player;
-    public TextMeshProUGUI textWatch;
-    public GameObject bgColor;
-    [SerializeField] private Animator myAnimController;
+    private Transform head;
+    private TextMeshProUGUI textWatch;
+    private Animator myAnimController;
     public String OnEnter="";
     public String OnStay="";
     public String OnExit="";
@@ -26,8 +27,11 @@ public class InfoTexts : MonoBehaviour
     
     void Start()
     {
+        rotateText.SetActive(false);
+        head = Player.transform;
+        textWatch = rotateText.GetComponentInChildren<TextMeshProUGUI>();
+        myAnimController = rotateText.GetComponent<Animator>();
         textWatch.SetText("");
-        bgColor.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,17 +40,21 @@ public class InfoTexts : MonoBehaviour
         timer += 1 * Time.deltaTime;
         mytimer = (int) timer;
         //Debug.Log(mytimer);
+        rotateText.transform.LookAt(new Vector3(head.position.x, rotateText.transform.position.y, head.position.z));
+        rotateText.transform.forward *= -1;
+        rotateText.transform.Rotate(0, 0, 0);
     }
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player")){
-        if(OnStay=="")
+        if(OnStay=="" && OnEnter!="")
         if(!enterOnce){
-        bgColor.SetActive(true);
+        rotateText.SetActive(true);
         textWatch.SetText(OnEnter);
         myAnimController.SetBool("showText",true);
         Invoke("HideText",timeEnter);
         enterOnce = true;
+    
         if (freezeEnter==true)
         {
             //TurnOffControls(other);
@@ -58,9 +66,9 @@ public class InfoTexts : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player")){
-        if(OnEnter=="")
+        if(OnEnter=="" && OnStay!= "")
         if(!stayOnce){
-        bgColor.SetActive(true);
+        rotateText.SetActive(true);
         textWatch.SetText(OnStay);
         myAnimController.SetBool("showText",true);
         Invoke("HideText",timeStay);
@@ -76,8 +84,9 @@ public class InfoTexts : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         if(other.CompareTag("Player")){
+        if(OnExit!="")
         if(!exitOnce){
-        bgColor.SetActive(true);
+        rotateText.SetActive(true);
         textWatch.SetText(OnExit);
         myAnimController.SetBool("showText",true);
         Invoke("HideText",timeExit);
