@@ -1284,7 +1284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take canned goods
 --- !u!64 &106307388
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2944,8 +2943,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.72209907, y: 1.778, z: 0.7620002}
-  m_Center: {x: 0.056249484, y: 0, z: -0.000000029802322}
+  m_Size: {x: 0.72209907, y: 1.7780002, z: 0.076081045}
+  m_Center: {x: 0.05624947, y: 0, z: -0.34296075}
 --- !u!65 &192087654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6404,7 +6403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take phone
 --- !u!65 &425433547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9307,7 +9305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take bottled water
 --- !u!65 &628162939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25079,7 +25076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take canned goods
 --- !u!64 &1345390155
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27024,7 +27020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take bottled water
 --- !u!65 &1461207537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27425,7 +27420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take bottled water
 --- !u!65 &1509853910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33689,7 +33683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take canned goods
 --- !u!65 &1564139545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36045,7 +36038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take canned goods
 --- !u!65 &1754923565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36189,7 +36181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take canned goods
 --- !u!64 &1778203465
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36256,7 +36247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take bottled water
 --- !u!65 &1787552288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39027,7 +39017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135ddb756b55b2e4ba81f13a1398c09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: take bottled water
 --- !u!65 &1968698245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42989,7 +42978,7 @@ GameObject:
   - component: {fileID: 1751811104}
   - component: {fileID: 1751811105}
   m_Layer: 6
-  m_Name: can
+  m_Name: canned goods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43009,7 +42998,7 @@ GameObject:
   - component: {fileID: 1778203465}
   - component: {fileID: 1778203464}
   m_Layer: 6
-  m_Name: can
+  m_Name: canned goods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43029,7 +43018,7 @@ GameObject:
   - component: {fileID: 1787354134}
   - component: {fileID: 1787354135}
   m_Layer: 6
-  m_Name: bottle
+  m_Name: bottled water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43049,7 +43038,7 @@ GameObject:
   - component: {fileID: 1963297637}
   - component: {fileID: 1963297638}
   m_Layer: 6
-  m_Name: bottle
+  m_Name: bottled water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43219,7 +43208,7 @@ GameObject:
   - component: {fileID: 1459976313}
   - component: {fileID: 1459976314}
   m_Layer: 6
-  m_Name: bottle
+  m_Name: bottled water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43239,7 +43228,7 @@ GameObject:
   - component: {fileID: 1345390155}
   - component: {fileID: 1345390154}
   m_Layer: 6
-  m_Name: can
+  m_Name: canned goods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43291,7 +43280,7 @@ GameObject:
   - component: {fileID: 1559925386}
   - component: {fileID: 1559925387}
   m_Layer: 6
-  m_Name: can
+  m_Name: canned goods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43327,7 +43316,7 @@ GameObject:
   - component: {fileID: 1508854313}
   - component: {fileID: 1508854314}
   m_Layer: 6
-  m_Name: bottle
+  m_Name: bottled water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43363,7 +43352,7 @@ GameObject:
   - component: {fileID: 626349999}
   - component: {fileID: 626350000}
   m_Layer: 6
-  m_Name: bottle
+  m_Name: bottled water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43569,7 +43558,7 @@ GameObject:
   - component: {fileID: 106307388}
   - component: {fileID: 106307387}
   m_Layer: 6
-  m_Name: can
+  m_Name: canned goods
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48898,6 +48887,7 @@ GameObject:
   - component: {fileID: 4306142438084655320}
   - component: {fileID: 8449996119312826242}
   - component: {fileID: 191235393}
+  - component: {fileID: 8449996119312826243}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -54802,6 +54792,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8449996119312826243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404148687350738684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07016741, y: 0.178389, z: 0.76200056}
+  m_Center: {x: 0.2815763, y: -0.79981005, z: 0.00000021959606}
 --- !u!1 &8458600450022164728
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,11 +5,9 @@ using TMPro;
 
 public class EquipItem : Equipable
 {
-    Equipable equipable;
     PlayerMovement player;
     private TextMeshProUGUI promptText;
     void Start() {
-        equipable = FindObjectOfType<Equipable>();
         player = FindObjectOfType<PlayerMovement>();
     }
     void Update() {
@@ -18,15 +16,11 @@ public class EquipItem : Equipable
         promptText = player.itemName.transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>();
         Debug.Log(promptText);
         if(promptText != null)
-        UpdateText(equipable.promptMessage);
+        promptText.SetText("take "+player.itemName.name);
 
     }
     protected override void Equip(){
         Debug.Log(gameObject.name);
         gameObject.SetActive(false);
-    }
-    // Update is called once per frame
-    public void UpdateText(string promptMessage) {
-        promptText.SetText(promptMessage);
     }
 }
