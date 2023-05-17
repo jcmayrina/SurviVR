@@ -144,26 +144,26 @@ extern void InfoTexts_OnTriggerStay_m500EB54EB6FD90FD4CA5A6AC24D3D59E6605CAE6 (v
 extern void InfoTexts_OnTriggerExit_mB593E835AE626C83FBDCAAA1BE3237830D2F5068 (void);
 // 0x00000042 System.Void InfoTexts::HideText()
 extern void InfoTexts_HideText_m6001AD5241323FFF9FCC9C23956CAA9543456DDE (void);
-// 0x00000043 System.Void InfoTexts::TurnOffControls(UnityEngine.Collider)
-extern void InfoTexts_TurnOffControls_mB1EAB6DF3E27F41C7DFC08240E29B03045EB2E77 (void);
+// 0x00000043 System.Void InfoTexts::TurnOffControls()
+extern void InfoTexts_TurnOffControls_m0F67718FC6C8CF4684CDE43707B2D28D8AB457F5 (void);
 // 0x00000044 System.Void InfoTexts::TurnOnControls()
 extern void InfoTexts_TurnOnControls_m5CBB85E65422586CD9DFC8A6A9573163F5707843 (void);
 // 0x00000045 System.Collections.IEnumerator InfoTexts::waiter()
 extern void InfoTexts_waiter_m8029D93771406E11364DA92146571BD1267FA1B1 (void);
 // 0x00000046 System.Void InfoTexts::.ctor()
 extern void InfoTexts__ctor_mCB496EEEA9ACD2704AC1489B6E86A1AC7CDCDE19 (void);
-// 0x00000047 System.Void InfoTexts/<waiter>d__28::.ctor(System.Int32)
-extern void U3CwaiterU3Ed__28__ctor_m580518B7980B3EA54F7FB5A80D6A4A53284474FC (void);
-// 0x00000048 System.Void InfoTexts/<waiter>d__28::System.IDisposable.Dispose()
-extern void U3CwaiterU3Ed__28_System_IDisposable_Dispose_mB4E6BABDB584A8D31F13A0B1D31B66C27356ED48 (void);
-// 0x00000049 System.Boolean InfoTexts/<waiter>d__28::MoveNext()
-extern void U3CwaiterU3Ed__28_MoveNext_m799D25D78D781A2EA8B091170634DC7573EEFA0B (void);
-// 0x0000004A System.Object InfoTexts/<waiter>d__28::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CwaiterU3Ed__28_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6CA5EBC4245D1F29FCD0D921FF1FC2FBB2060686 (void);
-// 0x0000004B System.Void InfoTexts/<waiter>d__28::System.Collections.IEnumerator.Reset()
-extern void U3CwaiterU3Ed__28_System_Collections_IEnumerator_Reset_m22C3911DFEF1B71226CC22E1EFFB751E9DC350AD (void);
-// 0x0000004C System.Object InfoTexts/<waiter>d__28::System.Collections.IEnumerator.get_Current()
-extern void U3CwaiterU3Ed__28_System_Collections_IEnumerator_get_Current_m7F763DF6EBD77EC6552038AC3E51AD0DEB4FDFC2 (void);
+// 0x00000047 System.Void InfoTexts/<waiter>d__27::.ctor(System.Int32)
+extern void U3CwaiterU3Ed__27__ctor_mB6352F1B6F43516CD0E12EBAD53B3C76E34C8CFA (void);
+// 0x00000048 System.Void InfoTexts/<waiter>d__27::System.IDisposable.Dispose()
+extern void U3CwaiterU3Ed__27_System_IDisposable_Dispose_m8FE9A3C355970A956126B4855781F431E1DFD937 (void);
+// 0x00000049 System.Boolean InfoTexts/<waiter>d__27::MoveNext()
+extern void U3CwaiterU3Ed__27_MoveNext_m92AABD937A15668C3074B31DACAA98B31D9942C8 (void);
+// 0x0000004A System.Object InfoTexts/<waiter>d__27::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CwaiterU3Ed__27_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m01F8B7C285E7F2406D8563C5C00F5822D8424512 (void);
+// 0x0000004B System.Void InfoTexts/<waiter>d__27::System.Collections.IEnumerator.Reset()
+extern void U3CwaiterU3Ed__27_System_Collections_IEnumerator_Reset_mE43079A5D42930031BD2E02BBF2FB1CB958A6A8B (void);
+// 0x0000004C System.Object InfoTexts/<waiter>d__27::System.Collections.IEnumerator.get_Current()
+extern void U3CwaiterU3Ed__27_System_Collections_IEnumerator_get_Current_m6498A592BAD4A87DE1922646F89E0D1464F72691 (void);
 // 0x0000004D System.Void Interactable::HideDoorPass()
 extern void Interactable_HideDoorPass_mE8D2E120BF14186DAE6E255FE70C972345B263CD (void);
 // 0x0000004E System.String Interactable::ClickItem()
@@ -465,16 +465,16 @@ static Il2CppMethodPointer s_methodPointers[201] =
 	InfoTexts_OnTriggerStay_m500EB54EB6FD90FD4CA5A6AC24D3D59E6605CAE6,
 	InfoTexts_OnTriggerExit_mB593E835AE626C83FBDCAAA1BE3237830D2F5068,
 	InfoTexts_HideText_m6001AD5241323FFF9FCC9C23956CAA9543456DDE,
-	InfoTexts_TurnOffControls_mB1EAB6DF3E27F41C7DFC08240E29B03045EB2E77,
+	InfoTexts_TurnOffControls_m0F67718FC6C8CF4684CDE43707B2D28D8AB457F5,
 	InfoTexts_TurnOnControls_m5CBB85E65422586CD9DFC8A6A9573163F5707843,
 	InfoTexts_waiter_m8029D93771406E11364DA92146571BD1267FA1B1,
 	InfoTexts__ctor_mCB496EEEA9ACD2704AC1489B6E86A1AC7CDCDE19,
-	U3CwaiterU3Ed__28__ctor_m580518B7980B3EA54F7FB5A80D6A4A53284474FC,
-	U3CwaiterU3Ed__28_System_IDisposable_Dispose_mB4E6BABDB584A8D31F13A0B1D31B66C27356ED48,
-	U3CwaiterU3Ed__28_MoveNext_m799D25D78D781A2EA8B091170634DC7573EEFA0B,
-	U3CwaiterU3Ed__28_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m6CA5EBC4245D1F29FCD0D921FF1FC2FBB2060686,
-	U3CwaiterU3Ed__28_System_Collections_IEnumerator_Reset_m22C3911DFEF1B71226CC22E1EFFB751E9DC350AD,
-	U3CwaiterU3Ed__28_System_Collections_IEnumerator_get_Current_m7F763DF6EBD77EC6552038AC3E51AD0DEB4FDFC2,
+	U3CwaiterU3Ed__27__ctor_mB6352F1B6F43516CD0E12EBAD53B3C76E34C8CFA,
+	U3CwaiterU3Ed__27_System_IDisposable_Dispose_m8FE9A3C355970A956126B4855781F431E1DFD937,
+	U3CwaiterU3Ed__27_MoveNext_m92AABD937A15668C3074B31DACAA98B31D9942C8,
+	U3CwaiterU3Ed__27_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m01F8B7C285E7F2406D8563C5C00F5822D8424512,
+	U3CwaiterU3Ed__27_System_Collections_IEnumerator_Reset_mE43079A5D42930031BD2E02BBF2FB1CB958A6A8B,
+	U3CwaiterU3Ed__27_System_Collections_IEnumerator_get_Current_m6498A592BAD4A87DE1922646F89E0D1464F72691,
 	Interactable_HideDoorPass_mE8D2E120BF14186DAE6E255FE70C972345B263CD,
 	Interactable_ClickItem_m0ED6E977B2E03A0EB9D89B4F03F421A5B0F6A50A,
 	Interactable_HideDoor_m3C8785425EDD2B553EC73D8678203ED9B6AAD7C1,
@@ -730,7 +730,7 @@ static const int32_t s_InvokerIndices[201] =
 	3707,
 	3707,
 	4669,
-	3707,
+	4669,
 	4669,
 	4566,
 	4669,

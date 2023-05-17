@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float keyDelay = .2f;
     private float timePassed = 0f;
     public bool canMove;
+    public GameObject itemName;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -60,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
 
             else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                hitInfo.collider.transform.GetChild(0).GetComponentInChildren<Canvas>().enabled = true;
+                itemName = hitInfo.collider.gameObject;
             }
 
 
@@ -156,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
         velocity = Camera.main.transform.TransformDirection(velocity);
         velocity.y -= gravity;
         controller.Move(velocity * Time.deltaTime);
-        if(controller.isGrounded == true && controller.velocity.magnitude>3f)
+        if(controller.isGrounded == true && controller.velocity.magnitude>3f && gameObject.GetComponent<CharacterController>().enabled == true  && gameObject.GetComponent<Rigidbody>().isKinematic == false)
         {
             footsteps.volume = UnityEngine.Random.Range(.8f,1f);
             footsteps.pitch = UnityEngine.Random.Range(.8f,1.1f);

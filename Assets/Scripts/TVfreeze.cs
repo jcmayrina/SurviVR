@@ -59,10 +59,12 @@ public class TVfreeze : MonoBehaviour
     public void TurnOffControls()
     {
         Player.gameObject.GetComponent<CharacterController>().enabled = false;
+        Player.gameObject.GetComponent<Rigidbody>().isKinematic=true;
     }
 
     public void TurnOnControls()
     {
         Player.gameObject.GetComponent<CharacterController>().enabled = true;
+        Player.gameObject.GetComponent<Rigidbody>().isKinematic=false;
     }
 }

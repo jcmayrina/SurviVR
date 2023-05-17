@@ -57,7 +57,7 @@ public class InfoTexts : MonoBehaviour
     
         if (freezeEnter==true)
         {
-            //TurnOffControls(other);
+            TurnOffControls();
             StartCoroutine(waiter());
         }
         }
@@ -75,7 +75,7 @@ public class InfoTexts : MonoBehaviour
         stayOnce = true;
         if (freezeStay==true)
         {
-            //TurnOffControls(other);
+            TurnOffControls();
             StartCoroutine(waiter());
         }
         }
@@ -93,7 +93,7 @@ public class InfoTexts : MonoBehaviour
         exitOnce = true;
         if (freezeExit==true)
         {
-            //TurnOffControls(other);
+            TurnOffControls();
             StartCoroutine(waiter());
         }
         }
@@ -103,18 +103,21 @@ public class InfoTexts : MonoBehaviour
             myAnimController.SetBool("showText",false);
     }
     
-    public void TurnOffControls(Collider collider)
+    public void TurnOffControls()
     {
         Player.gameObject.GetComponent<CharacterController>().enabled = false;
+        Player.gameObject.GetComponent<Rigidbody>().isKinematic=true;
     }
 
     public void TurnOnControls()
     {
         Player.gameObject.GetComponent<CharacterController>().enabled = true;
+        Player.gameObject.GetComponent<Rigidbody>().isKinematic=false;
     }
     
     IEnumerator waiter()
     {
         yield return new WaitForSecondsRealtime(5);
+        TurnOnControls();
     }
 }
