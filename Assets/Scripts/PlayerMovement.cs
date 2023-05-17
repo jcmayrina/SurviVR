@@ -61,12 +61,20 @@ public class PlayerMovement : MonoBehaviour
 
 
             else if(hitInfo.collider.GetComponent<Equipable>() != null) {
-                hitInfo.collider.transform.GetChild(0).GetComponentInChildren<Canvas>().enabled = true;
+                //Turn on equipable texts
+                hitInfo.collider.transform.GetChild(0).gameObject.SetActive(true);
                 itemName = hitInfo.collider.gameObject;
             }
 
 
             else if(hitInfo.collider.GetComponent<Television>() != null) {
+            }
+           
+        }
+        else{
+            //Turn off equipable texts
+            if(itemName != null && itemName.transform.GetChild(0).gameObject.activeSelf == true){
+                itemName.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         
@@ -148,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("joystick buttonSelect");
         timePassed = 0f;
         }
+            
     }
 
     private void playerMove(){
