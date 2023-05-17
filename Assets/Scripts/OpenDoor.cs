@@ -21,6 +21,11 @@ public class OpenDoor : Interactable
         anim.Play("doorOpen");
         if (gameObject.tag =="Ref")
         anim.Play("refOpen");
+        if (gameObject.tag =="TopCabinetL")
+        anim.Play("LTopcabinetOpen");
+        if (gameObject.tag =="TopCabinetR")
+        anim.Play("RTopcabinetOpen");
+        StartCoroutine(waiter());
         if (gameObject.tag =="CabinetL")
         anim.Play("LcabinetOpen");
         if (gameObject.tag =="CabinetR")
@@ -29,13 +34,16 @@ public class OpenDoor : Interactable
     }
     IEnumerator waiter()
     {
-        //Wait for 2 seconds
-        yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(10);
         gameObject.GetComponent<BoxCollider>().enabled=true;
         if (gameObject.tag =="Door")
         anim.Play("doorClose");
         if (gameObject.tag =="Ref")
         anim.Play("refClose");
+        if (gameObject.tag =="TopCabinetL")
+        anim.Play("LTopcabinetClose");
+        if (gameObject.tag =="TopCabinetR")
+        anim.Play("RTopcabinetClose");
         if (gameObject.tag =="CabinetL")
         anim.Play("LcabinetClose");
         if (gameObject.tag =="CabinetR")

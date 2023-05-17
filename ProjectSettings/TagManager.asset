@@ -9,8 +9,10 @@ TagManager:
   - TV
   - Ref
   - Hotbar
-  - CabinetL
+  - TopCabinetL
+  - TopCabinetR
   - CabinetR
+  - CabinetL
   layers:
   - Default
   - TransparentFX
