@@ -11,10 +11,8 @@ public class EquipItem : Equipable
         player = FindObjectOfType<PlayerMovement>();
     }
     void Update() {
-        Debug.Log(player.itemName);
         if(player.itemName != null)
         promptText = player.itemName.transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        Debug.Log(promptText);
         if(promptText != null)
         promptText.SetText("take "+player.itemName.name);
 
