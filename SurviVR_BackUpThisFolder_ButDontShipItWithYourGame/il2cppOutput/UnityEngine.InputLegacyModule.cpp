@@ -1305,6 +1305,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Input_GetAxisRaw_m47C0CF8E090561A2F407A
 	float icallRetVal = _il2cpp_icall_func(___axisName0);
 	return icallRetVal;
 }
+// System.Boolean UnityEngine.Input::GetButton(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Input_GetButton_m2F217DAE69DB3D1324FB848B3C9C84F19A80989E (String_t* ___buttonName0, const RuntimeMethod* method) 
+{
+	typedef bool (*Input_GetButton_m2F217DAE69DB3D1324FB848B3C9C84F19A80989E_ftn) (String_t*);
+	static Input_GetButton_m2F217DAE69DB3D1324FB848B3C9C84F19A80989E_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Input_GetButton_m2F217DAE69DB3D1324FB848B3C9C84F19A80989E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::GetButton(System.String)");
+	bool icallRetVal = _il2cpp_icall_func(___buttonName0);
+	return icallRetVal;
+}
 // System.Boolean UnityEngine.Input::GetButtonDown(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Input_GetButtonDown_mEF5F80C9E8F04104E807D9CBD6F70CDB98751579 (String_t* ___buttonName0, const RuntimeMethod* method) 
 {
@@ -1356,26 +1366,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Touch_t03E51455ED508492B3F278903A0114FA0E87B4
 		Touch_t03E51455ED508492B3F278903A0114FA0E87B417 L_1 = V_0;
 		return L_1;
 	}
-}
-// System.Boolean UnityEngine.Input::get_anyKeyDown()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Input_get_anyKeyDown_m9B8D98B5574A2AA63CEED98FBF0E2A1D946BCA71 (const RuntimeMethod* method) 
-{
-	typedef bool (*Input_get_anyKeyDown_m9B8D98B5574A2AA63CEED98FBF0E2A1D946BCA71_ftn) ();
-	static Input_get_anyKeyDown_m9B8D98B5574A2AA63CEED98FBF0E2A1D946BCA71_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Input_get_anyKeyDown_m9B8D98B5574A2AA63CEED98FBF0E2A1D946BCA71_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::get_anyKeyDown()");
-	bool icallRetVal = _il2cpp_icall_func();
-	return icallRetVal;
-}
-// System.String UnityEngine.Input::get_inputString()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Input_get_inputString_mB022DED50E8838B8319C591830BEB21E4904561B (const RuntimeMethod* method) 
-{
-	typedef String_t* (*Input_get_inputString_mB022DED50E8838B8319C591830BEB21E4904561B_ftn) ();
-	static Input_get_inputString_mB022DED50E8838B8319C591830BEB21E4904561B_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Input_get_inputString_mB022DED50E8838B8319C591830BEB21E4904561B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::get_inputString()");
-	String_t* icallRetVal = _il2cpp_icall_func();
-	return icallRetVal;
 }
 // UnityEngine.Vector3 UnityEngine.Input::get_mousePosition()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Input_get_mousePosition_mFF21FBD2647DAE2A23BD4C45571CA95D05A0A42C (const RuntimeMethod* method) 

@@ -3,12 +3,10 @@ using System.Collections;
 
 public class OpenDoor : Interactable
 {
-    public MeshRenderer gameobj;
-    public MeshRenderer gameobj2;
-    public BoxCollider boxcollider;
+    private Animation anim;
     void Start()
     {
-        
+        anim = gameObject.GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -18,17 +16,37 @@ public class OpenDoor : Interactable
     }
     protected override void HideDoor(){
         Debug.Log("open door");
-        gameobj.enabled=false;
-        gameobj2.enabled=false;
-        boxcollider.enabled=false;
+        gameObject.GetComponent<BoxCollider>().enabled=false;
+        if (gameObject.tag =="Door")
+        anim.Play("doorOpen");
+        if (gameObject.tag =="Ref")
+        anim.Play("refOpen");
+        if (gameObject.tag =="TopCabinetL")
+        anim.Play("LTopcabinetOpen");
+        if (gameObject.tag =="TopCabinetR")
+        anim.Play("RTopcabinetOpen");
+        StartCoroutine(waiter());
+        if (gameObject.tag =="CabinetL")
+        anim.Play("LcabinetOpen");
+        if (gameObject.tag =="CabinetR")
+        anim.Play("RcabinetOpen");
         StartCoroutine(waiter());
     }
     IEnumerator waiter()
     {
-        //Wait for 2 seconds
-        yield return new WaitForSecondsRealtime(4);
-        gameobj.enabled=true;
-        gameobj2.enabled=true;
-        boxcollider.enabled=true;
+        yield return new WaitForSecondsRealtime(10);
+        gameObject.GetComponent<BoxCollider>().enabled=true;
+        if (gameObject.tag =="Door")
+        anim.Play("doorClose");
+        if (gameObject.tag =="Ref")
+        anim.Play("refClose");
+        if (gameObject.tag =="TopCabinetL")
+        anim.Play("LTopcabinetClose");
+        if (gameObject.tag =="TopCabinetR")
+        anim.Play("RTopcabinetClose");
+        if (gameObject.tag =="CabinetL")
+        anim.Play("LcabinetClose");
+        if (gameObject.tag =="CabinetR")
+        anim.Play("RcabinetClose");
     }
 }

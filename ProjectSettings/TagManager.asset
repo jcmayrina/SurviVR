@@ -7,6 +7,12 @@ TagManager:
   - Selectable
   - Door
   - TV
+  - Ref
+  - Hotbar
+  - TopCabinetL
+  - TopCabinetR
+  - CabinetR
+  - CabinetL
   layers:
   - Default
   - TransparentFX

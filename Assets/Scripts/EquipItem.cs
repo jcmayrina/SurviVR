@@ -1,20 +1,26 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
 
 public class EquipItem : Equipable
 {
-    void Start()
-    {
-        
+    PlayerMovement player;
+    private TextMeshProUGUI promptText;
+    void Start() {
+        player = FindObjectOfType<PlayerMovement>();
     }
+    void Update() {
+        Debug.Log(player.itemName);
+        if(player.itemName != null)
+        promptText = player.itemName.transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        Debug.Log(promptText);
+        if(promptText != null)
+        promptText.SetText("take "+player.itemName.name);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     protected override void Equip(){
-        Debug.Log("equipped");
+        Debug.Log(gameObject.name);
         gameObject.SetActive(false);
     }
 }

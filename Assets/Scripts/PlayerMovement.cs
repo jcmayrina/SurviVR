@@ -1,3 +1,4 @@
+
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,95 +6,161 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {   
+    public Transform head;
     public GameObject hotbarUI;
     public GameObject flashlight;
     public String itemChoose="";
     public float speed = 5f;
     private float gravity = 10f;
+    Rigidbody myRb;
+    private Camera cam;
+    private Animation anim;
+    private bool isActive;
+    private bool isAvailable;
+    public AudioSource footsteps;
+    private float keyDelay = .2f;
+    private float timePassed = 0f;
+    public bool canMove;
+    public GameObject itemName;
+
+    //-----Controller related objects and variables
     private CharacterController controller;
     public PlayerInputActions playerControls;
-    public CharacterController rigidbodyfreeze;
-    Rigidbody myRb;
     private InputAction fire,buttB,buttY,buttX,buttSel,buttSt;
-    public Image img;
-    private Camera cam;
-    private PlayerUI playerUI;
-    //private InputManager inputManager;
+    private InputAction navigate;
+
+    //-----Serialize Fields for Raycast
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
     private void Awake()
     {
-        if(Input.anyKeyDown)
-    Debug.Log(Input.inputString);
         playerControls = new PlayerInputActions();
-    }
-    private void OnEnable()
-    {
-        fire = playerControls.Player.Fire;
-        fire.Enable();
-        fire.performed += Fire;
-        buttB = playerControls.Player.ButtonB;
-        buttB.Enable();
-        buttB.performed += ButtonB;
-        buttY = playerControls.Player.ButtonY;
-        buttY.Enable();
-        buttY.performed += ButtonY;
-        buttX = playerControls.Player.ButtonX;
-        buttX.Enable();
-        buttX.performed += ButtonX;
-        buttSel = playerControls.Player.ButtonSelect;
-        buttSel.Enable();
-        buttSel.performed += ButtonSelect;
-        buttSt = playerControls.Player.ButtonStart;
-        buttSt.Enable();
-        buttSt.performed += ButtonStart;
-    }
-    private void OnDisable()
-    {
-        fire.Disable();
-        buttB.Disable();
-        buttX.Disable();
-        buttY.Disable();
-        buttSel.Disable();
-        buttSt.Disable();
     }
     void Start()
     {
-        controller =  GetComponent<CharacterController>();
+        canMove = true;
+        controller = GetComponent<CharacterController>();
         myRb = GetComponent<Rigidbody>();
-        cam = Camera.main;
-        playerUI = GetComponent<PlayerUI>();
-        hotbarUI.SetActive(false);
         flashlight.SetActive(false);
+        hotbarUI.SetActive(false);
+        cam = Camera.main;
     }
     void Update(){
+        timePassed += Time.deltaTime;
         playerMove();
-        playerUI.UpdateText(string.Empty);
-        img.gameObject.SetActive(false);
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().promptMessage);
-                img.gameObject.SetActive(true);
+                if(hitInfo.collider.tag == "Hotbar"){
+                itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                }
+            }
+
+
+            else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                //Turn on equipable texts
+                hitInfo.collider.transform.GetChild(0).gameObject.SetActive(true);
+                itemName = hitInfo.collider.gameObject;
+            }
+
+
+            else if(hitInfo.collider.GetComponent<Television>() != null) {
+            }
+           
+        }
+        else{
+            //Turn off equipable texts
+            if(itemName != null && itemName.transform.GetChild(0).gameObject.activeSelf == true){
+                itemName.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Equipable>() != null) {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Equipable>().promptMessage);
-                img.gameObject.SetActive(true);
-            }
+        if(hotbarUI.activeSelf) {
+            hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
+            hotbarUI.transform.forward *= -1;
+            hotbarUI.transform.Rotate(90, 0, 0);
         }
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Television>() != null) {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Television>().promptMessage);
-                img.gameObject.SetActive(true);
+        if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
+            
+            if(hotbarUI.activeSelf) {
+                    itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                    Debug.Log(itemChoose);
             }
+            else {
+                Debug.Log("joystick buttonA");
+
+                if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                    if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                        hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                        hitInfo.collider.GetComponent<Equipable>().EquipPass();
+                        
+                        if(string.Equals(hitInfo.collider.name, "Go Bag")) {
+                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                            // isAvailable = !isAvailable;
+                        }
+                        else {
+                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                        }
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Television>() != null) {
+                        hitInfo.collider.GetComponent<Television>().TelevisionPass();
+                    }
+                }
         }
+        timePassed = 0f;
+        }
+        
+        if(Input.GetButton("ButtonB") && timePassed >= keyDelay){
+            //gameObject.GetComponent<CharacterController>().enabled = true;
+            Debug.Log("joystick buttonB");
+            timePassed = 0f;
+        }
+        if(Input.GetButton("ButtonY") && timePassed >= keyDelay){
+            Debug.Log("joystick buttonY");
+            if(hotbarUI.activeSelf) {
+                if(itemChoose.Equals("slot1")) {
+                    Debug.Log("Flashlight");
+                    itemChoose = "slot2";
+                }
+                else if(itemChoose.Equals("slot2")) {
+                    Debug.Log("Hand");
+                    itemChoose = "";
+                }
+                else {
+                    Debug.Log("Whistle");
+                    itemChoose = "slot1";
+                }
+            }
+            
+        timePassed = 0f;
+        }
+        if(Input.GetButton("ButtonX") && timePassed >= keyDelay){
+            Debug.Log("joystick buttonX");
+            isActive = !hotbarUI.activeSelf;
+            hotbarUI.SetActive(isActive);
+            hotbarUI.transform.position = head.position + new Vector3(head.forward.x, (head.forward.y - 1), head.forward.z).normalized * 2;
+        timePassed = 0f;
+        }
+        if(Input.GetButton("ButtonStart") && timePassed >= keyDelay){
+            Debug.Log("joystick buttonStart");
+        timePassed = 0f;
+        }
+        if(Input.GetButton("ButtonSelect") && timePassed >= keyDelay){
+            Debug.Log("joystick buttonSelect");
+        timePassed = 0f;
+        }
+            
     }
+
     private void playerMove(){
+        if(canMove){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical);
@@ -101,75 +168,15 @@ public class PlayerMovement : MonoBehaviour
         velocity = Camera.main.transform.TransformDirection(velocity);
         velocity.y -= gravity;
         controller.Move(velocity * Time.deltaTime);
-    }
-    private void Fire(InputAction.CallbackContext context){
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-        Debug.DrawRay(ray.origin, ray.direction * maxDistance);
-        Debug.Log("buttonA");
-        if(itemChoose.Equals("slot1")) {
-            Debug.Log("WHISTLE NASAAN NA");
+        if(controller.isGrounded == true && controller.velocity.magnitude>3f && gameObject.GetComponent<CharacterController>().enabled == true  && gameObject.GetComponent<Rigidbody>().isKinematic == false)
+        {
+            footsteps.volume = UnityEngine.Random.Range(.8f,1f);
+            footsteps.pitch = UnityEngine.Random.Range(.8f,1.1f);
+            footsteps.enabled=true;
         }
-        else if(itemChoose.Equals("slot2")) {
-            if(flashlight.activeSelf) {
-                flashlight.SetActive(false);
-            }
-            else {
-                flashlight.SetActive(true);
-            }
-        }
-        else {
-            Debug.Log("buttonA");
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                    hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
-                }
-                if(hitInfo.collider.GetComponent<Equipable>() != null) {
-                hitInfo.collider.GetComponent<Equipable>().EquipPass();
-                hotbarUI.SetActive(true);
-                }
-                if(hitInfo.collider.GetComponent<Television>() != null) {
-                hitInfo.collider.GetComponent<Television>().TelevisionPass();
-                }
-            }
-            }
-        }
-    private void ButtonB(InputAction.CallbackContext context){
-        rigidbodyfreeze.enabled = true;
-        Debug.Log("buttonB");
+        else{
+            footsteps.enabled=false;
+        }}
     }
-    private void ButtonX(InputAction.CallbackContext context){
-        Debug.Log("buttonX");
-    }
-    private void ButtonY(InputAction.CallbackContext context){
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        RaycastHit hitInfo;
-        Debug.DrawRay(ray.origin, ray.direction * maxDistance);
-        Debug.Log("buttonY");
-        if(hotbarUI.activeSelf) {
-            if(itemChoose.Equals("slot1")) {
-                Debug.Log("Flashlight");
-                itemChoose = "slot2";
-            }
-            else if(itemChoose.Equals("slot2")) {
-                Debug.Log("Hand");
-                itemChoose = "";
-            }
-            else {
-                Debug.Log("Whistle");
-                itemChoose = "slot1";
-            }
-        }
-        if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-            if(hitInfo.collider.GetComponent<Television>() != null) {
-                hitInfo.collider.GetComponent<Television>().TelevisionPass();
-            }
-        }
-    }
-    private void ButtonSelect(InputAction.CallbackContext context){
-        Debug.Log("buttonSelect");
-    }
-    private void ButtonStart(InputAction.CallbackContext context){
-        Debug.Log("buttonStart");
-    }
+
 }

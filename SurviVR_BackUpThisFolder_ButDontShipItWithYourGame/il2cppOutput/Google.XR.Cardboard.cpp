@@ -820,8 +820,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___x0, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___y1, const RuntimeMethod* method) ;
-// System.Void UnityEngine.GameObject::SendMessage(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SendMessage_m65848D6A8F999FACBC1C21B7303660B7AFF6674E (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, String_t* ___methodName0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.GameObject::SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SendMessage_m452B3418BE240EC79550C15E1F2EAE61488F06DF (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, String_t* ___methodName0, RuntimeObject* ___value1, int32_t ___options2, const RuntimeMethod* method) ;
 // System.Int32 UnityEngine.GameObject::get_layer()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GameObject_get_layer_m108902B9C89E9F837CE06B9942AA42307450FEAF (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
 // System.Int32 UnityEngine.LayerMask::op_Implicit(UnityEngine.LayerMask)
@@ -1234,10 +1234,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardboardReticlePointer_Update_mDA81EA31
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3;
 		L_3 = Transform_get_forward_mFCFACF7165FDAB21E80E384C494DF278386CEE2F(L_2, NULL);
 		bool L_4;
-		L_4 = Physics_Raycast_m011EA7022C33B2C499EF744E5AF3E01EEB8FBD33(L_1, L_3, (&V_0), (20.0f), NULL);
+		L_4 = Physics_Raycast_m011EA7022C33B2C499EF744E5AF3E01EEB8FBD33(L_1, L_3, (&V_0), (6.0f), NULL);
 		if (!L_4)
 		{
-			goto IL_00a8;
+			goto IL_00ac;
 		}
 	}
 	{
@@ -1253,11 +1253,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardboardReticlePointer_Update_mDA81EA31
 		L_8 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_5, L_7, NULL);
 		if (!L_8)
 		{
-			goto IL_0078;
+			goto IL_007c;
 		}
 	}
 	{
-		// _gazedAtObject?.SendMessage("OnPointerExit");
+		// _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->____gazedAtObject_14;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = L_9;
 		G_B3_0 = L_10;
@@ -1268,16 +1268,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardboardReticlePointer_Update_mDA81EA31
 		}
 	}
 	{
-		goto IL_0056;
+		goto IL_0058;
 	}
 
 IL_004c:
 	{
 		NullCheck(G_B4_0);
-		GameObject_SendMessage_m65848D6A8F999FACBC1C21B7303660B7AFF6674E(G_B4_0, _stringLiteralB81A1EDFC9FCE7D754F9199BAED4FF1E125B0C7E, NULL);
+		GameObject_SendMessage_m452B3418BE240EC79550C15E1F2EAE61488F06DF(G_B4_0, _stringLiteralB81A1EDFC9FCE7D754F9199BAED4FF1E125B0C7E, NULL, 1, NULL);
 	}
 
-IL_0056:
+IL_0058:
 	{
 		// _gazedAtObject = hit.transform.gameObject;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11;
@@ -1287,13 +1287,13 @@ IL_0056:
 		L_12 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_11, NULL);
 		__this->____gazedAtObject_14 = L_12;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____gazedAtObject_14), (void*)L_12);
-		// _gazedAtObject.SendMessage("OnPointerEnter");
+		// _gazedAtObject.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = __this->____gazedAtObject_14;
 		NullCheck(L_13);
-		GameObject_SendMessage_m65848D6A8F999FACBC1C21B7303660B7AFF6674E(L_13, _stringLiteral7892A84274C1DC4A2351A49903EB298DEA99C240, NULL);
+		GameObject_SendMessage_m452B3418BE240EC79550C15E1F2EAE61488F06DF(L_13, _stringLiteral7892A84274C1DC4A2351A49903EB298DEA99C240, NULL, 1, NULL);
 	}
 
-IL_0078:
+IL_007c:
 	{
 		// bool isInteractive = (1 << _gazedAtObject.layer & ReticleInteractionLayerMask) != 0;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->____gazedAtObject_14;
@@ -1309,32 +1309,32 @@ IL_0078:
 		L_18 = RaycastHit_get_distance_m035194B0E9BB6229259CFC43B095A9C8E5011C78((&V_0), NULL);
 		bool L_19 = V_1;
 		CardboardReticlePointer_SetParams_m0A0EA80939328F34E54DA53C75C9FBB0E85EE572(__this, L_18, L_19, NULL);
-		goto IL_00cb;
+		goto IL_00d1;
 	}
 
-IL_00a8:
+IL_00ac:
 	{
-		// _gazedAtObject?.SendMessage("OnPointerExit");
+		// _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = __this->____gazedAtObject_14;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = L_20;
 		G_B8_0 = L_21;
 		if (L_21)
 		{
 			G_B9_0 = L_21;
-			goto IL_00b4;
+			goto IL_00b8;
 		}
 	}
 	{
-		goto IL_00be;
+		goto IL_00c4;
 	}
 
-IL_00b4:
+IL_00b8:
 	{
 		NullCheck(G_B9_0);
-		GameObject_SendMessage_m65848D6A8F999FACBC1C21B7303660B7AFF6674E(G_B9_0, _stringLiteralB81A1EDFC9FCE7D754F9199BAED4FF1E125B0C7E, NULL);
+		GameObject_SendMessage_m452B3418BE240EC79550C15E1F2EAE61488F06DF(G_B9_0, _stringLiteralB81A1EDFC9FCE7D754F9199BAED4FF1E125B0C7E, NULL, 1, NULL);
 	}
 
-IL_00be:
+IL_00c4:
 	{
 		// _gazedAtObject = null;
 		__this->____gazedAtObject_14 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
@@ -1343,7 +1343,7 @@ IL_00be:
 		CardboardReticlePointer_ResetParams_mFB0D6C3A87A724DFBC8A3E39FCE34BBD091DAA4F(__this, NULL);
 	}
 
-IL_00cb:
+IL_00d1:
 	{
 		// if (Google.XR.Cardboard.Api.IsTriggerPressed)
 		il2cpp_codegen_runtime_class_init_inline(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_il2cpp_TypeInfo_var);
@@ -1351,31 +1351,31 @@ IL_00cb:
 		L_22 = Api_get_IsTriggerPressed_mE2356D33F433C078FB257D788BD9B3B219FA920E(NULL);
 		if (!L_22)
 		{
-			goto IL_00e8;
+			goto IL_00f0;
 		}
 	}
 	{
-		// _gazedAtObject?.SendMessage("OnPointerClick");
+		// _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23 = __this->____gazedAtObject_14;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = L_23;
 		G_B13_0 = L_24;
 		if (L_24)
 		{
 			G_B14_0 = L_24;
-			goto IL_00de;
+			goto IL_00e4;
 		}
 	}
 	{
-		goto IL_00e8;
+		goto IL_00f0;
 	}
 
-IL_00de:
+IL_00e4:
 	{
 		NullCheck(G_B14_0);
-		GameObject_SendMessage_m65848D6A8F999FACBC1C21B7303660B7AFF6674E(G_B14_0, _stringLiteralE4D1D91E707649742B086EDB3E0F4EFA9754545A, NULL);
+		GameObject_SendMessage_m452B3418BE240EC79550C15E1F2EAE61488F06DF(G_B14_0, _stringLiteralE4D1D91E707649742B086EDB3E0F4EFA9754545A, NULL, 1, NULL);
 	}
 
-IL_00e8:
+IL_00f0:
 	{
 		// UpdateDiameters();
 		CardboardReticlePointer_UpdateDiameters_mC0F33DEAC1A47CDD75423242BEF5E7A4266F32C2(__this, NULL);
@@ -1403,7 +1403,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardboardReticlePointer_UpdateDiameters_
 		// Mathf.Clamp(_reticleDistanceInMeters, _RETICLE_MIN_DISTANCE, _RETICLE_MAX_DISTANCE);
 		float L_0 = __this->____reticleDistanceInMeters_18;
 		float L_1;
-		L_1 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(L_0, (0.449999988f), (20.0f), NULL);
+		L_1 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(L_0, (0.449999988f), (6.0f), NULL);
 		__this->____reticleDistanceInMeters_18 = L_1;
 		// if (_reticleInnerAngle < _RETICLE_MIN_INNER_ANGLE)
 		float L_2 = __this->____reticleInnerAngle_16;
@@ -1456,7 +1456,7 @@ IL_004b:
 		float L_12;
 		L_12 = Time_get_unscaledDeltaTime_mF057EECA857E5C0F90A3F910D26D3EE59F27C4B5(NULL);
 		float L_13;
-		L_13 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_10, L_11, ((float)il2cpp_codegen_multiply(L_12, (8.0f))), NULL);
+		L_13 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_10, L_11, ((float)il2cpp_codegen_multiply(L_12, (5.0f))), NULL);
 		__this->____reticleInnerDiameter_19 = L_13;
 		// _reticleOuterDiameter = Mathf.Lerp(
 		//     _reticleOuterDiameter, outer_diameter, Time.unscaledDeltaTime * _RETICLE_GROWTH_SPEED);
@@ -1465,7 +1465,7 @@ IL_004b:
 		float L_16;
 		L_16 = Time_get_unscaledDeltaTime_mF057EECA857E5C0F90A3F910D26D3EE59F27C4B5(NULL);
 		float L_17;
-		L_17 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_14, L_15, ((float)il2cpp_codegen_multiply(L_16, (8.0f))), NULL);
+		L_17 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_14, L_15, ((float)il2cpp_codegen_multiply(L_16, (5.0f))), NULL);
 		__this->____reticleOuterDiameter_20 = L_17;
 		// _reticleMaterial.SetFloat(
 		//     "_InnerDiameter", _reticleInnerDiameter * _reticleDistanceInMeters);
@@ -1499,7 +1499,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardboardReticlePointer_SetParams_m0A0EA
 		//                                       _RETICLE_MAX_DISTANCE);
 		float L_0 = ___distance0;
 		float L_1;
-		L_1 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(L_0, (0.449999988f), (20.0f), NULL);
+		L_1 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(L_0, (0.449999988f), (6.0f), NULL);
 		__this->____reticleDistanceInMeters_18 = L_1;
 		// if (interactive)
 		bool L_2 = ___interactive1;
@@ -1531,7 +1531,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CardboardReticlePointer_ResetParams_mFB0
 {
 	{
 		// _reticleDistanceInMeters = _RETICLE_MAX_DISTANCE;
-		__this->____reticleDistanceInMeters_18 = (20.0f);
+		__this->____reticleDistanceInMeters_18 = (6.0f);
 		// _reticleInnerAngle = _RETICLE_MIN_INNER_ANGLE;
 		__this->____reticleInnerAngle_16 = (0.0f);
 		// _reticleOuterAngle = _RETICLE_MIN_OUTER_ANGLE;
