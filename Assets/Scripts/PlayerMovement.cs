@@ -55,17 +55,20 @@ public class PlayerMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 if(hitInfo.collider.tag == "Hotbar"){
-                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                    hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                }
+                else {
+                    Debug.Log("Interact other object as hotbar is inactive.");
                 }
             }
 
-            else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+            else if(hitInfo.collider.GetComponent<Equipable>() != null && !hotbarUI.activeSelf) {
                 //Turn on equipable texts
                 hitInfo.collider.transform.GetChild(0).gameObject.SetActive(true);
                 itemName = hitInfo.collider.gameObject;
             }
 
-            else if(hitInfo.collider.GetComponent<Television>() != null) {
+            else if(hitInfo.collider.GetComponent<Television>() != null && !hotbarUI.activeSelf) {
             }
         
         }
@@ -108,15 +111,44 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
             
+            Debug.Log("joystick buttonA");
+
             if(hotbarUI.activeSelf) {
                 itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                Debug.Log(itemChoose);
             }
-            else {
-                Debug.Log("joystick buttonA");
 
+            else {
                 if(String.Equals(itemChoose, "Hand")) {
-                    if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                    if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                        hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                        hitInfo.collider.GetComponent<Equipable>().EquipPass();
+                        
+                        // if(string.Equals(hitInfo.collider.name, "Go Bag")) {
+                        //     Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                        // }
+                        // else {
+                        //     Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                        // }
+                    }
+
+                    else if(hitInfo.collider.GetComponent<Television>() != null) {
+                        hitInfo.collider.GetComponent<Television>().TelevisionPass();
+                    }
+                }
+
+                else if(String.Equals(itemChoose, "Flashlight")) {
+                    if(!Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                        if(gameObject.transform.GetChild(2).gameObject.activeSelf) {
+                            gameObject.transform.GetChild(2).gameObject.SetActive(false);
+                        }
+                        else {
+                            gameObject.transform.GetChild(2).gameObject.SetActive(true);
+                        }
+                    }
+                    else {
                         if(hitInfo.collider.GetComponent<Interactable>() != null) {
                             hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
                         }
@@ -138,19 +170,32 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
 
-                else if(String.Equals(itemChoose, "Flashlight")) {
-                    if(gameObject.transform.GetChild(2).gameObject.activeSelf) {
-                        gameObject.transform.GetChild(2).gameObject.SetActive(false);
+                else if (String.Equals(itemChoose, "Whistle")) {
+                    if(!Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                        Debug.Log("Whistle mo 'to.");
                     }
                     else {
-                        gameObject.transform.GetChild(2).gameObject.SetActive(true);
+                        if(hitInfo.collider.GetComponent<Interactable>() != null) {
+                            hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
+                        }
+
+                        else if(hitInfo.collider.GetComponent<Equipable>() != null) {
+                            hitInfo.collider.GetComponent<Equipable>().EquipPass();
+                            
+                            // if(string.Equals(hitInfo.collider.name, "Go Bag")) {
+                            //     Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                            // }
+                            // else {
+                            //     Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
+                            // }
+                        }
+
+                        else if(hitInfo.collider.GetComponent<Television>() != null) {
+                            hitInfo.collider.GetComponent<Television>().TelevisionPass();
+                        }
                     }
                 }
-
-                else if(String.Equals(itemChoose, "Whistle")) {
-                    Debug.Log(itemChoose);
-                }
-            }
+            }            
         
             timePassed = 0f;
         }
