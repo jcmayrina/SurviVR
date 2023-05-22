@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private bool flag;
     private bool isAvailable;
     public AudioSource footsteps;
+    public AudioSource click;
     private float keyDelay = .2f;
     private float timePassed = 0f;
     public bool canMove;
@@ -83,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
                 gameObject.GetComponent<CharacterController>().enabled = false;
                 gameObject.GetComponent<Rigidbody>().isKinematic=true;
                 hotbarUI.SetActive(true);
+                gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                 if(!flag) {
                     spawnInventory();
                     flag = true;
@@ -92,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
                     gameObject.GetComponent<Rigidbody>().isKinematic=false;
                     hotbarUI.SetActive(false);
                     flag = false;
+                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
                 }
                 timePassed = 0f;
             }
@@ -194,7 +197,8 @@ public class PlayerMovement : MonoBehaviour
         }}
     }
     private void spawnInventory() {
-        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, head.forward.y, (head.forward.z - 1)).normalized * 1;
+        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * 2;
+        hotbarUI.transform.LookAt(new Vector3(gameObject.transform.position.x, hotbarUI.transform.position.y, gameObject.transform.position.z));
         hotbarUI.transform.forward *= -1;
         hotbarUI.transform.Rotate(70, 0, 0);
     }

@@ -20,5 +20,6 @@ public class EquipItem : Equipable
     protected override void Equip(){
         Debug.Log(gameObject.name);
         gameObject.SetActive(false);
+        player.click.Play();
     }
 }
