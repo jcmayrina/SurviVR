@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 if(hitInfo.collider.tag == "Hotbar"){
-                    hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
                 }
             }
 
@@ -75,24 +75,35 @@ public class PlayerMovement : MonoBehaviour
                 itemName.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
-        
-        if(head.eulerAngles.x >= 30 && head.eulerAngles.x <= 90) {
-            gameObject.GetComponent<CharacterController>().enabled = false;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            hotbarUI.SetActive(true);
-            if(!flag) {
-                spawnInventory();
-                flag = true;
+        if(head.eulerAngles.x >= 70 && head.eulerAngles.x <= 90) {
+            if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
+                Debug.Log("buttA inv");
+
+                gameObject.GetComponent<CharacterController>().enabled = false;
+                gameObject.GetComponent<Rigidbody>().isKinematic=true;
+                hotbarUI.SetActive(true);
+                if(!flag) {
+                    spawnInventory();
+                    flag = true;
+                }
+                else{
+                    gameObject.GetComponent<CharacterController>().enabled = true;
+                    gameObject.GetComponent<Rigidbody>().isKinematic=false;
+                    hotbarUI.SetActive(false);
+                    flag = false;
+                }
+                timePassed = 0f;
             }
-            timePassed = 0f;
+            gameObject.transform.GetChild(3).gameObject.GetComponentInChildren<RawImage>().enabled = true;
+            
         }
     
         else {
-            gameObject.GetComponent<CharacterController>().enabled = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            hotbarUI.SetActive(false);
-            flag = false;
-            timePassed = 0f;
+            gameObject.transform.GetChild(3).gameObject.GetComponentInChildren<RawImage>().enabled = false;
+            //gameObject.GetComponent<CharacterController>().enabled = true;
+            //gameObject.GetComponent<Rigidbody>().isKinematic=false;
+            //hotbarUI.SetActive(false);
+            //flag = false;
         }
 
         if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
@@ -190,6 +201,11 @@ public class PlayerMovement : MonoBehaviour
         else{
             footsteps.enabled=false;
         }}
+    }
+    private void spawnInventory() {
+        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, head.forward.y, (head.forward.z - 1)).normalized * 1;
+        hotbarUI.transform.forward *= -1;
+        hotbarUI.transform.Rotate(70, 0, 0);
     }
 
 }
