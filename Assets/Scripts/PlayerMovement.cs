@@ -178,10 +178,10 @@ public class PlayerMovement : MonoBehaviour
             
     }
     private void spawnInventory() {
-        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, head.forward.y, (head.forward.z - 1)).normalized * 1;
-        hotbarUI.transform.LookAt(new Vector3(head.position.x, hotbarUI.transform.position.y, head.position.z));
+        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * 2;
+        hotbarUI.transform.LookAt(new Vector3(gameObject.transform.position.x, hotbarUI.transform.position.y, gameObject.transform.position.z));
         hotbarUI.transform.forward *= -1;
-        hotbarUI.transform.Rotate(70, 0, 0);
+        hotbarUI.transform.Rotate(50, 0, 0);
     }
     private void playerMove(){
         if(canMove){
@@ -202,10 +202,6 @@ public class PlayerMovement : MonoBehaviour
             footsteps.enabled=false;
         }}
     }
-    private void spawnInventory() {
-        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, head.forward.y, (head.forward.z - 1)).normalized * 1;
-        hotbarUI.transform.forward *= -1;
-        hotbarUI.transform.Rotate(70, 0, 0);
-    }
+    
 
 }
