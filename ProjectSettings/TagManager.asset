@@ -9,6 +9,11 @@ TagManager:
   - TV
   - Ref
   - Hotbar
+  - TopCabinetL
+  - TopCabinetR
+  - CabinetR
+  - CabinetL
+  - inventoryIcon
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - Equipable
   - Television
   - House
-  - 
+  - Inventory
   - 
   - 
   - 
