@@ -18,6 +18,8 @@ public class GameDirector : MonoBehaviour
     private bool isTriggered = false;
     private float timePassed = 0f;
     private string sceneName;
+    private Vector3 colliderPosition;
+    private Vector3 playerPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,16 +41,16 @@ public class GameDirector : MonoBehaviour
             }
             if(!goBag.activeSelf && goBagFlag) {
                 colliderActTrigger.SetActive(true);
+                colliderPosition = colliderActTrigger.transform.position;
+                playerPosition = Player.transform.position;
                 goBagFlag = !goBagFlag;
             }
             if(isTriggered) {
-                Debug.Log("Next Scene");
-                timePassed += Time.deltaTime;
-            }
-            if(timePassed > 2f) {
-                timePassed = 0f;
-                isTriggered = false;
-                SceneManager.LoadScene("SchoolScene Act2");
+                Player.transform.position = Vector3.Lerp(playerPosition, colliderPosition, Time.deltaTime * 0.2f);
+                if(Vector3.Distance(colliderPosition, Player.transform.position) > 0.1f) {
+                    isTriggered = !isTriggered;
+                    Debug.Log("Next Scene");
+                }
             }
         }
     }
