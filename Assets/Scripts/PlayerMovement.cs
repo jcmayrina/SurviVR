@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 itemName.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
-        if(head.eulerAngles.x >= 70 && head.eulerAngles.x <= 90) {
+        if(head.eulerAngles.x >= 50 && head.eulerAngles.x <= 85) {
             if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
                 Debug.Log("buttA inv");
 

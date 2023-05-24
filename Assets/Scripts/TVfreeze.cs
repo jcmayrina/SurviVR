@@ -7,6 +7,7 @@ public class TVfreeze : MonoBehaviour
     float crouchtimer;
     int mycrouchtimer;
     public GameObject Player;
+    public GameObject tvcondition;
     public VideoPlayer video;
     private bool checkPlay=false;
     private float keyDelay = .2f;
@@ -32,12 +33,7 @@ public class TVfreeze : MonoBehaviour
                     if(video.isPlaying==false){
                         video.Play();
                         checkPlay = true;
-                        Player.GetComponentInChildren<CardboardReticlePointer>().GetComponent<MeshRenderer>().enabled = false;
-                    }
-                    else{
-                        video.Pause();
-                        TurnOnControls();
-                        Player.GetComponentInChildren<CardboardReticlePointer>().GetComponent<MeshRenderer>().enabled = true;
+                        tvcondition.SetActive(false);
                     }
                     timePassed = 0f;
                 }
