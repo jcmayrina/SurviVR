@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private float timePassed = 0f;
     public bool canMove;
     public GameObject itemName;
+    public List<string> objectiveLists = new List<string>();
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -48,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update(){
         timePassed += Time.deltaTime;
+        foreach( var x in objectiveLists) {
+        Debug.Log( x.ToString());
+        }
         playerMove();
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hitInfo;

@@ -18,7 +18,8 @@ public class EquipItem : Equipable
 
     }
     protected override void Equip(){
-        Debug.Log(gameObject.name);
+        player.objectiveLists.Add(gameObject.name);
+        Debug.Log("added "+gameObject.name);
         gameObject.SetActive(false);
         player.click.Play();
     }
