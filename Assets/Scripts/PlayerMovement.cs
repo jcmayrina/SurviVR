@@ -103,12 +103,14 @@ public class PlayerMovement : MonoBehaviour
                 }
                 timePassed = 0f;
             }
-            gameObject.transform.GetChild(3).gameObject.GetComponentInChildren<RawImage>().enabled = true;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = true;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = true;
             
         }
     
         else {
-            gameObject.transform.GetChild(3).gameObject.GetComponentInChildren<RawImage>().enabled = false;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = false;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = false;
             //gameObject.GetComponent<CharacterController>().enabled = true;
             //gameObject.GetComponent<Rigidbody>().isKinematic=false;
             //hotbarUI.SetActive(false);
