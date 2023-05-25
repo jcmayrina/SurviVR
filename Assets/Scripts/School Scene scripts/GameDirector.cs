@@ -14,6 +14,7 @@ public class GameDirector : MonoBehaviour
 
     private bool goBagFlag = true;
     private bool hotBarUIFlag = true;
+    private bool isStart = true;
     private bool sceneTransitionFlag = false;
     private bool isTriggered = false;
     private float timePassed = 0f;
@@ -25,6 +26,7 @@ public class GameDirector : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
+        Canvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,18 +48,19 @@ public class GameDirector : MonoBehaviour
                 goBagFlag = !goBagFlag;
             }
             if(isTriggered) {
-                Player.transform.position = Vector3.Lerp(playerPosition, colliderPosition, Time.deltaTime * 0.2f);
-                if(Vector3.Distance(colliderPosition, Player.transform.position) > 0.1f) {
-                    isTriggered = !isTriggered;
-                    Debug.Log("Next Scene");
-                }
+                SceneManager.LoadScene("SchoolScene Act2");
+            }
+        }
+        if(sceneName == "SchooldScene Act2") {
+            if(isStart) {
+                sceneTransition.Play("FadeOut");
+                isStart = !isStart;
             }
         }
     }
 
     public void playerTriggerThis() {
         isTriggered = true;
-        sceneTransition.GetComponent<Animation>().Play("FadeOut");
         Canvas.SetActive(true);
         Player.GetComponent<CharacterController>().enabled = false;
     }

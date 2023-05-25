@@ -18,6 +18,7 @@ public class ItemClick : Interactable
     }
 
     protected override string ChooseItem() {
+        gameObject.GetComponent<AudioSource>().Play();
         return gameObject.name;
     }
 }

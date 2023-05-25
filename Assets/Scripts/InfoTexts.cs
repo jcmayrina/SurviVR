@@ -117,7 +117,7 @@ public class InfoTexts : MonoBehaviour
     
     IEnumerator waiter()
     {
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(3);
         TurnOnControls();
     }
 }
