@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level-1/Level-1 TV.unity
     guid: cb144fd3e09aba346bb1d1b84d776615
   - enabled: 1
     path: Assets/Scenes/Level-2/SchoolScene Act1.unity
     guid: cdfc4fc737fd2764c9e1b7b3a4c94be2
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level-2/SchoolScene Act2.unity
-    guid: 05f6e5978daeb5d4190f94727cfdff96
+    guid: 5db28d59faf7f6348b5a9f688d69ea4b
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 39bb11499745eb245a63447adea52a67, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: fe9cf5c3af28958408692534ed8fda1c, type: 2}

@@ -18,7 +18,7 @@ public class colliderActTrigger : MonoBehaviour
     }
 
     void OnTriggerEnter() {
-        gdFunction.playerTriggerThis();
+        gdFunction.setTriggeredCollider(gdFunction.Colliders.IndexOf(gameObject));
         gameObject.SetActive(false);
     }
 }
