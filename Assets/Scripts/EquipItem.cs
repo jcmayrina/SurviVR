@@ -13,8 +13,12 @@ public class EquipItem : Equipable
     void Update() {
         if(player.itemName != null)
         promptText = player.itemName.transform.GetChild(0).gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        if(promptText != null)
+        if(promptText != null){
         promptText.SetText("take "+player.itemName.name);
+        gameObject.transform.Find("Canvas").transform.LookAt(new Vector3(player.transform.position.x, gameObject.transform.Find("Canvas").transform.position.y, player.transform.position.z));
+        gameObject.transform.Find("Canvas").transform.forward *= -1;
+        gameObject.transform.Find("Canvas").transform.Rotate(30, 0, 0);
+        }
 
     }
     protected override void Equip(){

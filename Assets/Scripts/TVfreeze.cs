@@ -4,10 +4,12 @@ using UnityEngine.Video;
 
 public class TVfreeze : MonoBehaviour
 {
+    Camera m_MainCamera;
     float crouchtimer;
     int mycrouchtimer;
     public GameObject Player;
     public GameObject tvcondition;
+    public GameObject outsidecondition;
     public VideoPlayer video;
     private bool checkPlay=false;
     private float keyDelay = .2f;
@@ -19,6 +21,7 @@ public class TVfreeze : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_MainCamera = Camera.main;
     }
     // Update is called once per frame
     void Update()
@@ -33,7 +36,6 @@ public class TVfreeze : MonoBehaviour
                     if(video.isPlaying==false){
                         video.Play();
                         checkPlay = true;
-                        tvcondition.SetActive(false);
                     }
                     timePassed = 0f;
                 }
@@ -43,11 +45,13 @@ public class TVfreeze : MonoBehaviour
         crouchtimer += 1 * Time.deltaTime;
         mycrouchtimer = (int) crouchtimer;
         if(mycrouchtimer > 64){
+            tvcondition.SetActive(false);
+            outsidecondition.SetActive(true);
             TurnOnControls();
         }
         else if(mycrouchtimer < 64){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
-            Player.transform.rotation = Quaternion.Euler(new Vector3(0f,0f,6.9f));
+            m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
             TurnOffControls();
         }
         }

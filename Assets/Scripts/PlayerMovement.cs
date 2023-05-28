@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private float timePassed = 0f;
     public bool canMove;
     public GameObject itemName;
+    public int timePlay;
     public List<string> objectiveLists = new List<string>();
 
     //-----Controller related objects and variables
