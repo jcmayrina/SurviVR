@@ -11,12 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level-2/SchoolScene Act1.unity
     guid: cdfc4fc737fd2764c9e1b7b3a4c94be2
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level-2/SchoolScene Act2.unity
-    guid: 5db28d59faf7f6348b5a9f688d69ea4b
+    guid: 41ad223c79072a04fa338e7aecc0ebaa
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 39bb11499745eb245a63447adea52a67, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: fe9cf5c3af28958408692534ed8fda1c, type: 2}
