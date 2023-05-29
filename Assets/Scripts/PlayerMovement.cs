@@ -91,20 +91,18 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
                 Debug.Log("buttA inv");
 
-                gameObject.GetComponent<CharacterController>().enabled = false;
-                gameObject.GetComponent<Rigidbody>().isKinematic=true;
-                hotbarUI.SetActive(true);
-                gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                if(!flag) {
+                if(!hotbarUI.activeSelf) {
+                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    hotbarUI.SetActive(true);
                     spawnInventory();
-                    flag = true;
+                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                    gameObject.GetComponent<CharacterController>().enabled = false;
                 }
-                else{
-                    gameObject.GetComponent<CharacterController>().enabled = true;
-                    gameObject.GetComponent<Rigidbody>().isKinematic=false;
+                else {
+                    gameObject.GetComponent<Rigidbody>().isKinematic = false;
                     hotbarUI.SetActive(false);
-                    flag = false;
                     gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
+                    gameObject.GetComponent<CharacterController>().enabled = true;
                 }
                 timePassed = 0f;
             }
@@ -124,30 +122,35 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
             
-                Debug.Log("joystick buttonA");
-
-                if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+            Debug.Log("joystick buttonA");
+            
+            if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hotbarUI.activeSelf == false) {
                     if(hitInfo.collider.GetComponent<Interactable>() != null) {
                         hitInfo.collider.GetComponent<Interactable>().HideDoorPass();
                     }
-
                     else if(hitInfo.collider.GetComponent<Equipable>() != null) {
                         hitInfo.collider.GetComponent<Equipable>().EquipPass();
-                        
-                        if(string.Equals(hitInfo.collider.name, "Go Bag")) {
-                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
-                            // isAvailable = !isAvailable;
-                        }
-                        else {
-                            Debug.Log(string.Equals(hitInfo.collider.name, "Go Bag"));
-                        }
                     }
-
                     else if(hitInfo.collider.GetComponent<Television>() != null) {
                         hitInfo.collider.GetComponent<Television>().TelevisionPass();
                     }
-                
-        }
+                }
+                else {
+                    if(hitInfo.collider.tag == "Hotbar") {
+                        itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                    }
+                }
+            }
+            else {
+                if(String.Equals(itemChoose, "Flashlight")) {
+                    flashlight.SetActive(!flashlight.activeSelf);
+                }
+                if(String.Equals(itemChoose, "Whistle")) {
+                    Debug.Log("Whistle is used");
+                }
+            }
+
         timePassed = 0f;
         }
         

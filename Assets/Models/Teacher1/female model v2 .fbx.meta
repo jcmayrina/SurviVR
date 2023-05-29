@@ -1,8 +1,23 @@
 fileFormatVersion: 2
-guid: 89275be7694854b4385c22a4a720efab
+guid: 112f39c6944440942bd1a83f3cacc408
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -4990767959301788674
+    second: rig|EmptyAction.001
+  - first:
+      74: -9186884095095935461
+    second: rig|speakingIdle.001
+  - first:
+      74: 8861956530864447550
+    second: rig|speakingIdle.002
+  - first:
+      74: 7339967371243086174
+    second: rig|TeachingIdle
+  - first:
+      74: -6371369689968625921
+    second: rig|Walking
   externalObjects: {}
   materials:
     materialImportMode: 2
