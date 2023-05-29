@@ -7,6 +7,7 @@ public class SuccessLvl1 : MonoBehaviour
 {
     PlayerMovement player;
     public GameObject outsidecondition;
+    public GameObject outsidewarnings;
     float timer;
     int mytimer;
     void Start()
@@ -22,6 +23,7 @@ public class SuccessLvl1 : MonoBehaviour
         Debug.Log(player.objectiveLists.Count);
         if(player.objectiveLists.Count==16){
             outsidecondition.SetActive(false);
+            outsidewarnings.SetActive(false);
         }
         if(player.objectiveLists.Count==22){
              SceneManager.LoadScene("Level-1 End");
