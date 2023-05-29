@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -26,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject itemName;
     public int timePlay;
     public List<string> objectiveLists = new List<string>();
+    public GameObject objectCheck;
+    public bool pickBroom;
+    public bool pickDustpan;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -52,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     void Update(){
         timePassed += Time.deltaTime;
         foreach( var x in objectiveLists) {
-        Debug.Log( x.ToString());
+        //Debug.Log( x.ToString());
         }
         playerMove();
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -106,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
             }
             gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = true;
             gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = true;
+            
             
         }
     
@@ -182,9 +187,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("joystick buttonSelect");
         timePassed = 0f;
         }
-            
+        if(pickDustpan == true && pickBroom == true){
+            objectCheck.transform.GetChild(0).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(1).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(2).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(3).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(4).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(5).GetComponent<OutlineBorder>().enabled = true;
+        }
     }
-
     private void playerMove(){
         if(canMove){
         float horizontal = Input.GetAxis("Horizontal");
@@ -210,5 +221,4 @@ public class PlayerMovement : MonoBehaviour
         hotbarUI.transform.forward *= -1;
         hotbarUI.transform.Rotate(70, 0, 0);
     }
-
 }
