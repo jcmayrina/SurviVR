@@ -14,6 +14,7 @@ public class GameDirector : MonoBehaviour
     public GameObject Teacher;
     public GameObject TextDialogueGuide;
     public TextMeshProUGUI Dialogue;
+    public TextMeshProUGUI ObjectiveText;
 
     // Object Reference
     private Transform cam;
@@ -55,7 +56,8 @@ public class GameDirector : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         Player.GetComponent<CharacterController>().enabled = false;
-
+        ObjectiveText.SetText("- None");
+        
         if(sceneName == "SchoolScene Act1") {
             index = 0;
             Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
@@ -211,6 +213,7 @@ public class GameDirector : MonoBehaviour
     private void spawnTextGuide() {
         TextDialogue.transform.position = cam.position + new Vector3(cam.forward.x, 0, cam.forward.z).normalized * 3f;
         Dialogue.SetText(currentDialogue);
+        ObjectiveText.SetText("- " + currentDialogue);
     }
 
     // Sets timer to show text dialogue in front of player when idle or not doing the objetive. Show after 5sec, hide after another 5sec

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class TVfreeze : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class TVfreeze : MonoBehaviour
     public GameObject outsidecondition;
     public VideoPlayer video;
     private bool checkPlay=false;
+    private bool checkPlay1=false;
     private float keyDelay = .2f;
     private float timePassed = 0f;
     //-----Serialize Fields for Raycast
@@ -40,6 +42,15 @@ public class TVfreeze : MonoBehaviour
                     timePassed = 0f;
                 }
             }
+            if(hitInfo.collider.tag == "TVLast") {
+                if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
+                    if(video.isPlaying==false){
+                        video.Play();
+                        checkPlay1 = true;
+                    }
+                    timePassed = 0f;
+                }
+            }
         }
         if(checkPlay){
         crouchtimer += 1 * Time.deltaTime;
@@ -50,6 +61,19 @@ public class TVfreeze : MonoBehaviour
             TurnOnControls();
         }
         else if(mycrouchtimer < 64){
+            Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
+            m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
+            TurnOffControls();
+        }
+        }
+        
+        if(checkPlay1){
+        crouchtimer += 1 * Time.deltaTime;
+        mycrouchtimer = (int) crouchtimer;
+        if(mycrouchtimer > 5){
+             SceneManager.LoadScene("Level-1 End");
+        }
+        else if(mycrouchtimer < 5){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
             m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
             TurnOffControls();

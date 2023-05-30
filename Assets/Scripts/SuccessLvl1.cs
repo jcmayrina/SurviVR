@@ -29,7 +29,7 @@ public class SuccessLvl1 : MonoBehaviour
             outsidewarnings.SetActive(false);
         }
         if(player.objectiveLists.Count==24){
-             SceneManager.LoadScene("Level-1 End");
+             SceneManager.LoadScene("Level-1 TV2");
         }
         
         foreach( var x in player.objectiveLists) {

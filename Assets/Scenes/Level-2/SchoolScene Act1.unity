@@ -91702,7 +91702,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 657846400}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -92835,7 +92835,8 @@ MonoBehaviour:
   Player: {fileID: 525432307}
   Teacher: {fileID: 919132148428757726}
   TextDialogueGuide: {fileID: 2067283110}
-  Dialogue: {fileID: 0}
+  Dialogue: {fileID: 342184395}
+  ObjectiveText: {fileID: 415938065}
   activateTimer: 0
   Colliders:
   - {fileID: 863513421}
@@ -111987,8 +111988,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.27999997, z: 1.9999999}
-  m_Center: {x: -0.5, y: -0.13999903, z: 1.0000005}
+  m_Size: {x: 1, y: 0.27999997, z: 0.9850365}
+  m_Center: {x: -0.5, y: -0.13999942, z: 0.4925211}
 --- !u!1 &7756424494300195820
 GameObject:
   m_ObjectHideFlags: 0

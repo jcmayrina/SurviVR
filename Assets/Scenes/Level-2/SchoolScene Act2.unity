@@ -83711,7 +83711,8 @@ MonoBehaviour:
   Player: {fileID: 525432307}
   Teacher: {fileID: 919132148428757726}
   TextDialogueGuide: {fileID: 2067283110}
-  Dialogue: {fileID: 0}
+  Dialogue: {fileID: 342184395}
+  ObjectiveText: {fileID: 415938065}
   activateTimer: 0
   Colliders:
   - {fileID: 863513421}
