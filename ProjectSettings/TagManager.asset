@@ -15,6 +15,7 @@ TagManager:
   - CabinetL
   - inventoryIcon
   - TVLast
+  - MainMenu
   layers:
   - Default
   - TransparentFX

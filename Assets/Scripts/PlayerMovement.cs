@@ -87,34 +87,45 @@ public class PlayerMovement : MonoBehaviour
                 itemName.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
-        if(head.eulerAngles.x >= 60 && head.eulerAngles.x <= 130) {
+        if(head.eulerAngles.x >= 50 && head.eulerAngles.x <= 90) {
             if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
                 Debug.Log("buttA inv");
 
-                if(!hotbarUI.activeSelf) {
+                if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
+                if(hitInfo.collider.tag == "inventoryIcon" && !hotbarUI.activeSelf) {
                     gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     hotbarUI.SetActive(true);
                     spawnInventory();
+                    Debug.Log("Hotbar open");
                     gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                     gameObject.GetComponent<CharacterController>().enabled = false;
                 }
                 else {
                     gameObject.GetComponent<Rigidbody>().isKinematic = false;
                     hotbarUI.SetActive(false);
+                    Debug.Log("Hotbar close");
                     gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
                     gameObject.GetComponent<CharacterController>().enabled = true;
+                }
+                if(hitInfo.collider.tag == "MainMenu") {
+                    Debug.Log("Go to Main Menu");
+                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                    gameObject.GetComponent<CharacterController>().enabled = false;
+                }
                 }
                 timePassed = 0f;
             }
             gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = true;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<BoxCollider>().enabled = true;
             gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = true;
-            
-            
+            gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<BoxCollider>().enabled = true;
         }
-    
         else {
             gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = false;
             gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = false;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<BoxCollider>().enabled = false;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<BoxCollider>().enabled = false;
             //gameObject.GetComponent<CharacterController>().enabled = true;
             //gameObject.GetComponent<Rigidbody>().isKinematic=false;
             //hotbarUI.SetActive(false);
@@ -198,6 +209,7 @@ public class PlayerMovement : MonoBehaviour
             objectCheck.transform.GetChild(4).GetComponent<OutlineBorder>().enabled = true;
             objectCheck.transform.GetChild(5).GetComponent<OutlineBorder>().enabled = true;
         }
+    
     }
     private void playerMove(){
         if(canMove){

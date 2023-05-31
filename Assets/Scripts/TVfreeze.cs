@@ -9,6 +9,7 @@ public class TVfreeze : MonoBehaviour
     float crouchtimer;
     int mycrouchtimer;
     public GameObject Player;
+    PlayerMovement player;
     public GameObject tvcondition;
     public GameObject outsidecondition;
     public VideoPlayer video;
@@ -24,6 +25,7 @@ public class TVfreeze : MonoBehaviour
     void Start()
     {
         m_MainCamera = Camera.main;
+        player = FindObjectOfType<PlayerMovement>();
     }
     // Update is called once per frame
     void Update()
@@ -38,6 +40,7 @@ public class TVfreeze : MonoBehaviour
                     if(video.isPlaying==false){
                         video.Play();
                         checkPlay = true;
+                        player.objectiveLists.Add("TV1");
                     }
                     timePassed = 0f;
                 }
@@ -47,6 +50,7 @@ public class TVfreeze : MonoBehaviour
                     if(video.isPlaying==false){
                         video.Play();
                         checkPlay1 = true;
+                        player.objectiveLists.Add("TV2");
                     }
                     timePassed = 0f;
                 }
