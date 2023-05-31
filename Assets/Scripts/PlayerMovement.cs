@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 
 public class PlayerMovement : MonoBehaviour
 {   
     public Transform head;
     public GameObject hotbarUI;
     public GameObject flashlight;
-    public String itemChoose;
+    public String itemChoose="";
     public float speed = 5f;
     private float gravity = 10f;
     Rigidbody myRb;
@@ -22,8 +23,13 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource click;
     private float keyDelay = .2f;
     private float timePassed = 0f;
+    public bool canMove;
     public GameObject itemName;
+    public int timePlay;
     public List<string> objectiveLists = new List<string>();
+    public GameObject objectCheck;
+    public bool pickBroom;
+    public bool pickDustpan;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -40,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
+        canMove = true;
         controller = GetComponent<CharacterController>();
         myRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
@@ -49,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     void Update(){
         timePassed += Time.deltaTime;
         foreach( var x in objectiveLists) {
-        Debug.Log( x.ToString());
+        //Debug.Log( x.ToString());
         }
         playerMove();
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
@@ -58,9 +65,10 @@ public class PlayerMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
                 if(hitInfo.collider.tag == "Hotbar"){
-                    hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
                 }
             }
+
 
             else if(hitInfo.collider.GetComponent<Equipable>() != null) {
                 //Turn on equipable texts
@@ -68,8 +76,10 @@ public class PlayerMovement : MonoBehaviour
                 itemName = hitInfo.collider.gameObject;
             }
 
+
             else if(hitInfo.collider.GetComponent<Television>() != null) {
             }
+           
         }
         else{
             //Turn off equipable texts
@@ -77,21 +87,24 @@ public class PlayerMovement : MonoBehaviour
                 itemName.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
-
-        if(hotbarUI.activeSelf) {
-            gameObject.GetComponent<CharacterController>().enabled = false;
-        }
-
         if(head.eulerAngles.x >= 60 && head.eulerAngles.x <= 130) {
             if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
                 Debug.Log("buttA inv");
-                
-                if(!hotbarUI.activeSelf) {
-                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                    hotbarUI.SetActive(true);
-                    spawnInventory();
-                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                    gameObject.GetComponent<CharacterController>().enabled = false;
+
+                if(hitInfo.collider.tag == "Hotbar") {
+                    // gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    // hotbarUI.SetActive(true);
+                    // spawnInventory();
+                    // gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                    // gameObject.GetComponent<CharacterController>().enabled = false;
+                    Debug.Log("Inventory");
+                }
+                else if(hitInfo.collider.tag == "MainMenu") {
+                    // Debug.Log("Go to Main Menu");
+                    // gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    // gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                    // gameObject.GetComponent<CharacterController>().enabled = false;
+                    Debug.Log("Main Menu");
                 }
                 else {
                     gameObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -99,19 +112,20 @@ public class PlayerMovement : MonoBehaviour
                     gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
                     gameObject.GetComponent<CharacterController>().enabled = true;
                 }
-
                 timePassed = 0f;
             }
-            
-            gameObject.transform.GetChild(3).gameObject.GetComponentInChildren<RawImage>().enabled = true;
-            
+            gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = true;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = true;
         }
     
         else {
-            gameObject.transform.GetChild(3).gameObject.GetComponentInChildren<RawImage>().enabled = false;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = false;
+            gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = false;
+            //gameObject.GetComponent<CharacterController>().enabled = true;
+            //gameObject.GetComponent<Rigidbody>().isKinematic=false;
+            //hotbarUI.SetActive(false);
+            //flag = false;
         }
-
-
         if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
             
             Debug.Log("joystick buttonA");
@@ -128,10 +142,11 @@ public class PlayerMovement : MonoBehaviour
                         hitInfo.collider.GetComponent<Television>().TelevisionPass();
                     }
                 }
-                else {
-                    if(hitInfo.collider.tag == "Hotbar") {
-                        itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                    }
+                else if(hitInfo.collider.tag == "Hotbar"){
+                    itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                }
+                else if(hitInfo.collider.tag == "MainMenu") {
+                    Debug.Log(hitInfo.collider.name);
                 }
             }
             else {
@@ -147,11 +162,28 @@ public class PlayerMovement : MonoBehaviour
         }
         
         if(Input.GetButton("ButtonB") && timePassed >= keyDelay){
+            //gameObject.GetComponent<CharacterController>().enabled = true;
             Debug.Log("joystick buttonB");
             timePassed = 0f;
         }
         if(Input.GetButton("ButtonY") && timePassed >= keyDelay){
-            timePassed = 0f;
+            Debug.Log("joystick buttonY");
+            if(hotbarUI.activeSelf) {
+                if(itemChoose.Equals("slot1")) {
+                    Debug.Log("Flashlight");
+                    itemChoose = "slot2";
+                }
+                else if(itemChoose.Equals("slot2")) {
+                    Debug.Log("Hand");
+                    itemChoose = "";
+                }
+                else {
+                    Debug.Log("Whistle");
+                    itemChoose = "slot1";
+                }
+            }
+            
+        timePassed = 0f;
         }
         if(Input.GetButton("ButtonX") && timePassed >= keyDelay){
             Debug.Log("joystick buttonX");
@@ -165,10 +197,17 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("joystick buttonSelect");
         timePassed = 0f;
         }
-
+        if(pickDustpan == true && pickBroom == true){
+            objectCheck.transform.GetChild(0).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(1).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(2).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(3).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(4).GetComponent<OutlineBorder>().enabled = true;
+            objectCheck.transform.GetChild(5).GetComponent<OutlineBorder>().enabled = true;
+        }
     }
-
     private void playerMove(){
+        if(canMove){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertical);
@@ -184,7 +223,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else{
             footsteps.enabled=false;
-        }
+        }}
     }
     private void spawnInventory() {
         hotbarUI.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * 2;
@@ -192,5 +231,4 @@ public class PlayerMovement : MonoBehaviour
         hotbarUI.transform.forward *= -1;
         hotbarUI.transform.Rotate(70, 0, 0);
     }
-
 }
