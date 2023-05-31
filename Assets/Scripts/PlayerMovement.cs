@@ -91,20 +91,12 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
                 Debug.Log("buttA inv");
 
-                if(hitInfo.collider.tag == "Hotbar") {
-                    // gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                    // hotbarUI.SetActive(true);
-                    // spawnInventory();
-                    // gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                    // gameObject.GetComponent<CharacterController>().enabled = false;
-                    Debug.Log("Inventory");
-                }
-                else if(hitInfo.collider.tag == "MainMenu") {
-                    // Debug.Log("Go to Main Menu");
-                    // gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                    // gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                    // gameObject.GetComponent<CharacterController>().enabled = false;
-                    Debug.Log("Main Menu");
+                if(!hotbarUI.activeSelf) {
+                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    hotbarUI.SetActive(true);
+                    spawnInventory();
+                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                    gameObject.GetComponent<CharacterController>().enabled = false;
                 }
                 else {
                     gameObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -116,6 +108,8 @@ public class PlayerMovement : MonoBehaviour
             }
             gameObject.transform.GetChild(3).gameObject.transform.Find("InvImage").GetComponent<RawImage>().enabled = true;
             gameObject.transform.GetChild(3).gameObject.transform.Find("ExitImage").GetComponent<RawImage>().enabled = true;
+            
+            
         }
     
         else {
@@ -142,11 +136,10 @@ public class PlayerMovement : MonoBehaviour
                         hitInfo.collider.GetComponent<Television>().TelevisionPass();
                     }
                 }
-                else if(hitInfo.collider.tag == "Hotbar"){
-                    itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                }
-                else if(hitInfo.collider.tag == "MainMenu") {
-                    Debug.Log(hitInfo.collider.name);
+                else {
+                    if(hitInfo.collider.tag == "Hotbar") {
+                        itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                    }
                 }
             }
             else {
