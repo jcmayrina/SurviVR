@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -145,6 +146,9 @@ public class PlayerMovement : MonoBehaviour
                     }
                     else if(hitInfo.collider.GetComponent<Television>() != null) {
                         hitInfo.collider.GetComponent<Television>().TelevisionPass();
+                    }
+                    if(hitInfo.collider.tag == "Truck") {
+                        SceneManager.LoadScene("Level-3-3");
                     }
                 }
                 else {

@@ -16,6 +16,7 @@ TagManager:
   - inventoryIcon
   - TVLast
   - MainMenu
+  - Truck
   layers:
   - Default
   - TransparentFX

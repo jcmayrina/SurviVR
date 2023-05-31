@@ -12,7 +12,37 @@ ModelImporter:
   - first:
       74: 1143011632861203104
     second: rig|Waving
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 67d146949e771fc40922f75d7b5c6df2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 89a5e0dc85d256444b02adc8c48073b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: 02e066b3dc9a21a49bce67e414cc51db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin color
+    second: {fileID: 2100000, guid: 3c28424731d1623459888d3247e14574, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red
+    second: {fileID: 2100000, guid: fdd8868cdb5ec444e814573f27ddaa08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shoes
+    second: {fileID: 2100000, guid: dc559bdb071a153488298e5b40fe5dc5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
