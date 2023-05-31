@@ -20,7 +20,7 @@ public class SuccessLvl1 : MonoBehaviour
     {
         timer += 1 * Time.deltaTime;
         mytimer = (int) timer;
-        if(player.objectiveLists.Count==16){
+        if(player.objectiveLists.Count==17){
             outsidecondition.SetActive(false);
             outsidecondition.transform.GetChild(0).GetComponent<MeshCollider>().enabled = false;
             outsidecondition.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
@@ -28,8 +28,8 @@ public class SuccessLvl1 : MonoBehaviour
             outsidecondition.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
             outsidewarnings.SetActive(false);
         }
-        if(player.objectiveLists.Count==24){
-             SceneManager.LoadScene("Level-1 End");
+        if(player.objectiveLists.Count==25){
+             SceneManager.LoadScene("Level-1 TV2");
         }
         
         foreach( var x in player.objectiveLists) {
