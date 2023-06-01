@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isAvailable;
     public AudioSource footsteps;
     public AudioSource click;
+    public AudioSource whistle;
     private float keyDelay = .2f;
     private float timePassed = 0f;
     public bool canMove;
@@ -167,6 +168,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if(hitInfo.collider.tag == "Hotbar") {
                         itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                        hotbarUI.SetActive(false);
                     }
                 }
                 if (MainMenu.activeSelf == true) {
@@ -190,6 +192,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 if(String.Equals(itemChoose, "Whistle")) {
                     Debug.Log("Whistle is used");
+                    whistle.Play();
                 }
             }
 
