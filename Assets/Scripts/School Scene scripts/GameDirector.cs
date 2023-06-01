@@ -128,7 +128,6 @@ public class GameDirector : MonoBehaviour
                     ++index;
                     Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
                     continueDialogue = true;
-                    keyPassed = 0f;
                 }
             }
         }

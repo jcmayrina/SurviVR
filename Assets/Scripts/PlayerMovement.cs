@@ -173,10 +173,14 @@ public class PlayerMovement : MonoBehaviour
                     if(hitInfo.collider.tag == "Yes") {
                         Debug.Log("yes click");
                         SceneManager.LoadScene("mainmenu");
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
                     }
                     if(hitInfo.collider.tag == "No") {
                         Debug.Log("no click");
+                        gameObject.GetComponent<Rigidbody>().isKinematic = false;
                         MainMenu.SetActive(false);
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
+                        gameObject.GetComponent<CharacterController>().enabled = true;
                     }
                 }
             }
