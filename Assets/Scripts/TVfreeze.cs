@@ -15,6 +15,7 @@ public class TVfreeze : MonoBehaviour
     public VideoPlayer video;
     private bool checkPlay=false;
     private bool checkPlay1=false;
+    private bool checkPlay2=false;
     private float keyDelay = .2f;
     private float timePassed = 0f;
     //-----Serialize Fields for Raycast
@@ -55,16 +56,26 @@ public class TVfreeze : MonoBehaviour
                     timePassed = 0f;
                 }
             }
+            if(hitInfo.collider.tag == "TV3") {
+                if(Input.GetButton("ButtonA") && timePassed >= keyDelay){
+                    if(video.isPlaying==false){
+                        video.Play();
+                        checkPlay2 = true;
+                        player.objectiveLists.Add("TV1");
+                    }
+                    timePassed = 0f;
+                }
+            }
         }
         if(checkPlay){
         crouchtimer += 1 * Time.deltaTime;
         mycrouchtimer = (int) crouchtimer;
-        if(mycrouchtimer > 64){
+        if(mycrouchtimer == 54){
             tvcondition.SetActive(false);
             outsidecondition.SetActive(true);
             TurnOnControls();
         }
-        else if(mycrouchtimer < 64){
+        else if(mycrouchtimer < 54){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
             m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
             TurnOffControls();
@@ -74,10 +85,25 @@ public class TVfreeze : MonoBehaviour
         if(checkPlay1){
         crouchtimer += 1 * Time.deltaTime;
         mycrouchtimer = (int) crouchtimer;
-        if(mycrouchtimer > 5){
+        if(mycrouchtimer == 5){
              SceneManager.LoadScene("Level-1 End");
         }
         else if(mycrouchtimer < 5){
+            Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
+            m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
+            TurnOffControls();
+        }
+        }
+        
+        if(checkPlay2){
+        crouchtimer += 1 * Time.deltaTime;
+        mycrouchtimer = (int) crouchtimer;
+        if(mycrouchtimer == 32){
+            tvcondition.SetActive(false);
+            outsidecondition.SetActive(true);
+            TurnOnControls();
+        }
+        else if(mycrouchtimer < 32){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
             m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
             TurnOffControls();

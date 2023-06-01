@@ -14,20 +14,24 @@ TagManager:
   - CabinetR
   - CabinetL
   - inventoryIcon
+  - TVLast
   - MainMenu
+  - Truck
   - Yes
   - No
+  - tent
+  - TV3
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Interactable
+  - 
   - Water
   - UI
-  - Equipable
-  - Television
-  - House
-  - Inventory
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

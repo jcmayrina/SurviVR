@@ -27,6 +27,7 @@ public class SuccessLvl3 : MonoBehaviour
             outsidecondition.transform.GetChild(1).GetComponent<MeshCollider>().enabled = false;
             outsidecondition.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
             outsidewarnings.SetActive(false);
+            SceneManager.LoadScene("Level-3-2");
         }
         
     }

@@ -4,25 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Level-1/Level-1 TV.unity
-    guid: cb144fd3e09aba346bb1d1b84d776615
-  - enabled: 1
-    path: Assets/Scenes/Level-2/SchoolScene Act1.unity
-    guid: cdfc4fc737fd2764c9e1b7b3a4c94be2
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Level-2/SchoolScene Act2.unity
-    guid: ad79a27d8ef757f44b12c750dca6b986
-  - enabled: 1
-    path: Assets/Scenes/MainMenu/mainmenu.unity
-    guid: fe5c3a8ed50b74349bfd5ef69720a279
-  m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 39bb11499745eb245a63447adea52a67, type: 2}
-    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: fe9cf5c3af28958408692534ed8fda1c, type: 2}
-    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 7b7bee563d2423241bccad4c9bd108ff, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3286e5b697cf9ec49b430f8f793875d0, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1d12f5b4593d1a943904828fff35b61b, type: 2}
+  m_Scenes: []
+  m_configObjects: {}

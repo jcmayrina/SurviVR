@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {   
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject objectCheck;
     public bool pickBroom;
     public bool pickDustpan;
+    public GameObject MainMenu;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -94,20 +95,22 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("buttA inv");
 
                 if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                    if(hitInfo.collider.tag == "inventoryIcon" && !hotbarUI.activeSelf) {
-                        gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                        hotbarUI.SetActive(true);
-                        spawnInventory();
-                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                        gameObject.GetComponent<CharacterController>().enabled = false;
-                    }
-                    else {
-                        gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                        hotbarUI.SetActive(false);
-                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
-                        gameObject.GetComponent<CharacterController>().enabled = true;
-                    }
-                    if(hitInfo.collider.tag == "MainMenu" && !MainMenu.activeSelf) {
+                if(hitInfo.collider.tag == "inventoryIcon" && !hotbarUI.activeSelf) {
+                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    hotbarUI.SetActive(true);
+                    spawnInventory();
+                    Debug.Log("Hotbar open");
+                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                    gameObject.GetComponent<CharacterController>().enabled = false;
+                }
+                else {
+                    gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                    hotbarUI.SetActive(false);
+                    Debug.Log("Hotbar close");
+                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
+                    gameObject.GetComponent<CharacterController>().enabled = true;
+                }
+                if(hitInfo.collider.tag == "MainMenu" && !MainMenu.activeSelf) {
                         MainMenu.SetActive(true);
                         spawnInventory();
                         gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -156,15 +159,23 @@ public class PlayerMovement : MonoBehaviour
                     if(hitInfo.collider.tag == "Truck") {
                         SceneManager.LoadScene("Level-3-3");
                     }
+                    if(hitInfo.collider.tag == "tent") {
+                        SceneManager.LoadScene("Level-3 End");
+                    }
                 }
-                else {
+                else
+                {
                     if(hitInfo.collider.tag == "Hotbar") {
                         itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
                     }
-                    else if(hitInfo.collider.tag == "Yes") {
+                }
+                if (MainMenu.activeSelf == true) {
+                    if(hitInfo.collider.tag == "Yes") {
+                        Debug.Log("yes click");
                         SceneManager.LoadScene("mainmenu");
                     }
-                    else if(hitInfo.collider.tag == "No") {
+                    if(hitInfo.collider.tag == "No") {
+                        Debug.Log("no click");
                         MainMenu.SetActive(false);
                     }
                 }

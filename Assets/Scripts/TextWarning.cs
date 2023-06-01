@@ -29,6 +29,7 @@ public class TextWarning : MonoBehaviour
         rotateText.transform.LookAt(new Vector3(head.position.x, rotateText.transform.position.y, head.position.z));
         rotateText.transform.forward *= -1;
         rotateText.transform.Rotate(0, 0, 0);
+        rotateText.transform.position = head.position + new Vector3(head.forward.x, .7f, head.forward.z).normalized * 4;
     }
     void OnTriggerEnter(Collider other)
     {
