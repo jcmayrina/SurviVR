@@ -171,11 +171,11 @@ public class PlayerMovement : MonoBehaviour
                 }
                 if (MainMenu.activeSelf == true) {
                     if(hitInfo.collider.tag == "Yes") {
-                        Debug.Log("yes click");
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                         SceneManager.LoadScene("mainmenu");
                     }
                     if(hitInfo.collider.tag == "No") {
-                        Debug.Log("no click");
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                         MainMenu.SetActive(false);
                     }
                 }
