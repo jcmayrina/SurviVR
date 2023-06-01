@@ -20,6 +20,7 @@ public class GameDirector : MonoBehaviour
     private Transform cam;
     private Animation TextBoxAnimation;
     private GameObject TextDialogue;
+    private AudioClip audioClip;
 
     // Private Variables
     private bool goBagFlag = true;
@@ -127,7 +128,7 @@ public class GameDirector : MonoBehaviour
                     itemClick = 0;
                     ++index;
                     Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
-                    continueDialogue = true;
+                    Invoke("LoadNextScene", 43f);
                 }
             }
         }
@@ -170,9 +171,6 @@ public class GameDirector : MonoBehaviour
             currentDialogue = Dialogues[5];
             activateTimer = true;
             continueDialogue = false;
-        }
-        else if(index == 6 && !Teacher.GetComponent<AudioSource>().isPlaying) {
-            SceneManager.LoadScene("SchoolScene End");
         }
     }
 
@@ -256,5 +254,9 @@ public class GameDirector : MonoBehaviour
             break;
         }
 
+    }
+
+    private void LoadNextScene() {
+        SceneManager.LoadScene("SchoolScene End");
     }
 }

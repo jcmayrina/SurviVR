@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isAvailable;
     public AudioSource footsteps;
     public AudioSource click;
+    public AudioSource whistle;
     private float keyDelay = .2f;
     private float timePassed = 0f;
     public bool canMove;
@@ -184,7 +185,7 @@ public class PlayerMovement : MonoBehaviour
                     flashlight.SetActive(!flashlight.activeSelf);
                 }
                 if(String.Equals(itemChoose, "Whistle")) {
-                    Debug.Log("Whistle is used");
+                    whistle.Play();
                 }
             }
 
