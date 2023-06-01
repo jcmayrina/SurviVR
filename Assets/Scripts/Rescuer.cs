@@ -19,14 +19,14 @@ public class Rescuer : MonoBehaviour
     {
         crouchtimer += 1 * Time.deltaTime;
         mycrouchtimer = (int) crouchtimer;
-        if(mycrouchtimer > 16){
+        if(mycrouchtimer == 16){
             Player.GetComponent<Rigidbody>().isKinematic = false;
             Player.GetComponent<CharacterController>().enabled = true;
         }
         else if(mycrouchtimer == 4){
             gameObject.GetComponent<AudioSource>().Play();
         }
-        else if(mycrouchtimer <= 16){
+        else if(mycrouchtimer < 16){
             Player.GetComponent<Rigidbody>().isKinematic = true;
             Player.GetComponent<CharacterController>().enabled = false;
         }

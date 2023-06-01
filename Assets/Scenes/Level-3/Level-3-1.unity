@@ -10910,8 +10910,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateText: {fileID: 929860806}
   Player: {fileID: 412160518}
-  OnEnter: 
-  OnStay: Find the other emergency kits for evacuation.
+  OnEnter: Find the other emergency kits for evacuation.
+  OnStay: 
   OnExit: 
 --- !u!65 &838564279
 BoxCollider:
@@ -10973,8 +10973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateText: {fileID: 1850310638}
   Player: {fileID: 412160518}
-  OnEnter: 
-  OnStay: Find the other emergency kits for evacuation.
+  OnEnter: Find the other emergency kits for evacuation.
+  OnStay: 
   OnExit: 
 --- !u!65 &841492194
 BoxCollider:
