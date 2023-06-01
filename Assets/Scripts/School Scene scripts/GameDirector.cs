@@ -23,7 +23,6 @@ public class GameDirector : MonoBehaviour
 
     // Private Variables
     private bool goBagFlag = true;
-    private bool tDialogueFlag = false;
     private bool continueDialogue = true;
     private string sceneName;
     private string currentDialogue;
@@ -56,7 +55,6 @@ public class GameDirector : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         Player.GetComponent<CharacterController>().enabled = false;
-        ObjectiveText.SetText("- None");
         
         if(sceneName == "SchoolScene Act1") {
             index = 0;
@@ -127,8 +125,10 @@ public class GameDirector : MonoBehaviour
 
                 if(itemClick == 3) {
                     itemClick = 0;
-                    index++;
+                    ++index;
                     Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
+                    continueDialogue = true;
+                    keyPassed = 0f;
                 }
             }
         }
@@ -171,6 +171,9 @@ public class GameDirector : MonoBehaviour
             currentDialogue = Dialogues[5];
             activateTimer = true;
             continueDialogue = false;
+        }
+        else if(index == 6 && !Teacher.GetComponent<AudioSource>().isPlaying) {
+            SceneManager.LoadScene("SchoolScene End");
         }
     }
 

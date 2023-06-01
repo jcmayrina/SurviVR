@@ -15,6 +15,8 @@ TagManager:
   - CabinetL
   - inventoryIcon
   - MainMenu
+  - Yes
+  - No
   layers:
   - Default
   - TransparentFX

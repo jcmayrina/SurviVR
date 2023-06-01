@@ -102,29 +102,5 @@ public class Objectivelvl1 : MonoBehaviour
             obj.transform.GetChild(9).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
         }
         
-        if(currentScene.name == "Level-1 End"){
-            obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(3).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(3).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(4).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(4).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(5).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(5).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(6).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(6).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(7).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(7).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(8).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(8).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(9).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(9).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            obj.transform.GetChild(10).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
-            obj.transform.GetChild(10).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-        }
     }
 }
