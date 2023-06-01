@@ -26,7 +26,7 @@ public class Rescuer : MonoBehaviour
         else if(mycrouchtimer == 4){
             gameObject.GetComponent<AudioSource>().Play();
         }
-        else{
+        else if(mycrouchtimer <= 16){
             Player.GetComponent<Rigidbody>().isKinematic = true;
             Player.GetComponent<CharacterController>().enabled = false;
         }

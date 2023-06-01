@@ -23,7 +23,7 @@ public class FadeIn : MonoBehaviour
             Player.GetComponent<CharacterController>().enabled = true;
             gameObject.SetActive(false);;
         }
-        else{
+        else if (mytimer < 3){
             Player.GetComponent<Rigidbody>().isKinematic = true;
             Player.GetComponent<CharacterController>().enabled = false;
         }
