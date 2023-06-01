@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject objectCheck;
     public bool pickBroom;
     public bool pickDustpan;
-    public GameObject MainMenu;
 
     //-----Controller related objects and variables
     private CharacterController controller;
