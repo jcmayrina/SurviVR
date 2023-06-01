@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject objectCheck;
     public bool pickBroom;
     public bool pickDustpan;
+    public GameObject MainMenu;
 
     //-----Controller related objects and variables
     private CharacterController controller;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         myRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
         hotbarUI.SetActive(false);
+        MainMenu.SetActive(false);
         cam = Camera.main;
     }
     void Update(){
@@ -108,12 +110,19 @@ public class PlayerMovement : MonoBehaviour
                     gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
                     gameObject.GetComponent<CharacterController>().enabled = true;
                 }
-                if(hitInfo.collider.tag == "MainMenu") {
-                    Debug.Log("Go to Main Menu");
-                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                    gameObject.GetComponent<CharacterController>().enabled = false;
-                }
+                if(hitInfo.collider.tag == "MainMenu" && !MainMenu.activeSelf) {
+                        MainMenu.SetActive(true);
+                        spawnInventory();
+                        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                        gameObject.GetComponent<CharacterController>().enabled = false;
+                    }
+                    else {
+                        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                        MainMenu.SetActive(false);
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
+                        gameObject.GetComponent<CharacterController>().enabled = true;
+                    }
                 }
                 timePassed = 0f;
             }
@@ -150,10 +159,24 @@ public class PlayerMovement : MonoBehaviour
                     if(hitInfo.collider.tag == "Truck") {
                         SceneManager.LoadScene("Level-3-3");
                     }
+                    if(hitInfo.collider.tag == "tent") {
+                        SceneManager.LoadScene("Level-3 End");
+                    }
                 }
-                else {
+                else
+                {
                     if(hitInfo.collider.tag == "Hotbar") {
                         itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                    }
+                }
+                if (MainMenu.activeSelf == true) {
+                    if(hitInfo.collider.tag == "Yes") {
+                        Debug.Log("yes click");
+                        SceneManager.LoadScene("mainmenu");
+                    }
+                    if(hitInfo.collider.tag == "No") {
+                        Debug.Log("no click");
+                        MainMenu.SetActive(false);
                     }
                 }
             }
@@ -235,9 +258,16 @@ public class PlayerMovement : MonoBehaviour
         }}
     }
     private void spawnInventory() {
-        hotbarUI.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * 2;
-        hotbarUI.transform.LookAt(new Vector3(gameObject.transform.position.x, hotbarUI.transform.position.y, gameObject.transform.position.z));
-        hotbarUI.transform.forward *= -1;
-        hotbarUI.transform.Rotate(70, 0, 0);
+        if(hotbarUI.activeSelf) {
+            hotbarUI.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * 2;
+            hotbarUI.transform.LookAt(new Vector3(gameObject.transform.position.x, hotbarUI.transform.position.y, gameObject.transform.position.z));
+            hotbarUI.transform.forward *= -1;
+            hotbarUI.transform.Rotate(70, 0, 0);
+        }
+        else if(MainMenu.activeSelf) {
+            MainMenu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * 2;
+            MainMenu.transform.LookAt(new Vector3(gameObject.transform.position.x, MainMenu.transform.position.y, gameObject.transform.position.z));
+            MainMenu.transform.forward *= -1;
+        }
     }
 }

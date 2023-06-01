@@ -17,6 +17,9 @@ TagManager:
   - TVLast
   - MainMenu
   - Truck
+  - Yes
+  - No
+  - tent
   layers:
   - Default
   - TransparentFX
