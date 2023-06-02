@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.52410185, g: 0.56162286, b: 0.47700498, a: 1}
+  m_IndirectSpecularColor: {r: 0.5241321, g: 0.56178737, b: 0.47702885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -93537,7 +93537,7 @@ MonoBehaviour:
   Teacher: {fileID: 919132148428757726}
   TextDialogueGuide: {fileID: 2067283110}
   Dialogue: {fileID: 342184395}
-  ObjectiveText: {fileID: 0}
+  ObjectiveText: {fileID: 342184395}
   activateTimer: 0
   Colliders:
   - {fileID: 863513421}
