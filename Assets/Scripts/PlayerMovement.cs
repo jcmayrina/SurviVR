@@ -167,9 +167,28 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     if(hitInfo.collider.tag == "Hotbar") {
-                        itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                        hotbarUI.SetActive(false);
                         
+                        if(hitInfo.collider.gameObject.transform.GetChild(0).gameObject.activeSelf) {
+                            gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                            itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+                            if(!GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false && itemChoose == "Flashlight") {
+                                GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
+                                Debug.Log("flashlight111");
+                            }
+                            if(!GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false && itemChoose == "Whistle") {
+                                GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
+                                Debug.Log("whistle111");
+                            }
+                        }
+                        else {
+                            gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
+                            itemChoose = "";
+                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
+                        }
+
+                        hotbarUI.SetActive(false);
                     }
                 }
                 if (MainMenu.activeSelf == true) {
