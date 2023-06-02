@@ -166,16 +166,15 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     if(hitInfo.collider.tag == "Hotbar") {
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                         itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
                     }
                 }
                 if (MainMenu.activeSelf == true) {
                     if(hitInfo.collider.tag == "Yes") {
-                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                         SceneManager.LoadScene("mainmenu");
                     }
                     if(hitInfo.collider.tag == "No") {
-                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                         MainMenu.SetActive(false);
                     }
                 }
