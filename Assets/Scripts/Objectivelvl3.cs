@@ -8,9 +8,13 @@ public class Objectivelvl3 : MonoBehaviour
 {
     PlayerMovement player;
     public GameObject obj; 
+    public GameObject whistleItem; 
+    public GameObject flashItem; 
 
     void Start() {
         player = FindObjectOfType<PlayerMovement>();
+        whistleItem.GetComponent<BoxCollider>().enabled = false;
+        flashItem.GetComponent<BoxCollider>().enabled = false;
     }
     void Update() {
         Scene currentScene = SceneManager.GetActiveScene ();
@@ -57,10 +61,14 @@ public class Objectivelvl3 : MonoBehaviour
             if(entry.Key == "whistle"){
             obj.transform.GetChild(5).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
             obj.transform.GetChild(5).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+            whistleItem.GetComponentInChildren<MeshRenderer>().enabled = true;
+            whistleItem.GetComponent<BoxCollider>().enabled = true;
             }
             if(entry.Key == "flashlight"){
             obj.transform.GetChild(6).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
             obj.transform.GetChild(6).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+            flashItem.GetComponentInChildren<MeshRenderer>().enabled = true;
+            flashItem.GetComponent<BoxCollider>().enabled = true;
             }
             if(entry.Key == "evacuate"){
             obj.transform.GetChild(7).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
@@ -86,6 +94,10 @@ public class Objectivelvl3 : MonoBehaviour
             obj.transform.GetChild(5).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
             obj.transform.GetChild(6).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
             obj.transform.GetChild(6).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+            whistleItem.GetComponentInChildren<MeshRenderer>().enabled = true;
+            flashItem.GetComponentInChildren<MeshRenderer>().enabled = true;
+            flashItem.GetComponent<BoxCollider>().enabled = true;
+            whistleItem.GetComponent<BoxCollider>().enabled = true;
         }
         
         if(currentScene.name == "Level-3-3"){
@@ -105,6 +117,10 @@ public class Objectivelvl3 : MonoBehaviour
             obj.transform.GetChild(6).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
             obj.transform.GetChild(7).GetComponent<TextMeshProUGUI>().color = new Color(255, 0, 0, 255);
             obj.transform.GetChild(7).GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+            whistleItem.GetComponentInChildren<MeshRenderer>().enabled = true;
+            flashItem.GetComponentInChildren<MeshRenderer>().enabled = true;
+            whistleItem.GetComponent<BoxCollider>().enabled = true;
+            flashItem.GetComponent<BoxCollider>().enabled = true;
         }
     }
 }

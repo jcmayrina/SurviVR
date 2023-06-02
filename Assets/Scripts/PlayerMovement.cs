@@ -168,14 +168,20 @@ public class PlayerMovement : MonoBehaviour
                     if(hitInfo.collider.tag == "Hotbar") {
                         gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                         itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                        hotbarUI.SetActive(false);
                     }
                 }
                 if (MainMenu.activeSelf == true) {
                     if(hitInfo.collider.tag == "Yes") {
                         SceneManager.LoadScene("mainmenu");
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
                     }
                     if(hitInfo.collider.tag == "No") {
+                        Debug.Log("no click");
+                        gameObject.GetComponent<Rigidbody>().isKinematic = false;
                         MainMenu.SetActive(false);
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
+                        gameObject.GetComponent<CharacterController>().enabled = true;
                     }
                 }
             }
@@ -184,6 +190,7 @@ public class PlayerMovement : MonoBehaviour
                     flashlight.SetActive(!flashlight.activeSelf);
                 }
                 if(String.Equals(itemChoose, "Whistle")) {
+                    Debug.Log("Whistle is used");
                     whistle.Play();
                 }
             }
