@@ -68,8 +68,8 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                if(hitInfo.collider.tag == "Hotbar"){
-                hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
+                 if(hitInfo.collider.tag == "Hotbar" && hitInfo.collider.gameObject.transform.GetChild(0).gameObject.activeSelf){
+                    hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
                 }
             }
 
@@ -96,22 +96,22 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("buttA inv");
 
                 if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
-                if(hitInfo.collider.tag == "inventoryIcon" && !hotbarUI.activeSelf) {
-                    gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                    hotbarUI.SetActive(true);
-                    spawnInventory();
-                    Debug.Log("Hotbar open");
-                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                    gameObject.GetComponent<CharacterController>().enabled = false;
-                }
-                else {
-                    gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                    hotbarUI.SetActive(false);
-                    Debug.Log("Hotbar close");
-                    gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
-                    gameObject.GetComponent<CharacterController>().enabled = true;
-                }
-                if(hitInfo.collider.tag == "MainMenu" && !MainMenu.activeSelf) {
+                    if(hitInfo.collider.tag == "inventoryIcon" && !hotbarUI.activeSelf) {
+                        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                        hotbarUI.SetActive(true);
+                        spawnInventory();
+                        Debug.Log("Hotbar open");
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
+                        gameObject.GetComponent<CharacterController>().enabled = false;
+                    }
+                    else {
+                        gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                        hotbarUI.SetActive(false);
+                        Debug.Log("Hotbar close");
+                        gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
+                        gameObject.GetComponent<CharacterController>().enabled = true;
+                    }
+                    if(hitInfo.collider.tag == "MainMenu" && !MainMenu.activeSelf) {
                         MainMenu.SetActive(true);
                         spawnInventory();
                         gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -169,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
                     if(hitInfo.collider.tag == "Hotbar") {
                         itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
                         hotbarUI.SetActive(false);
+                        
                     }
                 }
                 if (MainMenu.activeSelf == true) {

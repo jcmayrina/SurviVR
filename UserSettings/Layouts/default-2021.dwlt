@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 382
+  controlID: 118
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 1148
     height: 567
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 13}
@@ -335,9 +335,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 1349}
-    m_SelectedIDs: cc7c0000
-    m_LastClickedID: 31948
-    m_ExpandedIDs: 00000000b27b0000b47b0000b67b0000b87b0000ba7b0000bc7b0000be7b0000c07b0000c27b0000c47b0000c67b0000c87b0000ca7b0000cc7b0000ce7b0000d07b0000d27b0000d47b0000d67b0000d87b0000da7b0000dc7b0000de7b0000e07b0000e27b0000e47b0000e67b0000e87b000000ca9a3b
+    m_SelectedIDs: f6990000
+    m_LastClickedID: 39414
+    m_ExpandedIDs: 00000000ec980000ee980000f0980000f2980000f4980000f6980000f8980000fa980000fc980000fe98000000990000029900000499000006990000089900000a9900000c9900000e99000010990000129900001499000016990000189900001a9900001c9900001e990000209900002299000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -365,7 +365,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b27b0000b47b0000b67b0000b87b0000ba7b0000bc7b0000be7b0000c07b0000c27b0000c47b0000c67b0000c87b0000ca7b0000cc7b0000ce7b0000d07b0000d27b0000d47b0000d67b0000d87b0000da7b0000dc7b0000de7b0000e07b0000e27b0000e47b0000e67b0000e87b0000
+    m_ExpandedIDs: 00000000ec980000ee980000f0980000f2980000f4980000f6980000f8980000fa980000fc980000fe98000000990000029900000499000006990000089900000a9900000c9900000e99000010990000129900001499000016990000189900001a9900001c9900001e9900002099000022990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000ca660000fc610000448400007e640000c00d050052d00000707401004ec702006c740100ace00b00000000008e980000f6b402004468030000200500dc970600
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.08512332, y: -0.08000978, z: 0.0068467287, w: 0.99315405}
     speed: 2
-    m_Value: {x: 0.08512122, y: -0.08000781, z: 0.0068465597, w: 0.99312955}
+    m_Value: {x: -0.08512332, y: 0.08000977, z: -0.0068467287, w: -0.993154}
   m_Size:
     m_Target: 1.0218124
     speed: 2
@@ -1361,21 +1361,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e454feff2a57feff305afefff05cfeff0876feff6079feff167cfeffe67efeff6c7ffeff6485feff1897feff66a9feff5cadfeffcaaffeff00b3feff64b5feffc0bbfeff34bffeffc4c5feffdac6feff48dbfeff30e5feff38e5feff3ce5feff9ae6feffeaecfeff3aeefeff3cf2feff44f3feffda05ffff3016ffffb417ffffe01bffffd01cffff622ffffffe30ffffda38ffffdc38ffffe838ffff203affffec4bffff924dffffe464ffff3e8fffff609fffff669fffff709fffff02b1ffff1ec3ffff30d5ffff0ae8ffffcefaffff987d0000908700001e8d0000448f0000c6b2000072b40000f8ce0000dae000003ee20000981c0100c01f0100902601001e2c0100442e0100c4a0010002a1010032a20100d8a30100a2aa01009ef00100acf1010058f20100ccf2010014f80100ea090200383b02001c510200f06402003686020000990200809a0200289c02002acf02001cd20200fad502001aeb0200e8130300d21d03004c560300e0610300c07b03003a7c0300ea970300509803005ea303003ea50300aed003002ed2030054df0300eee70300e0ea03009c00040014030400b4120400fa1204002c4f04007a4f040080550400fc560400425704002c580400c6590400365a0400be5a0400b86d0400fe6d040080730400fa730400c07804000e7904009e870400288a0400
+      m_ExpandedIDs: 88a9ffffd6a9ffff2eaaffff80aafffffcaaffff7eabffffdaabffff18acffff76acffff34bdfffff8cdffff54ceffffd0cfffff1ed0ffff5ed2ffffb2d2ffff30d3ffffb6d3ffff12d4ffff50d4ffffb2d4ffff70e5ffff48f6ffffa4f6ffff0ef8ffffd2faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: PanelInventory
-        m_OriginalName: PanelInventory
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 285402
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
