@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * maxDistance);
         if(Physics.Raycast(ray, out hitInfo, maxDistance, mask)) {
             if(hitInfo.collider.GetComponent<Interactable>() != null) {
-                if(hitInfo.collider.tag == "Hotbar" && hitInfo.collider.gameObject.transform.GetChild(0).gameObject.activeSelf){
+                 if(hitInfo.collider.tag == "Hotbar" && hitInfo.collider.gameObject.transform.GetChild(0).gameObject.activeSelf){
                     hitInfo.collider.GetComponentInChildren<Animation>().Play("InventorySelected");
                 }
             }
@@ -171,19 +171,21 @@ public class PlayerMovement : MonoBehaviour
                         if(hitInfo.collider.gameObject.transform.GetChild(0).gameObject.activeSelf) {
                             gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
                             itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = false;
 
-                            if(!GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.activeSelf && itemChoose != "Flashlight") {
-                                GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                            if(!GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false && itemChoose == "Flashlight") {
+                                GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
+                                Debug.Log("flashlight111");
                             }
-                            else if(!GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.activeSelf && itemChoose != "Whistle") {
-                                GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                            if(!GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false && itemChoose == "Whistle") {
+                                GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
+                                Debug.Log("whistle111");
                             }
                         }
                         else {
                             gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
                             itemChoose = "";
-                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
                         }
 
                         hotbarUI.SetActive(false);

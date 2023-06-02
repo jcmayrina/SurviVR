@@ -818,6 +818,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   cam: {fileID: 773266714}
+  beforeBO: {fileID: 0}
+  afterBO: {fileID: 0}
+  flash: {fileID: 0}
 --- !u!65 &54366046
 BoxCollider:
   m_ObjectHideFlags: 0

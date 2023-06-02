@@ -22,6 +22,9 @@ public class TVfreeze : MonoBehaviour
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
     public Camera cam;
+    public GameObject beforeBO;
+    public GameObject afterBO;
+    public GameObject flash;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +77,7 @@ public class TVfreeze : MonoBehaviour
             tvcondition.SetActive(false);
             outsidecondition.SetActive(true);
             TurnOnControls();
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
         else if(mycrouchtimer < 54){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
@@ -98,12 +102,22 @@ public class TVfreeze : MonoBehaviour
         if(checkPlay2){
         crouchtimer += 1 * Time.deltaTime;
         mycrouchtimer = (int) crouchtimer;
-        if(mycrouchtimer == 32){
+        if(mycrouchtimer == 29){
+            gameObject.transform.GetChild(0).GetComponent<AudioSource>().Play();
+        }
+        else if(mycrouchtimer == 30){
+            gameObject.transform.GetChild(1).GetComponent<AudioSource>().Play();
+            beforeBO.SetActive(false);
+            afterBO.SetActive(true);
+        }
+        else if(mycrouchtimer == 33){
             tvcondition.SetActive(false);
             outsidecondition.SetActive(true);
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+            flash.GetComponent<OutlineBorder>().enabled = true;
             TurnOnControls();
         }
-        else if(mycrouchtimer < 32){
+        else if(mycrouchtimer < 33){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);
             m_MainCamera.transform.rotation = Quaternion.Euler(new Vector3(6.9f,-90f,0f));
             TurnOffControls();
