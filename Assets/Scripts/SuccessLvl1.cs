@@ -8,6 +8,7 @@ public class SuccessLvl1 : MonoBehaviour
     PlayerMovement player;
     public GameObject outsidecondition;
     public GameObject outsidewarnings;
+    public GameObject outclean;
     float timer;
     int mytimer;
     void Start()
@@ -27,6 +28,7 @@ public class SuccessLvl1 : MonoBehaviour
             outsidecondition.transform.GetChild(1).GetComponent<MeshCollider>().enabled = false;
             outsidecondition.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
             outsidewarnings.SetActive(false);
+            outclean.SetActive(true);
         }
         if(player.objectiveLists.Count==25){
              SceneManager.LoadScene("Level-1 TV2");

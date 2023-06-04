@@ -12,6 +12,7 @@ public class TVfreeze : MonoBehaviour
     PlayerMovement player;
     public GameObject tvcondition;
     public GameObject outsidecondition;
+    public GameObject tvshow1;
     public VideoPlayer video;
     private bool checkPlay=false;
     private bool checkPlay1=false;
@@ -75,6 +76,7 @@ public class TVfreeze : MonoBehaviour
             outsidecondition.SetActive(true);
             TurnOnControls();
             gameObject.GetComponent<BoxCollider>().enabled = false;
+            tvshow1.SetActive(true);
         }
         else if(mycrouchtimer < 54){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);

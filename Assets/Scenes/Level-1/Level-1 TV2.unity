@@ -983,6 +983,7 @@ MonoBehaviour:
   Player: {fileID: 412160518}
   tvcondition: {fileID: 0}
   outsidecondition: {fileID: 0}
+  tvshow1: {fileID: 0}
   video: {fileID: 54366042}
   maxDistance: 6
   mask:
@@ -38797,7 +38798,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 89324900b9e93a24b8d44c6a5b6ddcc4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

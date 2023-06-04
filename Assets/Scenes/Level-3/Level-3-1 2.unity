@@ -14112,8 +14112,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.341848, y: 1.3199017, z: 5.673966}
-  m_Center: {x: -10.854095, y: 0.3481755, z: 3.3434515e-14}
+  m_Size: {x: 6.249673, y: 1.3630624, z: 5.673966}
+  m_Center: {x: -6.039757, y: 0.20204328, z: 1.9401764e-14}
 --- !u!1001 &1021729436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32408,8 +32408,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631447756}
-  m_LocalRotation: {x: -0, y: 0.33709523, z: -0, w: 0.9414706}
-  m_LocalPosition: {x: 0, y: 0, z: 13.891846}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 3.47}
   m_LocalScale: {x: 0.015, y: 0.015, z: 0.015}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -32418,10 +32418,10 @@ RectTransform:
   - {fileID: 1246359487}
   m_Father: {fileID: 1769428137}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1928.48, y: -2002.12}
+  m_AnchoredPosition: {x: 1926.69, y: -2002.1588}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1633528525
