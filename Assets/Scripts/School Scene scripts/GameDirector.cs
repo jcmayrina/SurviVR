@@ -106,7 +106,7 @@ public class GameDirector : MonoBehaviour
             }
 
             if(index == 3 && String.Equals(Player.GetComponent<PlayerMovement>().itemChoose, "Flashlight")) {
-                if(Input.GetButton("ButtonA") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
+                if(Input.GetButton("ButtonB") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
                     itemClick++;
                     keyPassed = 0f;
                 }
@@ -119,7 +119,7 @@ public class GameDirector : MonoBehaviour
             }
 
             if(index == 5 && String.Equals(Player.GetComponent<PlayerMovement>().itemChoose, "Whistle")) {
-                if(Input.GetButton("ButtonA") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
+                if(Input.GetButton("ButtonB") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
                     itemClick++;
                     keyPassed = 0f;
                 }

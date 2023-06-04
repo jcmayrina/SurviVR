@@ -167,32 +167,10 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     if(hitInfo.collider.tag == "Hotbar") {
-                        
-                        if(hitInfo.collider.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == true) {
-                            gameObject.transform.GetChild(3).gameObject.transform.Find("inventory1sfx").GetComponent<AudioSource>().Play();
-                            itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
-                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = false;
-
-                            if(GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false && itemChoose == "Whistle") {
-                                GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
-                            }
-                            if(GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false && itemChoose == "Flashlight") {
-                                GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
-                            }
+                        itemChoose = hitInfo.collider.GetComponent<Interactable>().ClickItem();
+                        if(String.Equals(itemChoose, "Whistle") && flashlight.activeSelf){
+                            flashlight.SetActive(false);
                         }
-                        else {
-                            gameObject.transform.GetChild(3).gameObject.transform.Find("inventory2sfx").GetComponent<AudioSource>().Play();
-                            itemChoose = "";
-                            hitInfo.collider.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
-
-                            if(GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false) {
-                                GameObject.Find("Flashlight").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
-                            }
-                            if(GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled == false) {
-                                GameObject.Find("Whistle").gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = true;
-                            }
-                        }
-
                         hotbarUI.SetActive(false);
                     }
                 }
@@ -211,15 +189,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-            else {
-                if(String.Equals(itemChoose, "Flashlight")) {
-                    flashlight.SetActive(!flashlight.activeSelf);
-                }
-                if(String.Equals(itemChoose, "Whistle")) {
-                    Debug.Log("Whistle is used");
-                    whistle.Play();
-                }
-            }
+                
 
         timePassed = 0f;
         }
@@ -227,25 +197,17 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButton("ButtonB") && timePassed >= keyDelay){
             //gameObject.GetComponent<CharacterController>().enabled = true;
             Debug.Log("joystick buttonB");
+            if(String.Equals(itemChoose, "Flashlight")) {
+                    flashlight.SetActive(!flashlight.activeSelf);
+            }
+            if(String.Equals(itemChoose, "Whistle")) {
+                Debug.Log("Whistle is used");
+                whistle.Play();
+            }
             timePassed = 0f;
         }
         if(Input.GetButton("ButtonY") && timePassed >= keyDelay){
             Debug.Log("joystick buttonY");
-            if(hotbarUI.activeSelf) {
-                if(itemChoose.Equals("slot1")) {
-                    Debug.Log("Flashlight");
-                    itemChoose = "slot2";
-                }
-                else if(itemChoose.Equals("slot2")) {
-                    Debug.Log("Hand");
-                    itemChoose = "";
-                }
-                else {
-                    Debug.Log("Whistle");
-                    itemChoose = "slot1";
-                }
-            }
-            
         timePassed = 0f;
         }
         if(Input.GetButton("ButtonX") && timePassed >= keyDelay){

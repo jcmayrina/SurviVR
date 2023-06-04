@@ -102,11 +102,10 @@ public class TVfreeze : MonoBehaviour
         if(checkPlay2){
         crouchtimer += 1 * Time.deltaTime;
         mycrouchtimer = (int) crouchtimer;
-        if(mycrouchtimer == 29){
+        if(mycrouchtimer == 30){
             gameObject.transform.GetChild(0).GetComponent<AudioSource>().Play();
         }
-        else if(mycrouchtimer == 30){
-            gameObject.transform.GetChild(1).GetComponent<AudioSource>().Play();
+        else if(mycrouchtimer == 31){
             beforeBO.SetActive(false);
             afterBO.SetActive(true);
         }
