@@ -20,7 +20,7 @@ public class SuccessLvl3 : MonoBehaviour
     {
         timer += 1 * Time.deltaTime;
         mytimer = (int) timer;
-        if(player.objectiveLists.Count==17){
+        if(player.objectiveLists.Count==16){
             outsidecondition.SetActive(false);
             outsidecondition.transform.GetChild(0).GetComponent<MeshCollider>().enabled = false;
             outsidecondition.transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
