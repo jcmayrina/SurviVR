@@ -14265,10 +14265,12 @@ struct SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8  : public MonoBehav
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___outsidecondition_5;
 	// UnityEngine.GameObject SuccessLvl1::outsidewarnings
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___outsidewarnings_6;
+	// UnityEngine.GameObject SuccessLvl1::outclean
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___outclean_7;
 	// System.Single SuccessLvl1::timer
-	float ___timer_7;
+	float ___timer_8;
 	// System.Int32 SuccessLvl1::mytimer
-	int32_t ___mytimer_8;
+	int32_t ___mytimer_9;
 };
 
 // SuccessLvl3
@@ -14303,24 +14305,26 @@ struct TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84  : public MonoBehaviou
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___tvcondition_9;
 	// UnityEngine.GameObject TVfreeze::outsidecondition
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___outsidecondition_10;
+	// UnityEngine.GameObject TVfreeze::tvshow1
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___tvshow1_11;
 	// UnityEngine.Video.VideoPlayer TVfreeze::video
-	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___video_11;
+	VideoPlayer_t48EA4A8117B822BC59590150DED9AD46C62F65D3* ___video_12;
 	// System.Boolean TVfreeze::checkPlay
-	bool ___checkPlay_12;
+	bool ___checkPlay_13;
 	// System.Boolean TVfreeze::checkPlay1
-	bool ___checkPlay1_13;
+	bool ___checkPlay1_14;
 	// System.Boolean TVfreeze::checkPlay2
-	bool ___checkPlay2_14;
+	bool ___checkPlay2_15;
 	// System.Single TVfreeze::keyDelay
-	float ___keyDelay_15;
+	float ___keyDelay_16;
 	// System.Single TVfreeze::timePassed
-	float ___timePassed_16;
+	float ___timePassed_17;
 	// System.Single TVfreeze::maxDistance
-	float ___maxDistance_17;
+	float ___maxDistance_18;
 	// UnityEngine.LayerMask TVfreeze::mask
-	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___mask_18;
+	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___mask_19;
 	// UnityEngine.Camera TVfreeze::cam
-	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___cam_19;
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___cam_20;
 };
 
 // TeacherDialogues
@@ -17369,9 +17373,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4052[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4053[2] = 
 {
 	static_cast<int32_t>(offsetof(TeacherDialogues_t92F05BB412BC69B0AE523583BB11CFC4CFF1CB94, ___TeacherDialogue_4)),static_cast<int32_t>(offsetof(TeacherDialogues_t92F05BB412BC69B0AE523583BB11CFC4CFF1CB94, ___Dialogues_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4055[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4055[6] = 
 {
-	static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___player_4)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___outsidecondition_5)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___outsidewarnings_6)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___timer_7)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___mytimer_8)),};
+	static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___player_4)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___outsidecondition_5)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___outsidewarnings_6)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___outclean_7)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___timer_8)),static_cast<int32_t>(offsetof(SuccessLvl1_t6635A7E7042D14A22B5E2B600FA867A3B89E1BF8, ___mytimer_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4056[5] = 
 {
 	static_cast<int32_t>(offsetof(SuccessLvl3_t1998D4B55B94A8FFCBD2A79A637AAB79E82440AF, ___player_4)),static_cast<int32_t>(offsetof(SuccessLvl3_t1998D4B55B94A8FFCBD2A79A637AAB79E82440AF, ___outsidecondition_5)),static_cast<int32_t>(offsetof(SuccessLvl3_t1998D4B55B94A8FFCBD2A79A637AAB79E82440AF, ___outsidewarnings_6)),static_cast<int32_t>(offsetof(SuccessLvl3_t1998D4B55B94A8FFCBD2A79A637AAB79E82440AF, ___timer_7)),static_cast<int32_t>(offsetof(SuccessLvl3_t1998D4B55B94A8FFCBD2A79A637AAB79E82440AF, ___mytimer_8)),};
@@ -17384,9 +17388,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4058[2] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4059[8] = 
 {
 	static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___rotateText_4)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___Player_5)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___head_6)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___textWatch_7)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___myAnimController_8)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___OnEnter_9)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___OnStay_10)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___OnExit_11)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4060[16] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4060[17] = 
 {
-	static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___m_MainCamera_4)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___crouchtimer_5)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mycrouchtimer_6)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___Player_7)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___player_8)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___tvcondition_9)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___outsidecondition_10)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___video_11)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay_12)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay1_13)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay2_14)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___keyDelay_15)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___timePassed_16)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___maxDistance_17)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mask_18)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___cam_19)),};
+	static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___m_MainCamera_4)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___crouchtimer_5)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mycrouchtimer_6)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___Player_7)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___player_8)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___tvcondition_9)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___outsidecondition_10)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___tvshow1_11)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___video_12)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay_13)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay1_14)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay2_15)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___keyDelay_16)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___timePassed_17)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___maxDistance_18)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mask_19)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___cam_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4062[2] = 
 {
 	static_cast<int32_t>(offsetof(TimePlayed_tD481F6FF5074CA7663AEE815C11FC12A72052189, ___player_4)),static_cast<int32_t>(offsetof(TimePlayed_tD481F6FF5074CA7663AEE815C11FC12A72052189, ___time_5)),};
