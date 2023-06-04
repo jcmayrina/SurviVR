@@ -88,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
         else{
             //Turn off equipable texts
             if(itemName != null && itemName.transform.GetChild(0).gameObject.activeSelf == true){
-                itemName.transform.GetChild(0).gameObject.SetActive(false);
+                if(itemName.name != "Emergency GO Bag"){
+                itemName.transform.GetChild(0).gameObject.SetActive(false);}
             }
         }
         if(head.eulerAngles.x >= 50 && head.eulerAngles.x <= 90) {

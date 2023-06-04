@@ -13831,8 +13831,8 @@ struct GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3  : public MonoBeha
 	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___TextBoxAnimation_12;
 	// UnityEngine.GameObject GameDirector::TextDialogue
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___TextDialogue_13;
-	// UnityEngine.AudioClip GameDirector::audioClip
-	AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___audioClip_14;
+	// UnityEngine.Animation GameDirector::teacherAnimation
+	Animation_t6593B06C39E3B139808B19F2C719C860F3F61040* ___teacherAnimation_14;
 	// System.Boolean GameDirector::goBagFlag
 	bool ___goBagFlag_15;
 	// System.Boolean GameDirector::continueDialogue
@@ -13855,12 +13855,10 @@ struct GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3  : public MonoBeha
 	float ___textDelay2_24;
 	// System.Single GameDirector::idleLength
 	float ___idleLength_25;
-	// System.Boolean GameDirector::activateTimer
-	bool ___activateTimer_26;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> GameDirector::Colliders
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___Colliders_27;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___Colliders_26;
 	// System.Collections.Generic.List`1<System.String> GameDirector::Dialogues
-	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ___Dialogues_28;
+	List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* ___Dialogues_27;
 };
 
 // InfoTexts
@@ -17362,9 +17360,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4049[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4050[1] = 
 {
 	static_cast<int32_t>(offsetof(colliderActTrigger_t38F8132036F5B175B0AD43C2578D54BF96DC7800, ___gdFunction_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4051[25] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4051[24] = 
 {
-	static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___goBag_4)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___hotbarUI_5)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Player_6)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Teacher_7)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___TextDialogueGuide_8)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Dialogue_9)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___ObjectiveText_10)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___cam_11)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___TextBoxAnimation_12)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___TextDialogue_13)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___audioClip_14)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___goBagFlag_15)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___continueDialogue_16)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___sceneName_17)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___currentDialogue_18)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___index_19)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___itemClick_20)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___keyDelay_21)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___keyPassed_22)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___textDelay_23)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___textDelay2_24)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___idleLength_25)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___activateTimer_26)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Colliders_27)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Dialogues_28)),};
+	static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___goBag_4)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___hotbarUI_5)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Player_6)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Teacher_7)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___TextDialogueGuide_8)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Dialogue_9)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___ObjectiveText_10)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___cam_11)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___TextBoxAnimation_12)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___TextDialogue_13)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___teacherAnimation_14)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___goBagFlag_15)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___continueDialogue_16)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___sceneName_17)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___currentDialogue_18)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___index_19)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___itemClick_20)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___keyDelay_21)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___keyPassed_22)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___textDelay_23)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___textDelay2_24)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___idleLength_25)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Colliders_26)),static_cast<int32_t>(offsetof(GameDirector_t884BFCBAF404F521600B0B6EB5DCE988B378FFE3, ___Dialogues_27)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4052[1] = 
 {
 	static_cast<int32_t>(offsetof(startAnimating_t47542EC9AEFC0A0B843BCBCD9E7A0FC313F9391D, ___animate_4)),};

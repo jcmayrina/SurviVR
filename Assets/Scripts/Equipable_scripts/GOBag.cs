@@ -7,7 +7,7 @@ public class GOBag : Equipable
 
     }
     void Update() {
-
+        
     }
     protected override void Equip(){
         Debug.Log("equipped");

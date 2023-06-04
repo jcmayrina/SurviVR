@@ -451,103 +451,107 @@ extern void GameDirector_afterGobagInactive_m7D66BA8F9638F476EBF4B019A64A7029BE0
 extern void GameDirector_textLookAtPlayer_mA97FAF5BBF4290736397A3CDAFD4AEC4000CBF90 (void);
 // 0x000000E4 System.Void GameDirector::spawnTextGuide()
 extern void GameDirector_spawnTextGuide_mEB104BF6C68B735517A90D68E81886CDA2740E73 (void);
-// 0x000000E5 System.Void GameDirector::setTimer()
-extern void GameDirector_setTimer_m04E924BF8D9D1BED866DEB61F7B46FB850DCDAC6 (void);
-// 0x000000E6 System.Void GameDirector::setTriggeredCollider(System.Int32)
+// 0x000000E5 System.Void GameDirector::textBoxOpen()
+extern void GameDirector_textBoxOpen_mA76D3B207AF9FBFE1844EC43503B732356A53E79 (void);
+// 0x000000E6 System.Void GameDirector::textBoxClose()
+extern void GameDirector_textBoxClose_m652FAC057EA06DDC7B81406AAA1A68036B611B08 (void);
+// 0x000000E7 System.Void GameDirector::deactiveTextBox()
+extern void GameDirector_deactiveTextBox_m9DE13F5BED9CC4ABD5AAE5D033DE86C04F5823BE (void);
+// 0x000000E8 System.Void GameDirector::setTriggeredCollider(System.Int32)
 extern void GameDirector_setTriggeredCollider_m2FDF6019AB72652BD89005BDB72B97C02EDBF387 (void);
-// 0x000000E7 System.Void GameDirector::LoadNextScene()
+// 0x000000E9 System.Void GameDirector::LoadNextScene()
 extern void GameDirector_LoadNextScene_m2AE152E06AF2114F1B95AE95B285A04692258C12 (void);
-// 0x000000E8 System.Void GameDirector::.ctor()
+// 0x000000EA System.Void GameDirector::.ctor()
 extern void GameDirector__ctor_m11BFC3A4A757A802BDD31DFC5E5F1D19E54DF1DD (void);
-// 0x000000E9 System.Void startAnimating::Awake()
+// 0x000000EB System.Void startAnimating::Awake()
 extern void startAnimating_Awake_m234F9FA82869D0A92EF45B67F96A0E81772FBE1A (void);
-// 0x000000EA System.Void startAnimating::Start()
+// 0x000000EC System.Void startAnimating::Start()
 extern void startAnimating_Start_m985E2830897F23EBC5858E88767E12EC5F10E075 (void);
-// 0x000000EB System.Void startAnimating::Update()
+// 0x000000ED System.Void startAnimating::Update()
 extern void startAnimating_Update_mF2CDC3AC17DAC19F18D2C6A69FE0718CF17D256B (void);
-// 0x000000EC System.Void startAnimating::.ctor()
+// 0x000000EE System.Void startAnimating::.ctor()
 extern void startAnimating__ctor_m567E6DE6362A059841C19FF671FC3D10DF0839B7 (void);
-// 0x000000ED System.Void TeacherDialogues::Start()
+// 0x000000EF System.Void TeacherDialogues::Start()
 extern void TeacherDialogues_Start_mD4BFE072F684B54DF5F3D8DBB680A5FA0FD4B0AB (void);
-// 0x000000EE System.Void TeacherDialogues::Update()
+// 0x000000F0 System.Void TeacherDialogues::Update()
 extern void TeacherDialogues_Update_mFADBF805F45D5066C4B9F98BF4DE1D7AB5687BA6 (void);
-// 0x000000EF System.Void TeacherDialogues::playDialogAudio(System.Int32)
+// 0x000000F1 System.Void TeacherDialogues::playDialogAudio(System.Int32)
 extern void TeacherDialogues_playDialogAudio_m0FF6EA5CB894DBDBCFA399D362003CBF0CD59DAC (void);
-// 0x000000F0 System.Void TeacherDialogues::.ctor()
+// 0x000000F2 System.Void TeacherDialogues::.ctor()
 extern void TeacherDialogues__ctor_mB0C1C48B20AED00A241DE78C05745E1CF19F1AA6 (void);
-// 0x000000F1 System.Void ShowMessage::Start()
+// 0x000000F3 System.Void ShowMessage::Start()
 extern void ShowMessage_Start_mB463EB203F6722E6AAED11DB4B86AF9FB1AD2A5A (void);
-// 0x000000F2 System.Void ShowMessage::Update()
+// 0x000000F4 System.Void ShowMessage::Update()
 extern void ShowMessage_Update_mAB48C2CBFC9C8CC9E415B2C14A0D074A596BBA53 (void);
-// 0x000000F3 System.Void ShowMessage::HideDoor()
+// 0x000000F5 System.Void ShowMessage::HideDoor()
 extern void ShowMessage_HideDoor_m974D1AF826CA9E8A53C64484B66E3E5083DC217E (void);
-// 0x000000F4 System.Void ShowMessage::.ctor()
+// 0x000000F6 System.Void ShowMessage::.ctor()
 extern void ShowMessage__ctor_m1B4D1C502379DEDE3CBED9BC9B87AFE123449E87 (void);
-// 0x000000F5 System.Void SuccessLvl1::Start()
+// 0x000000F7 System.Void SuccessLvl1::Start()
 extern void SuccessLvl1_Start_m7974384A4677DD41E75B3700F94F94C2CEC753DF (void);
-// 0x000000F6 System.Void SuccessLvl1::Update()
+// 0x000000F8 System.Void SuccessLvl1::Update()
 extern void SuccessLvl1_Update_mE1523C265017F00A0E3EAF870157AD1E576BDCA0 (void);
-// 0x000000F7 System.Void SuccessLvl1::.ctor()
+// 0x000000F9 System.Void SuccessLvl1::.ctor()
 extern void SuccessLvl1__ctor_m705746FC39C9B6ADB6E1BD29403B43D09AE46BC7 (void);
-// 0x000000F8 System.Void SuccessLvl3::Start()
+// 0x000000FA System.Void SuccessLvl3::Start()
 extern void SuccessLvl3_Start_m1F22B0BCC71E26544BE84066C38B3A7704936DFD (void);
-// 0x000000F9 System.Void SuccessLvl3::Update()
+// 0x000000FB System.Void SuccessLvl3::Update()
 extern void SuccessLvl3_Update_m689D6E2CC46BCAFDE58B17029E73D0AA311038DE (void);
-// 0x000000FA System.Void SuccessLvl3::.ctor()
+// 0x000000FC System.Void SuccessLvl3::.ctor()
 extern void SuccessLvl3__ctor_m1E29A00C3221241287028C3F8EC5F8416C7C918A (void);
-// 0x000000FB System.Void Television::TelevisionPass()
+// 0x000000FD System.Void Television::TelevisionPass()
 extern void Television_TelevisionPass_mA922FAAE44FEA31759D8B030EBAEF0E971A796FF (void);
-// 0x000000FC System.Void Television::TelevisionSwitch()
+// 0x000000FE System.Void Television::TelevisionSwitch()
 extern void Television_TelevisionSwitch_mD334B29A395142FA6A4B228F39EED89AD4BEA587 (void);
-// 0x000000FD System.Void Television::.ctor()
+// 0x000000FF System.Void Television::.ctor()
 extern void Television__ctor_m6CC8F000808E122840FF0B12B03FE561CB601800 (void);
-// 0x000000FE System.Void Tent::Start()
+// 0x00000100 System.Void Tent::Start()
 extern void Tent_Start_m52F2022EC62A7EC82907EAB900B2227FD30D234A (void);
-// 0x000000FF System.Void Tent::Update()
+// 0x00000101 System.Void Tent::Update()
 extern void Tent_Update_m2ADABDB34DD1E8EBE2CC2619685B735942D6417F (void);
-// 0x00000100 System.Void Tent::Equip()
+// 0x00000102 System.Void Tent::Equip()
 extern void Tent_Equip_m05171A6642B88FBE61BFE198E817B2526F77777E (void);
-// 0x00000101 System.Void Tent::.ctor()
+// 0x00000103 System.Void Tent::.ctor()
 extern void Tent__ctor_mD8C8D14F9F590556F5FA697BC27B7EAAEBE93047 (void);
-// 0x00000102 System.Void TextWarning::Start()
+// 0x00000104 System.Void TextWarning::Start()
 extern void TextWarning_Start_m25DB94870190877697AAF9B502F98F2E014CFB86 (void);
-// 0x00000103 System.Void TextWarning::Update()
+// 0x00000105 System.Void TextWarning::Update()
 extern void TextWarning_Update_m88308A0F9EA2FF7A2737F0930D6D6698CF01CF6F (void);
-// 0x00000104 System.Void TextWarning::OnTriggerEnter(UnityEngine.Collider)
+// 0x00000106 System.Void TextWarning::OnTriggerEnter(UnityEngine.Collider)
 extern void TextWarning_OnTriggerEnter_m404D959BDA37BEB23F2F9960A40CF7C7E5E93D92 (void);
-// 0x00000105 System.Void TextWarning::OnTriggerStay(UnityEngine.Collider)
+// 0x00000107 System.Void TextWarning::OnTriggerStay(UnityEngine.Collider)
 extern void TextWarning_OnTriggerStay_m68734A56282FFCFADE4304A768B15C99A52BF5CA (void);
-// 0x00000106 System.Void TextWarning::OnTriggerExit(UnityEngine.Collider)
+// 0x00000108 System.Void TextWarning::OnTriggerExit(UnityEngine.Collider)
 extern void TextWarning_OnTriggerExit_m601DC94CC14D479F2C083AC9BE2995BC0D48C39D (void);
-// 0x00000107 System.Void TextWarning::HideText()
+// 0x00000109 System.Void TextWarning::HideText()
 extern void TextWarning_HideText_m7BCB2BE263AD16108DBEE8AD809DD7A9861A1F27 (void);
-// 0x00000108 System.Void TextWarning::.ctor()
+// 0x0000010A System.Void TextWarning::.ctor()
 extern void TextWarning__ctor_m6CE0E0D3451A240325E1CD69FB460DDD70BFC179 (void);
-// 0x00000109 System.Void TVfreeze::Start()
+// 0x0000010B System.Void TVfreeze::Start()
 extern void TVfreeze_Start_mBC4550769B2F8B34ACDE3E5E08D803EB3A744F2A (void);
-// 0x0000010A System.Void TVfreeze::Update()
+// 0x0000010C System.Void TVfreeze::Update()
 extern void TVfreeze_Update_m370848335053257933143419871DE252355E23BC (void);
-// 0x0000010B System.Void TVfreeze::TurnOffControls()
+// 0x0000010D System.Void TVfreeze::TurnOffControls()
 extern void TVfreeze_TurnOffControls_m7F563AD664313D2C4C5AC3FDDD7FB9B69A10E497 (void);
-// 0x0000010C System.Void TVfreeze::TurnOnControls()
+// 0x0000010E System.Void TVfreeze::TurnOnControls()
 extern void TVfreeze_TurnOnControls_m2BB4F8CCBC1EC257F24C3AEB8A2E1CC19145374F (void);
-// 0x0000010D System.Void TVfreeze::.ctor()
+// 0x0000010F System.Void TVfreeze::.ctor()
 extern void TVfreeze__ctor_m89F564CF67672EBFCB12E8650BDD62AE4BF35037 (void);
-// 0x0000010E System.Void TVswitch::Start()
+// 0x00000110 System.Void TVswitch::Start()
 extern void TVswitch_Start_m6842C17EBED46CB834D602141B413AA2308AB136 (void);
-// 0x0000010F System.Void TVswitch::Update()
+// 0x00000111 System.Void TVswitch::Update()
 extern void TVswitch_Update_m4F60077C07271A79B21C08346656D03EE83DB893 (void);
-// 0x00000110 System.Void TVswitch::TelevisionSwitch()
+// 0x00000112 System.Void TVswitch::TelevisionSwitch()
 extern void TVswitch_TelevisionSwitch_m2D0EF793551BD28E5F946983C06375A0DFF4FBBD (void);
-// 0x00000111 System.Void TVswitch::.ctor()
+// 0x00000113 System.Void TVswitch::.ctor()
 extern void TVswitch__ctor_m5528AA0F5D3DF486822E002F24379CE9F6899422 (void);
-// 0x00000112 System.Void TimePlayed::Start()
+// 0x00000114 System.Void TimePlayed::Start()
 extern void TimePlayed_Start_mF6C968F5263CAB47F62412857D9210FC793FDA3F (void);
-// 0x00000113 System.Void TimePlayed::Update()
+// 0x00000115 System.Void TimePlayed::Update()
 extern void TimePlayed_Update_mFDDCEBDE932C6D1AE9FECB0827B197E6297064C5 (void);
-// 0x00000114 System.Void TimePlayed::.ctor()
+// 0x00000116 System.Void TimePlayed::.ctor()
 extern void TimePlayed__ctor_mA956811DF945913B3CD143C2BD322DEB5FF20B51 (void);
-static Il2CppMethodPointer s_methodPointers[276] = 
+static Il2CppMethodPointer s_methodPointers[278] = 
 {
 	ApplicationQuit_OnTriggerStay_m51C896A976C99DECF872441E507E832CF426570F,
 	ApplicationQuit__ctor_mA24310FE987463560FA7F9A00BAB943844D869E8,
@@ -777,7 +781,9 @@ static Il2CppMethodPointer s_methodPointers[276] =
 	GameDirector_afterGobagInactive_m7D66BA8F9638F476EBF4B019A64A7029BE0ED8AE,
 	GameDirector_textLookAtPlayer_mA97FAF5BBF4290736397A3CDAFD4AEC4000CBF90,
 	GameDirector_spawnTextGuide_mEB104BF6C68B735517A90D68E81886CDA2740E73,
-	GameDirector_setTimer_m04E924BF8D9D1BED866DEB61F7B46FB850DCDAC6,
+	GameDirector_textBoxOpen_mA76D3B207AF9FBFE1844EC43503B732356A53E79,
+	GameDirector_textBoxClose_m652FAC057EA06DDC7B81406AAA1A68036B611B08,
+	GameDirector_deactiveTextBox_m9DE13F5BED9CC4ABD5AAE5D033DE86C04F5823BE,
 	GameDirector_setTriggeredCollider_m2FDF6019AB72652BD89005BDB72B97C02EDBF387,
 	GameDirector_LoadNextScene_m2AE152E06AF2114F1B95AE95B285A04692258C12,
 	GameDirector__ctor_m11BFC3A4A757A802BDD31DFC5E5F1D19E54DF1DD,
@@ -887,7 +893,7 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[29] =
 	{ 0x060000B9, UIActions_get_enabled_m9302A9063DFF56B6B063875BE402BBD7414CDEA4_AdjustorThunk },
 	{ 0x060000BB, UIActions_SetCallbacks_mDB07748C0E11C6BBED0CE47CA9265F683369484D_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[276] = 
+static const int32_t s_InvokerIndices[278] = 
 {
 	3731,
 	4700,
@@ -1118,6 +1124,8 @@ static const int32_t s_InvokerIndices[276] =
 	4700,
 	4700,
 	4700,
+	4700,
+	4700,
 	3709,
 	4700,
 	4700,
@@ -1170,7 +1178,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	276,
+	278,
 	s_methodPointers,
 	29,
 	s_adjustorThunks,
