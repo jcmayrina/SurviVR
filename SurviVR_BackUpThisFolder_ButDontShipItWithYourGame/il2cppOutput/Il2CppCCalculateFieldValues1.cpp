@@ -14323,12 +14323,6 @@ struct TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84  : public MonoBehaviou
 	LayerMask_t97CB6BDADEDC3D6423C7BCFEA7F86DA2EC6241DB ___mask_18;
 	// UnityEngine.Camera TVfreeze::cam
 	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___cam_19;
-	// UnityEngine.GameObject TVfreeze::beforeBO
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___beforeBO_20;
-	// UnityEngine.GameObject TVfreeze::afterBO
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___afterBO_21;
-	// UnityEngine.GameObject TVfreeze::flash
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___flash_22;
 };
 
 // TeacherDialogues
@@ -17392,9 +17386,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4058[2] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4059[8] = 
 {
 	static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___rotateText_4)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___Player_5)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___head_6)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___textWatch_7)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___myAnimController_8)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___OnEnter_9)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___OnStay_10)),static_cast<int32_t>(offsetof(TextWarning_tC764D253F87EFDC49263E6778B49B301E883379C, ___OnExit_11)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4060[19] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4060[16] = 
 {
-	static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___m_MainCamera_4)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___crouchtimer_5)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mycrouchtimer_6)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___Player_7)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___player_8)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___tvcondition_9)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___outsidecondition_10)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___video_11)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay_12)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay1_13)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay2_14)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___keyDelay_15)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___timePassed_16)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___maxDistance_17)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mask_18)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___cam_19)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___beforeBO_20)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___afterBO_21)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___flash_22)),};
+	static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___m_MainCamera_4)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___crouchtimer_5)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mycrouchtimer_6)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___Player_7)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___player_8)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___tvcondition_9)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___outsidecondition_10)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___video_11)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay_12)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay1_13)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___checkPlay2_14)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___keyDelay_15)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___timePassed_16)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___maxDistance_17)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___mask_18)),static_cast<int32_t>(offsetof(TVfreeze_tD7BA6AD1058493B75E75DA313D5E450184F9DC84, ___cam_19)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4062[2] = 
 {
 	static_cast<int32_t>(offsetof(TimePlayed_tD481F6FF5074CA7663AEE815C11FC12A72052189, ___player_4)),static_cast<int32_t>(offsetof(TimePlayed_tD481F6FF5074CA7663AEE815C11FC12A72052189, ___time_5)),};
@@ -18094,51 +18088,51 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4400[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4401[1] = 
 {
 	static_cast<int32_t>(offsetof(IgnoreAttribute_tAB3F6C4808BA16CD585D60A6353B3E0599DFCE4D, ___U3CDoesNotContributeToSizeU3Ek__BackingField_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4404[17] = 
-{
-	static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ___ReticleSortingOrder_4)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ___ReticleInteractionLayerMask_5)),0,0,0,0,0,0,0,0,static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____gazedAtObject_14)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleMaterial_15)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleInnerAngle_16)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleOuterAngle_17)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleDistanceInMeters_18)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleInnerDiameter_19)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleOuterDiameter_20)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4405[6] = 
-{
-	static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____deviceParamsCount_0)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____cachedScreenOrientation_1)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____cachedScreenSafeArea_2)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____touchStarted_3)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____startTouchStamp_4)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____minTriggerHeldPressedTime_5)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4406[1] = 
-{
-	0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4407[4] = 
-{
-	0,0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4408[6] = 
-{
-	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4409[5] = 
-{
-	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4410[7] = 
-{
-	static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____displaySubsystemDescriptors_5)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____inputSubsystemDescriptors_6)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____closeTexture_7)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____gearTexture_8)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____whiteLineTexture_9)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ___U3C_isInitializedU3Ek__BackingField_10)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ___U3C_isStartedU3Ek__BackingField_11)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4413[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4404[1] = 
 {
 	static_cast<int32_t>(offsetof(IntegratedSubsystemDescriptor_t9232963B842E01748A8E032928DC8E35DF00C10D, ___m_Ptr_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4416[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4407[1] = 
 {
 	static_cast<int32_t>(offsetof(SubsystemDescriptor_tF417D2751C69A8B0DD86162EBCE55F84D3493A71, ___U3CidU3Ek__BackingField_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4418[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4409[2] = 
 {
 	static_cast<int32_t>(offsetof(IntegratedSubsystem_t990160A89854D87C0836DC589B720231C02D4CE3, ___m_Ptr_0)),static_cast<int32_t>(offsetof(IntegratedSubsystem_t990160A89854D87C0836DC589B720231C02D4CE3, ___m_SubsystemDescriptor_1)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4422[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4413[7] = 
 {
 	static_cast<int32_t>(offsetof(SubsystemManager_t9A7261E4D0B53B996F04B8707D8E1C33AB65E824_StaticFields, ___reloadSubsytemsStarted_0)),static_cast<int32_t>(offsetof(SubsystemManager_t9A7261E4D0B53B996F04B8707D8E1C33AB65E824_StaticFields, ___reloadSubsytemsCompleted_1)),static_cast<int32_t>(offsetof(SubsystemManager_t9A7261E4D0B53B996F04B8707D8E1C33AB65E824_StaticFields, ___beforeReloadSubsystems_2)),static_cast<int32_t>(offsetof(SubsystemManager_t9A7261E4D0B53B996F04B8707D8E1C33AB65E824_StaticFields, ___afterReloadSubsystems_3)),static_cast<int32_t>(offsetof(SubsystemManager_t9A7261E4D0B53B996F04B8707D8E1C33AB65E824_StaticFields, ___s_IntegratedSubsystems_4)),static_cast<int32_t>(offsetof(SubsystemManager_t9A7261E4D0B53B996F04B8707D8E1C33AB65E824_StaticFields, ___s_StandaloneSubsystems_5)),static_cast<int32_t>(offsetof(SubsystemManager_t9A7261E4D0B53B996F04B8707D8E1C33AB65E824_StaticFields, ___s_DeprecatedSubsystems_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4425[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4416[3] = 
 {
 	static_cast<int32_t>(offsetof(SubsystemDescriptorStore_tEF3761B84B8C25EA4B93F94A487551820B268250_StaticFields, ___s_IntegratedDescriptors_0)),static_cast<int32_t>(offsetof(SubsystemDescriptorStore_tEF3761B84B8C25EA4B93F94A487551820B268250_StaticFields, ___s_StandaloneDescriptors_1)),static_cast<int32_t>(offsetof(SubsystemDescriptorStore_tEF3761B84B8C25EA4B93F94A487551820B268250_StaticFields, ___s_DeprecatedDescriptors_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4426[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4417[1] = 
 {
 	static_cast<int32_t>(offsetof(SubsystemDescriptorWithProvider_t2A61A2C951A4A179E898CF207726BF6B5AF474D5, ___U3CidU3Ek__BackingField_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4427[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4418[2] = 
 {
 	static_cast<int32_t>(offsetof(SubsystemWithProvider_tC72E35EE2D413A4B0635B058154BABF265F31242, ___U3CrunningU3Ek__BackingField_0)),static_cast<int32_t>(offsetof(SubsystemWithProvider_tC72E35EE2D413A4B0635B058154BABF265F31242, ___U3CproviderBaseU3Ek__BackingField_1)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4428[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4419[1] = 
 {
 	static_cast<int32_t>(offsetof(SubsystemProvider_tE1865B8FE698C81A59AED35E0E536BD53F402455, ___m_Running_0)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4421[17] = 
+{
+	static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ___ReticleSortingOrder_4)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ___ReticleInteractionLayerMask_5)),0,0,0,0,0,0,0,0,static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____gazedAtObject_14)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleMaterial_15)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleInnerAngle_16)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleOuterAngle_17)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleDistanceInMeters_18)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleInnerDiameter_19)),static_cast<int32_t>(offsetof(CardboardReticlePointer_t9A831A87CC4F4E8308410F73B91A763941ED0A3F, ____reticleOuterDiameter_20)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4422[6] = 
+{
+	static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____deviceParamsCount_0)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____cachedScreenOrientation_1)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____cachedScreenSafeArea_2)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____touchStarted_3)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____startTouchStamp_4)),static_cast<int32_t>(offsetof(Api_t145FCB8AD359667011C398E3BE4F2962C25C363D_StaticFields, ____minTriggerHeldPressedTime_5)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4423[1] = 
+{
+	0,};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4424[4] = 
+{
+	0,0,0,0,};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4425[6] = 
+{
+	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,0,0,};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4426[5] = 
+{
+	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,0,};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4427[7] = 
+{
+	static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____displaySubsystemDescriptors_5)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____inputSubsystemDescriptors_6)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____closeTexture_7)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____gearTexture_8)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ____whiteLineTexture_9)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ___U3C_isInitializedU3Ek__BackingField_10)),static_cast<int32_t>(offsetof(XRLoader_t9E03B2E5E25A68BDAD7018462DE0746D5B750779_StaticFields, ___U3C_isStartedU3Ek__BackingField_11)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4430[2] = 
 {
 	static_cast<int32_t>(offsetof(XRConfigurationDataAttribute_tFCF093318B5224BCC0E168E99C562AB50DDFC0B2, ___U3CdisplayNameU3Ek__BackingField_0)),static_cast<int32_t>(offsetof(XRConfigurationDataAttribute_tFCF093318B5224BCC0E168E99C562AB50DDFC0B2, ___U3CbuildSettingsKeyU3Ek__BackingField_1)),};

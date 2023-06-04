@@ -22,9 +22,6 @@ public class TVfreeze : MonoBehaviour
     [SerializeField] private float maxDistance = 3f;
     [SerializeField] private LayerMask mask;
     public Camera cam;
-    public GameObject beforeBO;
-    public GameObject afterBO;
-    public GameObject flash;
     // Start is called before the first frame update
     void Start()
     {
@@ -102,20 +99,11 @@ public class TVfreeze : MonoBehaviour
         if(checkPlay2){
         crouchtimer += 1 * Time.deltaTime;
         mycrouchtimer = (int) crouchtimer;
-        if(mycrouchtimer == 29){
+        if(mycrouchtimer == 30){
             gameObject.transform.GetChild(0).GetComponent<AudioSource>().Play();
         }
-        else if(mycrouchtimer == 30){
-            gameObject.transform.GetChild(1).GetComponent<AudioSource>().Play();
-            beforeBO.SetActive(false);
-            afterBO.SetActive(true);
-        }
         else if(mycrouchtimer == 33){
-            tvcondition.SetActive(false);
-            outsidecondition.SetActive(true);
-            gameObject.GetComponent<BoxCollider>().enabled = false;
-            flash.GetComponent<OutlineBorder>().enabled = true;
-            TurnOnControls();
+            SceneManager.LoadScene("Level-3-1 2");
         }
         else if(mycrouchtimer < 33){
             Player.transform.position = new Vector3(8.040624f,6.198272f,-19.00196f);

@@ -20,7 +20,7 @@ public class GameDirector : MonoBehaviour
     private Transform cam;
     private Animation TextBoxAnimation;
     private GameObject TextDialogue;
-    private AudioClip audioClip;
+    private Animation teacherAnimation;
 
     // Private Variables
     private bool goBagFlag = true;
@@ -47,6 +47,7 @@ public class GameDirector : MonoBehaviour
         Dialogue = TextDialogue.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
         TextDialogue.SetActive(false);
         cam = Player.transform.GetChild(0).gameObject.transform; // Main Camera as GameObject
+        teacherAnimation = Teacher.GetComponent<Animation>();
     
     }
 
@@ -106,7 +107,7 @@ public class GameDirector : MonoBehaviour
             }
 
             if(index == 3 && String.Equals(Player.GetComponent<PlayerMovement>().itemChoose, "Flashlight")) {
-                if(Input.GetButton("ButtonA") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
+                if(Input.GetButton("ButtonB") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
                     itemClick++;
                     keyPassed = 0f;
                 }
@@ -119,7 +120,7 @@ public class GameDirector : MonoBehaviour
             }
 
             if(index == 5 && String.Equals(Player.GetComponent<PlayerMovement>().itemChoose, "Whistle")) {
-                if(Input.GetButton("ButtonA") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
+                if(Input.GetButton("ButtonB") && keyPassed >= keyDelay && hotbarUI.activeSelf == false) {
                     itemClick++;
                     keyPassed = 0f;
                 }
@@ -142,6 +143,7 @@ public class GameDirector : MonoBehaviour
         }
         else if(index == 1 && !Teacher.GetComponent<AudioSource>().isPlaying) {
             Player.GetComponent<CharacterController>().enabled = true;
+            teacherAnimation.Play("position");
             Colliders[1].SetActive(true);
             currentDialogue = Dialogues[1];
             activateTimer = true;
@@ -192,6 +194,7 @@ public class GameDirector : MonoBehaviour
         if(!goBag.activeSelf){
             index++;
             goBagFlag = !goBagFlag;
+            teacherAnimation.Play("backposition");
             continueDialogue = true;
 
             if(TextDialogue.activeSelf) {
