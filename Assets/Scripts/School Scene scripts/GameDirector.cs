@@ -125,7 +125,7 @@ public class GameDirector : MonoBehaviour
                     itemClick = 0;
                     ++index;
                     Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
-                    Invoke("LoadNextScene", 43f);
+                    Invoke("LoadNextScene", 45.0f);
                     continueDialogue = false;
                 }
             }
