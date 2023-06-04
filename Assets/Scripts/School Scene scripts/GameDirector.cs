@@ -35,7 +35,6 @@ public class GameDirector : MonoBehaviour
     private float idleLength = 0f;
 
     // Public Variables
-    public bool activateTimer = false;
     public List<GameObject> Colliders;
     
     [SerializeField] private List<String> Dialogues;
@@ -79,9 +78,6 @@ public class GameDirector : MonoBehaviour
     {
 
         // Static Methods
-        if(activateTimer) {
-            setTimer();
-        }
         textLookAtPlayer();
         
         // Exclusive for "SchoolScene Act1" scene
@@ -130,6 +126,7 @@ public class GameDirector : MonoBehaviour
                     ++index;
                     Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
                     Invoke("LoadNextScene", 43f);
+                    continueDialogue = false;
                 }
             }
         }
@@ -146,14 +143,14 @@ public class GameDirector : MonoBehaviour
             teacherAnimation.Play("position");
             Colliders[1].SetActive(true);
             currentDialogue = Dialogues[1];
-            activateTimer = true;
+            Invoke("textBoxOpen", 5.0f);
             continueDialogue = false;
         }
         else if(index == 2 && !Teacher.GetComponent<AudioSource>().isPlaying) {
             Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
             Colliders[0].SetActive(true);
             currentDialogue = Dialogues[3];
-            activateTimer = true;
+            Invoke("textBoxOpen", 5.0f);
             continueDialogue = false;
         }
     }
@@ -161,19 +158,19 @@ public class GameDirector : MonoBehaviour
     private void sceneTwoDialogueFlow() {
         if(index == 3 && !Teacher.GetComponent<AudioSource>().isPlaying) {
             currentDialogue = Dialogues[4];
-            activateTimer = true;
+            Invoke("textBoxOpen", 8.0f);
             continueDialogue = false;
         }
         else if(index == 4 && !Teacher.GetComponent<AudioSource>().isPlaying) {
             Teacher.GetComponent<TeacherDialogues>().playDialogAudio(index);
             index++;
-            continueDialogue = false;
-        }
-        else if(index == 5 && !Teacher.GetComponent<AudioSource>().isPlaying) {
             currentDialogue = Dialogues[5];
-            activateTimer = true;
+            Invoke("textBoxOpen", 17.0f);
             continueDialogue = false;
         }
+        // else if(index == 5 && !Teacher.GetComponent<AudioSource>().isPlaying) {
+        //     continueDialogue = false;
+        // }
     }
 
     private void beforeGoBagInactive() {
@@ -220,18 +217,17 @@ public class GameDirector : MonoBehaviour
     }
 
     // Sets timer to show text dialogue in front of player when idle or not doing the objetive. Show after 5sec, hide after another 5sec
-    private void setTimer() {
-        idleLength += Time.deltaTime;
-
-        if(idleLength >= textDelay && !TextDialogue.activeSelf) {
-            TextDialogue.SetActive(true);
-            spawnTextGuide();
-        }
-        if(idleLength >= textDelay2 && TextDialogue.activeSelf) {
-            TextBoxAnimation.Play("TextBoxClose");
-            activateTimer = false;
-            idleLength = 0f;
-        }
+    private void textBoxOpen() {
+        TextDialogue.SetActive(true);
+        spawnTextGuide();
+        Invoke("textBoxClose", 3.0f);
+    }
+    private void textBoxClose() {
+        TextBoxAnimation.Play("TextBoxClose");
+        Invoke("deactiveTextBox",3.0f);
+    }
+    private void deactiveTextBox() {
+        TextDialogue.SetActive(false);
     }
     
     // Trigger this set of methods when Player triggers any collider
@@ -245,7 +241,7 @@ public class GameDirector : MonoBehaviour
             case 1:
                 idleLength = 0f;
                 currentDialogue = Dialogues[2];
-                activateTimer = true;  
+                Invoke("textBoxOpen", 3.0f);
 
                 if(TextDialogue.activeSelf) {
                     TextDialogue.SetActive(false);
