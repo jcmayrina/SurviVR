@@ -49,10 +49,16 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene ();
         canMove = true;
         controller = GetComponent<CharacterController>();
         myRb = GetComponent<Rigidbody>();
+        if(currentScene.name == "Level-3-2"){
+            itemChoose = "Flashlight";
+        }else
+        {
         flashlight.SetActive(false);
+        }
         hotbarUI.SetActive(false);
         MainMenu.SetActive(false);
         cam = Camera.main;
